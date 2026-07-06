@@ -16,23 +16,8 @@ WORKDIR /app
 COPY . .
 RUN pnpm install --frozen-lockfile
 
-# Build-time-only placeholder env: `next build` runs `prisma generate` (needs
-# DATABASE_URL to be *defined*, not reachable) and may touch other env vars
-# at module-load time. Real values are injected at runtime via docker-compose.
-RUN printf '%s\n' \
-  'DATABASE_URL="mysql://user:pass@localhost:3306/db"' \
-  'NEXTAUTH_SECRET="build-time-placeholder"' \
-  'NEXTAUTH_URL="https://app.mifily.com"' \
-  'CRON_SECRET="build-time-placeholder"' \
-  'ENCRYPTION_KEY="build-time-placeholder"' \
-  'UPSTASH_REDIS_REST_URL="https://localhost"' \
-  'UPSTASH_REDIS_REST_TOKEN="build-time-placeholder"' \
-  'QSTASH_TOKEN="build-time-placeholder"' \
-  'QSTASH_CURRENT_SIGNING_KEY="build-time-placeholder"' \
-  'QSTASH_NEXT_SIGNING_KEY="build-time-placeholder"' \
-  'TINYBIRD_API_KEY="build-time-placeholder"' \
-  'RESEND_API_KEY="build-time-placeholder"' \
-  > apps/web/.env
+# Build-time-only placeholder env (see deploy/build-env.sh for why).
+RUN sh deploy/build-env.sh
 
 ENV NODE_ENV=production
 # The GH Actions runner has ~7GB RAM; Next.js's default V8 heap limit isn't
