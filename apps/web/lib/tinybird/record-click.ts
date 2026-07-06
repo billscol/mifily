@@ -12,7 +12,7 @@ import { recordClickCache } from "../api/links/record-click-cache";
 import { detectBot } from "../middleware/utils/detect-bot";
 import { detectQr } from "../middleware/utils/detect-qr";
 import { getIdentityHash } from "../middleware/utils/get-identity-hash";
-import { conn } from "../planetscale";
+import { prisma } from "../prisma";
 import { redis } from "../upstash";
 import { publishPartnerActivityEvent } from "../upstash/redis-streams/partner-activity";
 import { publishWorkspaceClickEvent } from "../upstash/redis-streams/workspace-click-events";
@@ -186,11 +186,7 @@ export async function recordClick({
         recordClickCache.set({ domain, key, identityHash, clickId }),
 
         // increment the click count for the link (based on their ID)
-        // we have to use planetscale connection directly (not prismaEdge) because of connection pooling
-        conn.execute(
-          "UPDATE Link SET clicks = clicks + 1, lastClicked = NOW() WHERE id = ?",
-          [linkId],
-        ),
+        prisma.$executeRaw`UPDATE Link SET clicks = clicks + 1, lastClicked = NOW() WHERE id = ${linkId}`,
         // if the link is associated with a workspace + has a destination URL
         // increment the usage count for the workspace
         workspaceId &&
@@ -201,10 +197,7 @@ export async function recordClick({
             timestamp: clickData.timestamp,
           }).catch(() => {
             // Fallback on writing directly to the database
-            return conn.execute(
-              "UPDATE Project p JOIN Link l ON p.id = l.projectId SET p.usage = p.usage + 1, p.totalClicks = p.totalClicks + 1 WHERE l.id = ?",
-              [linkId],
-            );
+            return prisma.$executeRaw`UPDATE Project p JOIN Link l ON p.id = l.projectId SET p.usage = p.usage + 1, p.totalClicks = p.totalClicks + 1 WHERE l.id = ${linkId}`;
           }),
 
         programId &&
@@ -216,10 +209,7 @@ export async function recordClick({
             timestamp: new Date().toISOString(),
           }).catch(() => {
             // Fallback on writing directly to the database
-            return conn.execute(
-              "UPDATE ProgramEnrollment SET totalClicks = totalClicks + 1 WHERE programId = ? AND partnerId = ?",
-              [programId, partnerId],
-            );
+            return prisma.$executeRaw`UPDATE ProgramEnrollment SET totalClicks = totalClicks + 1 WHERE programId = ${programId} AND partnerId = ${partnerId}`;
           }),
 
         // Publish the click event
