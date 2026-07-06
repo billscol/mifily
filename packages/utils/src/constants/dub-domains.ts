@@ -4,7 +4,19 @@ import { SHORT_DOMAIN } from "./main";
 // `Project.id` seeded on the server (see deploy/seed-default-domains.md).
 export const OPERATOR_WORKSPACE_ID = "ws_operator";
 
-export const DUB_DOMAINS = [
+type DubDomain = {
+  id: string;
+  slug: string;
+  verified: boolean;
+  primary: boolean;
+  archived: boolean;
+  placeholder: string;
+  allowedHostnames: string[];
+  description: string;
+  projectId: string;
+};
+
+export const DUB_DOMAINS: DubDomain[] = [
   {
     id: "domain_mifily_com",
     slug: SHORT_DOMAIN,
