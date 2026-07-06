@@ -55,6 +55,11 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+        with:
+          # The buildkit builder itself needs host networking, not just the
+          # build's `network: host` below, to reach the mysql service
+          # container published on the runner's 127.0.0.1.
+          driver-opts: network=host
 
       - name: Build and push
         uses: docker/build-push-action@v6
