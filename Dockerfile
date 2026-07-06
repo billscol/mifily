@@ -35,6 +35,9 @@ RUN printf '%s\n' \
   > apps/web/.env
 
 ENV NODE_ENV=production
+# The GH Actions runner has ~7GB RAM; Next.js's default V8 heap limit isn't
+# enough for this monorepo's build and OOMs otherwise.
+ENV NODE_OPTIONS="--max-old-space-size=6144"
 RUN pnpm turbo run build --filter=web
 
 FROM base AS runner
