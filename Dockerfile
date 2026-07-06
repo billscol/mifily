@@ -8,7 +8,7 @@ RUN corepack enable
 FROM base AS pruner
 WORKDIR /app
 COPY . .
-RUN npx turbo prune --scope=web --docker
+RUN npx turbo@1.12.5 prune --scope=web --docker
 
 FROM base AS installer
 WORKDIR /app
