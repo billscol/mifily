@@ -1,0 +1,28 @@
+# Reemplazo de los Vercel Cron Jobs definidos originalmente en apps/web/vercel.json.
+# Se llaman por la red interna de Docker (http://app:3000), nunca por internet.
+#
+# Solo se activan los jobs relevantes para un acortador multi-dominio simple.
+# Los de partners/payouts/bounties/stripe (programa de afiliados, retiros,
+# recordatorios de pago) se dejan comentados: agrégalos si activas esas
+# features de "ee" más adelante.
+
+0 * * * *  curl -fsS -X GET -H "Authorization: Bearer ${CRON_SECRET}" "${APP_URL}/api/cron/domains/verify" >/dev/null 2>&1
+* * * * *  curl -fsS -X GET -H "Authorization: Bearer ${CRON_SECRET}" "${APP_URL}/api/cron/streams/send-link-clicked-webhooks" >/dev/null 2>&1
+* * * * *  curl -fsS -X GET -H "Authorization: Bearer ${CRON_SECRET}" "${APP_URL}/api/cron/streams/update-workspace-clicks" >/dev/null 2>&1
+* * * * *  curl -fsS -X GET -H "Authorization: Bearer ${CRON_SECRET}" "${APP_URL}/api/cron/streams/update-workspace-links-usage" >/dev/null 2>&1
+*/5 * * * *  curl -fsS -X GET -H "Authorization: Bearer ${CRON_SECRET}" "${APP_URL}/api/cron/webhooks/sync-click-workspaces" >/dev/null 2>&1
+
+# Deshabilitados (features de partners/payouts que no configuramos):
+# 0 * * * *  .../api/cron/trial-emails
+# 0 * * * *  .../api/cron/payouts/aggregate-due-commissions
+# 0 1,13 * * *  .../api/cron/trigger-withdrawal
+# 0 12 * * *  .../api/cron/payouts/force-withdrawals
+# 0 14 * * *  .../api/cron/payouts/reminders/partners
+# 0 13 25-31,1-5 * *  .../api/cron/payouts/reminders/program-owners
+# 0 13 1 * *  .../api/cron/partner-program-summary
+# 0 9 * * *  .../api/cron/pending-applications-summary
+# * * * * *  .../api/cron/partner-platforms/website
+# 0 * * * *  .../api/cron/bounties/queue-sync-social-metrics
+# 0 2 * * *  .../api/cron/sitemaps/queue
+# 0 * * * *  .../api/cron/email-domains/verify
+# 40 0,8,12,20 * * *  .../api/cron/trigger-backup (PlanetScale-specific, no aplica)
