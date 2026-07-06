@@ -15,6 +15,24 @@ jobs:
     permissions:
       contents: read
       packages: write
+    # `next build` runs generateStaticParams for some pages (e.g. the
+    # partner-program routes), which execute real Prisma queries. This
+    # ephemeral, empty DB just needs to be reachable so those return `[]`
+    # instead of failing the build. Reached via 127.0.0.1 during the
+    # Docker build because of `network: host` below.
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: mifily_ci
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -48,3 +66,4 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          network: host

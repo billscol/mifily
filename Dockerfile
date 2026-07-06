@@ -19,6 +19,16 @@ RUN pnpm install --frozen-lockfile
 # Build-time-only placeholder env (see deploy/build-env.sh for why).
 RUN sh deploy/build-env.sh
 
+# `next build` runs generateStaticParams for some pages (e.g. partner
+# program routes), which execute real Prisma queries. Point at the
+# ephemeral, empty MySQL service the workflow starts (reachable at
+# 127.0.0.1 because the build runs with `network: host`) and push the
+# schema so those queries return `[]` instead of failing the build. This
+# overrides the placeholder DATABASE_URL from build-env.sh: dotenv-flow
+# never overrides an already-set process env var.
+ENV DATABASE_URL="mysql://root:root@127.0.0.1:3306/mifily_ci"
+RUN pnpm --filter web run prisma:push
+
 ENV NODE_ENV=production
 # The GH Actions runner has ~7GB RAM; Next.js's default V8 heap limit isn't
 # enough for this monorepo's build and OOMs otherwise.
