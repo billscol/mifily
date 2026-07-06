@@ -67,7 +67,7 @@ export function Form() {
           <Input
             type="email"
             {...register("supportEmail", { required: true })}
-            placeholder="support@dub.co"
+            placeholder="support@mifily.com"
             autoFocus={!isMobile}
             className="mt-2 w-full max-w-none"
           />

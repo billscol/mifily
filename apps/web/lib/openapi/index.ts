@@ -29,7 +29,7 @@ export const document = createDocument({
     version: "0.0.1",
     contact: {
       name: "Dub Support",
-      email: "support@dub.co",
+      email: "info@mifily.com",
       url: "https://dub.co/support",
     },
     license: {

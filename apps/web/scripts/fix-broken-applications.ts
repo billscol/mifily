@@ -55,7 +55,7 @@ async function main() {
       chunk.map((p) => ({
         subject: "Please resubmit your applications to these programs",
         to: p.partner.email,
-        replyTo: "support@dub.co",
+        replyTo: "info@mifily.com",
         react: NotifyPartnerReapply({
           partner: p.partner,
           programs: p.programs,

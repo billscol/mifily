@@ -116,7 +116,7 @@ export function createSupportTicketTool(options: CreateSupportTicketOptions) {
         return {
           success: false,
           message:
-            "Failed to create support ticket. Please try again or email support@dub.co.",
+            "Failed to create support ticket. Please try again or email support@mifily.com.",
         };
       }
     },

@@ -3,26 +3,21 @@ import { Metadata } from "next";
 export function constructMetadata({
   title,
   fullTitle,
-  description = "Dub is the modern link attribution platform for short links, conversion tracking, and affiliate programs.",
-  image = "https://assets.dub.co/thumbnail.jpg",
+  description = "Mifily is a link shortener and attribution platform for short links, conversion tracking, and affiliate programs.",
+  image = null,
   video,
   icons = [
-    {
-      rel: "apple-touch-icon",
-      sizes: "32x32",
-      url: "https://assets.dub.co/favicons/apple-touch-icon.png",
-    },
     {
       rel: "icon",
       type: "image/png",
       sizes: "32x32",
-      url: "https://assets.dub.co/favicons/favicon-32x32.png",
+      url: "/favicon-32x32.png",
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "16x16",
-      url: "https://assets.dub.co/favicons/favicon-16x16.png",
+      url: "/favicon-16x16.png",
     },
   ],
   url,
@@ -44,7 +39,7 @@ export function constructMetadata({
   return {
     title:
       fullTitle ||
-      (title ? `${title} | Dub` : "Dub - The Modern Link Attribution Platform"),
+      (title ? `${title} | Mifily` : "Mifily - Link Attribution Platform"),
     description,
     openGraph: {
       title,
@@ -67,10 +62,9 @@ export function constructMetadata({
       ...(video && {
         player: video,
       }),
-      creator: "@dubdotco",
     },
     icons,
-    metadataBase: new URL("https://dub.co"),
+    metadataBase: new URL("https://mifily.com"),
     ...((url || canonicalUrl) && {
       alternates: {
         canonical: url || canonicalUrl,
