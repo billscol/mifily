@@ -1,5 +1,4 @@
-import { conn } from "@/lib/planetscale/connection";
-import { WorkspaceProps } from "@/lib/types";
+import { prisma } from "@/lib/prisma";
 import { redis } from "@/lib/upstash";
 import { after } from "next/server";
 
@@ -12,15 +11,10 @@ export const getWorkspaceProduct = async (workspaceSlug: string) => {
       return workspaceProduct;
     }
 
-    const { rows } =
-      (await conn.execute(`SELECT * FROM Project WHERE slug = ?`, [
-        workspaceSlug,
-      ])) || {};
-
-    const workspace =
-      rows && Array.isArray(rows) && rows.length > 0
-        ? (rows[0] as WorkspaceProps)
-        : null;
+    const workspace = await prisma.project.findUnique({
+      where: { slug: workspaceSlug },
+      select: { defaultProgramId: true },
+    });
 
     workspaceProduct = workspace?.defaultProgramId ? "program" : "links";
 

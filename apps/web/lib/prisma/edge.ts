@@ -1,13 +1,5 @@
-import { Client } from "@planetscale/database";
-import { PrismaPlanetScale } from "@prisma/adapter-planetscale";
-import { PrismaClient } from "@prisma/client";
-
-const client = new Client({
-  url: process.env.PLANETSCALE_DATABASE_URL || process.env.DATABASE_URL,
-});
-
-const adapter = new PrismaPlanetScale(client);
-
-export const prismaEdge = new PrismaClient({
-  adapter,
-});
+// Self-hosted: no PlanetScale HTTP endpoint in front of our MySQL, and our
+// middleware runs with `runtime: "nodejs"` (see apps/web/middleware.ts), so
+// the regular TCP-based Prisma client works fine here - no need for the
+// HTTP-based PlanetScale driver this file used originally.
+export { prisma as prismaEdge } from "./index";
