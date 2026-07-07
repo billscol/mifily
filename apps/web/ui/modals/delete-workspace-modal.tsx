@@ -1,6 +1,6 @@
 import useWorkspace from "@/lib/swr/use-workspace";
 import { BlurImage, Button, Logo, Modal, useMediaQuery } from "@dub/ui";
-import { cn } from "@dub/utils";
+import { APP_DOMAIN, cn } from "@dub/utils";
 import { useSession } from "next-auth/react";
 import { useParams, useRouter } from "next/navigation";
 import {
@@ -101,7 +101,7 @@ function DeleteWorkspaceModal({
               {name || slug}
             </h3>
             <p className="text-xs font-medium text-neutral-500">
-              app.dub.co/{slug}
+              {APP_DOMAIN.replace(/^https?:\/\//, "")}/{slug}
             </p>
           </div>
         </div>

@@ -223,7 +223,7 @@ export function ChatInterface({
   const accountTypeOptions = [
     {
       value: "workspace",
-      label: "Workspace (app.dub.co)",
+      label: "Workspace (app.mifily.com)",
       icon: <OfficeBuilding className="size-3.5 shrink-0" />,
     },
     {
@@ -290,7 +290,7 @@ export function ChatInterface({
           </p>
         </div>
         <a
-          href="https://app.dub.co/login"
+          href="https://app.mifily.com/login"
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-700"

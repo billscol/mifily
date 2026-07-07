@@ -138,7 +138,7 @@ function PlanChangeConfirmationModal({
     "- You will lose access to your partner program.",
     "- Your partner program will be deactivated and partners will be notified automatically.",
     "- Partner links will stop tracking new activity.",
-    `- Any [pending payouts](https://app.dub.co/${slug}/program/payouts?status=pending) must be communicated and settled directly with your partners.`,
+    `- Any [pending payouts](https://app.mifily.com/${slug}/program/payouts?status=pending) must be communicated and settled directly with your partners.`,
   ].join("\n");
 
   const ADVANCED_DOWNGRADE_MARKDOWN = [
