@@ -1,5 +1,6 @@
 packages:
   - "apps/*"
+  - "!apps/admin" # standalone app, own lockfile, not part of this pnpm workspace
   - "apps/web/.react-email"
   - "packages/*"
   - "packages/embeds/*"
