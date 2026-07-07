@@ -70,6 +70,14 @@ PlanetScale (`@planetscale/database`) que solo tiene sentido en Vercel Edge
 Runtime. Como corremos Node.js normal, se reemplazó por un shim que usa
 Prisma directo contra MariaDB (commits `8ee9ea2` y `f99c0d2` en el repo).
 
+Nota: el primer intento de este fix (commit `f99c0d2`) falló el build por un
+error de tipos (el shim de `conn.execute` no era genérico y un archivo admin
+lo llama como `conn.execute<Tipo>(...)`) — ya corregido en el commit
+`4f1852a`. Si al retomar hay MÁS errores de tipos en archivos que usan
+`conn.execute` (hay ~15 en todo el repo, no solo los que se tocaron a mano),
+lo más probable es que sea el mismo patrón: revisar
+`apps/web/lib/planetscale/connection.ts` primero.
+
 Un build de GitHub Actions con este fix quedó **corriendo** al cerrar la
 sesión (tarda ~12 min). Al retomar:
 
