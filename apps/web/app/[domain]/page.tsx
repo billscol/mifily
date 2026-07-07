@@ -1,8 +1,5 @@
 import { ButtonLink } from "@/ui/placeholders/button-link";
-import { CTA } from "@/ui/placeholders/cta";
-import { FeaturesSection } from "@/ui/placeholders/features-section";
 import { Hero } from "@/ui/placeholders/hero";
-import { LearnMoreButton } from "@/ui/placeholders/learn-more-button";
 import { Logo } from "@dub/ui";
 import { cn, constructMetadata } from "@dub/utils";
 import { BubbleIcon } from "../../ui/placeholders/bubble-icon";
@@ -14,8 +11,8 @@ export async function generateMetadata(props: {
   params: Promise<{ domain: string }>;
 }) {
   const params = await props.params;
-  const title = `${params.domain.toUpperCase()} - A Dub Custom Domain`;
-  const description = `${params.domain.toUpperCase()} is a custom domain on Dub - the modern link attribution platform for short links, conversion tracking, and affiliate programs.`;
+  const title = `${params.domain}`;
+  const description = "Short links, powerful analytics.";
 
   return constructMetadata({
     title,
@@ -26,11 +23,6 @@ export async function generateMetadata(props: {
 export function generateStaticParams() {
   return [];
 }
-
-const UTM_PARAMS = {
-  utm_source: "Custom Domain",
-  utm_medium: "Welcome Page",
-};
 
 export default function CustomDomainPage() {
   return (
@@ -49,7 +41,7 @@ export default function CustomDomainPage() {
               "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:20px] [animation-duration:1s] [animation-fill-mode:both]",
             )}
           >
-            Welcome to Dub
+            Welcome to Mifily
           </h1>
           <p
             className={cn(
@@ -57,29 +49,21 @@ export default function CustomDomainPage() {
               "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:200ms] [animation-duration:1s] [animation-fill-mode:both]",
             )}
           >
-            This custom domain is powered by Dub &ndash; the link management
-            platform designed for modern marketing teams.
+            Short links, powerful analytics.
           </p>
         </div>
 
         <div
           className={cn(
-            "xs:flex-row relative mx-auto mt-8 flex max-w-fit flex-col items-center gap-4",
+            "relative mx-auto mt-8 flex max-w-fit flex-col items-center",
             "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:5px] [animation-delay:300ms] [animation-duration:1s] [animation-fill-mode:both]",
           )}
         >
-          <ButtonLink variant="primary" href="https://app.dub.co/register">
-            Try Dub today
+          <ButtonLink variant="primary" href="https://app.mifily.com">
+            Go to dashboard
           </ButtonLink>
-          <LearnMoreButton utmParams={UTM_PARAMS} />
         </div>
       </Hero>
-      <div className="mt-20">
-        <FeaturesSection utmParams={UTM_PARAMS} />
-      </div>
-      <div className="mt-32">
-        <CTA utmParams={UTM_PARAMS} />
-      </div>
     </div>
   );
 }
