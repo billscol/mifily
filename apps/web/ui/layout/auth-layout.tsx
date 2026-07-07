@@ -27,26 +27,8 @@ export const AuthLayout = ({
       </ClientOnly>
 
       <div className="flex grow basis-0 flex-col justify-end">
-        {showTerms && (
-          <p className="px-20 py-8 text-center text-xs font-medium text-neutral-500 md:px-0">
-            By continuing, you agree to Dub&rsquo;s{" "}
-            <a
-              href={`https://dub.co/legal/${showTerms === "app" ? "terms" : "partners"}`}
-              target="_blank"
-              className="font-semibold text-neutral-600 hover:text-neutral-800"
-            >
-              {showTerms === "app" ? "Terms of Service" : "Partner Terms"}
-            </a>{" "}
-            and{" "}
-            <a
-              href="https://dub.co/legal/privacy"
-              target="_blank"
-              className="font-semibold text-neutral-600 hover:text-neutral-800"
-            >
-              Privacy Policy
-            </a>
-          </p>
-        )}
+        {/* No Terms of Service / Privacy Policy pages of our own yet - not
+            linking to dub.co's, since these aren't our legal terms. */}
       </div>
     </div>
   );
