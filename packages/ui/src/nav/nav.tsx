@@ -117,7 +117,7 @@ export function Nav({
   navItems?: NavItem[];
   logo?: ReactNode;
 }) {
-  let { domain = "dub.co" } = useParams() as { domain: string };
+  let { domain = "mifily.com" } = useParams() as { domain: string };
   if (staticDomain) {
     domain = staticDomain;
   }
