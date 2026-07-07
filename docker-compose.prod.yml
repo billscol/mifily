@@ -13,6 +13,25 @@ services:
     networks:
       - mifily_net
 
+  admin:
+    image: ghcr.io/billscol/mifily-admin:latest
+    container_name: mifily_admin
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # reach the host's MariaDB
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      SESSION_SECRET: ${SESSION_SECRET}
+      MAIN_APP_INTERNAL_URL: http://app:3000
+      ADMIN_INTERNAL_SECRET: ${ADMIN_INTERNAL_SECRET}
+    ports:
+      - "127.0.0.1:3013:3000"
+    networks:
+      - mifily_net
+    depends_on:
+      - app
+
   minio:
     image: minio/minio:latest
     container_name: mifily_minio
