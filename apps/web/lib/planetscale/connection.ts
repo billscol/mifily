@@ -5,7 +5,7 @@ import { prisma } from "@/lib/prisma";
 // Connection.execute()) backed by the regular TCP-based Prisma client
 // instead, matching what every caller in this directory already expects.
 export const conn = {
-  execute: async <T = Record<string, unknown>>(
+  execute: async <T = any>(
     sql: string,
     params: unknown[] = [],
   ): Promise<{ rows: T[]; rowsAffected: number }> => {
