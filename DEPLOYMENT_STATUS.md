@@ -40,6 +40,29 @@ código + 1 dominio nuevo).
   de OpenLiteSpeed configurado a mano hacia los puertos de arriba. DNS en
   Cloudflare, ya activo.
 
+## 🎉 Actualización 2026-07-07: el sitio está arriba
+
+Los 3 dominios (`mifily.com`, `mifi.uno`, `app.mifily.com`) responden
+**HTTP 200**. Bugs adicionales encontrados y arreglados después de la nota de
+abajo:
+
+- El shim de `conn.execute` necesitó ser genérico + default `any` (no
+  `Record<string,unknown>`) para no romper varios `as Tipo` casts en
+  `lib/planetscale/*` — ver commits `1fefa90`, `a502229`, `4f1852a`.
+- El firewall UFW solo permitía `172.17.0.0/16` (red bridge default de
+  Docker), pero el contenedor real corre en la red personalizada del
+  compose (`mifily_mifily_net`, subred `172.21.0.0/16`). Se agregó una
+  segunda regla UFW para esa subred. **Si el proyecto de compose se borra y
+  recrea, la subred podría cambiar** — verificar con
+  `docker network inspect mifily_mifily_net` y ajustar la regla si hace falta.
+- El schema de Prisma nunca se había aplicado a la base de datos real
+  (`mifily_dub` estaba vacía). Se corrió `prisma db push` vía un contenedor
+  Node temporal (ver historial de comandos si hace falta repetirlo).
+
+Pendiente ahora: probar en el navegador — login con GitHub en
+`https://app.mifily.com`, crear el primer workspace, crear un link corto en
+cada dominio, verificar que llegue a Tinybird, y probar subir un logo (MinIO).
+
 ## Checklist
 
 - [x] Fork + adaptación del código (dominios por defecto, Dockerfile,
