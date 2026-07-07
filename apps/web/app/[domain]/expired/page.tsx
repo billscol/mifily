@@ -1,10 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { BubbleIcon } from "@/ui/placeholders/bubble-icon";
-import { ButtonLink } from "@/ui/placeholders/button-link";
-import { CTA } from "@/ui/placeholders/cta";
-import { FeaturesSection } from "@/ui/placeholders/features-section";
 import { Hero } from "@/ui/placeholders/hero";
-import { LearnMoreButton } from "@/ui/placeholders/learn-more-button";
 import { CircleHalfDottedClock } from "@dub/ui";
 import { cn, constructMetadata } from "@dub/utils";
 import { redirect } from "next/navigation";
@@ -17,11 +13,6 @@ export const metadata = constructMetadata({
     "This link has expired. Please contact the owner of this link to get a new one.",
   noIndex: true,
 });
-
-const UTM_PARAMS = {
-  utm_source: "Expired Link",
-  utm_medium: "Expired Link Page",
-};
 
 export function generateStaticParams() {
   return [];
@@ -58,7 +49,7 @@ export default async function ExpiredLinkPage(props: {
           </h1>
           <p
             className={cn(
-              "mt-5 text-pretty text-base text-neutral-700 sm:text-xl",
+              "mt-5 text-pretty text-center text-base text-neutral-700 sm:text-xl",
               "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:200ms] [animation-duration:1s] [animation-fill-mode:both]",
             )}
           >
@@ -66,25 +57,7 @@ export default async function ExpiredLinkPage(props: {
             a new one.
           </p>
         </div>
-
-        <div
-          className={cn(
-            "xs:flex-row relative mx-auto mt-8 flex max-w-fit flex-col items-center gap-4",
-            "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:5px] [animation-delay:300ms] [animation-duration:1s] [animation-fill-mode:both]",
-          )}
-        >
-          <ButtonLink variant="primary" href="https://app.dub.co/register">
-            Try Dub today
-          </ButtonLink>
-          <LearnMoreButton utmParams={UTM_PARAMS} />
-        </div>
       </Hero>
-      <div className="mt-20">
-        <FeaturesSection utmParams={UTM_PARAMS} />
-      </div>
-      <div className="mt-32">
-        <CTA utmParams={UTM_PARAMS} />
-      </div>
     </div>
   );
 }
