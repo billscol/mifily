@@ -1,6 +1,26 @@
 # Estado del despliegue de Mifily (Dub self-hosted)
 
-Última actualización: 2026-07-06
+Última actualización: 2026-07-07
+
+## 🎉 Actualización 2026-07-07 (2): login funciona, rebranding visual hecho
+
+- Bug real encontrado: OpenLiteSpeed no reenviaba el Host header correcto al
+  contenedor (`E=Proxy-Host:$host` no es una variable válida en su motor de
+  rewrite; se corrigió a `%{HTTP_HOST}` en los 4 proxy configs). Sin esto,
+  la app no podía distinguir mifily.com / mifi.uno / app.mifily.com entre sí
+  y todo caía en "Link not found".
+- Rebranding visual: se reemplazaron `Wordmark`/`Logo`
+  (`packages/ui/src/wordmark.tsx`, `logo.tsx`) — **no eran solo texto sin
+  traducir, dibujaban la marca vectorial exacta de Dub** (su logo real) —
+  por un wordmark de texto simple "Mifily" + monograma "M". Se quitó el
+  navbar/footer de marketing de Dub (decenas de links a dub.co/enterprise,
+  /pricing, /blog, etc.) de las páginas de utilidad (`[domain]/layout.tsx`),
+  y el testimonio de cliente (Framer) del panel de login.
+- Pendiente de rebranding: el logo es un placeholder de texto, no un diseño
+  real — reemplazar cuando haya un logo de verdad. Quedan menciones sueltas
+  de "Dub" en features "ee" no expuestas (partners/admin), bajo impacto.
+- Siguiente paso real: probar login con GitHub en el navegador (ya debería
+  funcionar), crear workspace, crear links de prueba.
 
 ## Qué es esto
 
