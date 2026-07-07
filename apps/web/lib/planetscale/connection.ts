@@ -5,12 +5,12 @@ import { prisma } from "@/lib/prisma";
 // Connection.execute()) backed by the regular TCP-based Prisma client
 // instead, matching what every caller in this directory already expects.
 export const conn = {
-  execute: async (sql: string, params: unknown[] = []) => {
+  execute: async <T = Record<string, unknown>>(
+    sql: string,
+    params: unknown[] = [],
+  ): Promise<{ rows?: T[]; rowsAffected?: number }> => {
     if (/^\s*select/i.test(sql)) {
-      const rows = await prisma.$queryRawUnsafe<Record<string, unknown>[]>(
-        sql,
-        ...params,
-      );
+      const rows = await prisma.$queryRawUnsafe<T[]>(sql, ...params);
       return { rows };
     }
     const rowsAffected = await prisma.$executeRawUnsafe(sql, ...params);
