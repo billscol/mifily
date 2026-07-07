@@ -8,12 +8,12 @@ export const conn = {
   execute: async <T = Record<string, unknown>>(
     sql: string,
     params: unknown[] = [],
-  ): Promise<{ rows?: T[]; rowsAffected?: number }> => {
+  ): Promise<{ rows: T[]; rowsAffected: number }> => {
     if (/^\s*select/i.test(sql)) {
       const rows = await prisma.$queryRawUnsafe<T[]>(sql, ...params);
-      return { rows };
+      return { rows, rowsAffected: rows.length };
     }
     const rowsAffected = await prisma.$executeRawUnsafe(sql, ...params);
-    return { rowsAffected };
+    return { rows: [], rowsAffected };
   },
 };
