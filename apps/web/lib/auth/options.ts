@@ -35,6 +35,13 @@ import { SSO_LOGIN_PROGRAMS } from "./sso-login-programs";
 import { trackDubLead } from "./track-dub-lead";
 
 const VERCEL_DEPLOYMENT = !!process.env.VERCEL_URL;
+// Self-hosted: always served over HTTPS in production (no Vercel), but
+// next-auth/jwt's getToken() decides which cookie name to look for based on
+// whether NEXTAUTH_URL starts with "https://" - since ours does, it expects
+// the "__Secure-" prefixed + secure cookie regardless of VERCEL_DEPLOYMENT.
+// Without this, the session cookie is set under one name and looked up
+// under another, so the app never recognizes a logged-in user.
+const IS_SECURE_DEPLOYMENT = VERCEL_DEPLOYMENT || process.env.NODE_ENV === "production";
 
 const CustomPrismaAdapter = (p: PrismaClient) => {
   return {
@@ -376,14 +383,15 @@ export const authOptions: NextAuthOptions = {
   session: { strategy: "jwt" },
   cookies: {
     sessionToken: {
-      name: `${VERCEL_DEPLOYMENT ? "__Secure-" : ""}next-auth.session-token`,
+      name: `${IS_SECURE_DEPLOYMENT ? "__Secure-" : ""}next-auth.session-token`,
       options: {
         httpOnly: true,
         sameSite: "lax",
         path: "/",
         // When working on localhost, the cookie domain must be omitted entirely (https://stackoverflow.com/a/1188145)
+        // Only Vercel deployments share the session cookie across dub.co subdomains.
         domain: VERCEL_DEPLOYMENT ? ".dub.co" : undefined,
-        secure: VERCEL_DEPLOYMENT,
+        secure: IS_SECURE_DEPLOYMENT,
       },
     },
   },
