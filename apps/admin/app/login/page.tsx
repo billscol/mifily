@@ -21,10 +21,21 @@ export default function LoginPage() {
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle>Mifily Admin</CardTitle>
-          <CardDescription>Enter the admin password to continue.</CardDescription>
+          <CardDescription>Sign in to continue.</CardDescription>
         </CardHeader>
         <CardContent>
           <form action={formAction} className="grid gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                required
+                autoFocus
+                autoComplete="username"
+              />
+            </div>
             <div className="grid gap-2">
               <Label htmlFor="password">Password</Label>
               <Input
@@ -32,7 +43,7 @@ export default function LoginPage() {
                 name="password"
                 type="password"
                 required
-                autoFocus
+                autoComplete="current-password"
               />
             </div>
             {state?.error && (

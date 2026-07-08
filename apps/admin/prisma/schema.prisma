@@ -53,6 +53,15 @@ enum WorkspaceRole {
   member
 }
 
+// Owned entirely by this app - apps/web has no knowledge of this table.
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
 model ProjectUsers {
   id        String        @id @default(cuid())
   role      WorkspaceRole @default(member)
