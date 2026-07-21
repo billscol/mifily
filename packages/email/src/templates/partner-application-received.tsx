@@ -61,7 +61,7 @@ export default function PartnerApplicationReceived({
     slug: string;
   };
 }) {
-  const applicationUrl = `https://app.dub.co/${workspace.slug}/program/partners/applications?partnerId=${partner.id}`;
+  const applicationUrl = `https://app.mifily.com/${workspace.slug}/program/partners/applications?partnerId=${partner.id}`;
 
   return (
     <Html>
@@ -89,7 +89,7 @@ export default function PartnerApplicationReceived({
                 href={applicationUrl}
                 className="text-neutral-600 underline underline-offset-4"
               >
-                review on Dub
+                review on Mifily
               </Link>
               .
             </Text>
@@ -155,7 +155,7 @@ export default function PartnerApplicationReceived({
                       href={applicationUrl}
                       className="box-border block w-full rounded-lg bg-black px-0 py-4 text-center text-sm font-semibold leading-none text-white no-underline"
                     >
-                      Review application on Dub
+                      Review application on Mifily
                     </Link>
                   </Section>
                 </Section>
@@ -164,7 +164,7 @@ export default function PartnerApplicationReceived({
 
             <Footer
               email={email}
-              notificationSettingsUrl={`https://app.dub.co/${workspace.slug}/settings/notifications`}
+              notificationSettingsUrl={`https://app.mifily.com/${workspace.slug}/settings/notifications`}
             />
           </Container>
         </Body>

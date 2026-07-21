@@ -47,10 +47,10 @@ export function PartnerRewindCard() {
 
             <div className="flex flex-col">
               <span className="text-content-emphasis line-clamp-1 text-sm font-semibold">
-                Dub Partner Rewind &rsquo;25
+                Mifily Partner Rewind &rsquo;25
               </span>
               <p className="text-content-subtle line-clamp-2 text-xs">
-                See how you performed this year on Dub Partners!
+                See how you performed this year on Mifily Partners!
               </p>
             </div>
 

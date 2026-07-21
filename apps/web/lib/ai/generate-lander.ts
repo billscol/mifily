@@ -108,8 +108,8 @@ export const generateLanderAction = authActionClient
       }),
       prompt:
         // Instructions
-        `Generate a basic landing page for an affiliate program powered by Dub Partners based on a company website. ` +
-        `For context, Dub Partners is a next-gen affiliate management platform with 1-click global payouts + white-labeling functionality. ` +
+        `Generate a basic landing page for an affiliate program powered by Mifily Partners based on a company website. ` +
+        `For context, Mifily Partners is a next-gen affiliate management platform with 1-click global payouts + white-labeling functionality. ` +
         `Do not include any initial header/hero content because the landing page will already have an initial title and subtitle. ` +
         `Do not make any assumptions about the terms or rewards associated with the program. ` +
         (scrapeResult.metadata?.ogImage

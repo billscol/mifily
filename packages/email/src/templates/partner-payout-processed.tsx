@@ -94,7 +94,7 @@ export default function PartnerPayoutProcessed({
         <br />
         If you'd like to receive your payout right away, please{" "}
         <Link
-          href="https://partners.dub.co/payouts"
+          href="https://partners.mifily.com/payouts"
           target="_blank"
           className="font-medium text-black underline decoration-dotted underline-offset-2"
         >
@@ -174,11 +174,11 @@ export default function PartnerPayoutProcessed({
               <strong className="text-black">{payoutAmountInDollars}</strong>{" "}
               for affiliate commissions made via{" "}
               <Link
-                href="https://partners.dub.co"
+                href="https://partners.mifily.com"
                 target="_blank"
                 className="font-medium text-black underline decoration-dotted underline-offset-2"
               >
-                Dub Partners
+                Mifily Partners
               </Link>
               {startDate && endDate ? (
                 <>
@@ -202,7 +202,7 @@ export default function PartnerPayoutProcessed({
             <Section className="my-8">
               <Link
                 className="rounded-lg bg-neutral-900 px-4 py-3 text-[12px] font-semibold text-white no-underline"
-                href={`https://partners.dub.co/payouts?payoutId=${payout.id}`}
+                href={`https://partners.mifily.com/payouts?payoutId=${payout.id}`}
               >
                 View payout
               </Link>

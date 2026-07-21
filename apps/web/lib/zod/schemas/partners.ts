@@ -196,7 +196,7 @@ export const getPartnersQuerySchema = z
   })
   .extend(getPaginationQuerySchema({ pageSize: PARTNERS_MAX_PAGE_SIZE }));
 
-// Only Dub UI uses the following query parameters
+// Only Mifily UI uses the following query parameters
 export const getPartnersQuerySchemaExtended = getPartnersQuerySchema.extend({
   status: z
     .enum(ProgramEnrollmentStatus)
@@ -372,18 +372,18 @@ export const PartnerProfileDetailsSchema = z.object({
 
 export const PartnerSchema = z
   .object({
-    id: z.string().describe("The partner's unique ID on Dub."),
+    id: z.string().describe("The partner's unique ID on Mifily."),
     name: z.string().max(190).describe("The partner's full legal name."),
     username: z
       .string()
       .nullable()
-      .describe("The partner's unique username on Dub."),
+      .describe("The partner's unique username on Mifily."),
     email: z
       .string()
       .max(190)
       .nullable()
       .describe(
-        "The partner's email address. Should be a unique value across Dub.",
+        "The partner's email address. Should be a unique value across Mifily.",
       ),
     image: z.string().nullable().describe("The partner's avatar image."),
     description: z
@@ -404,10 +404,10 @@ export const PartnerSchema = z
       ),
     profileType: z
       .enum(PartnerProfileType)
-      .describe("The partner's profile type on Dub."),
+      .describe("The partner's profile type on Mifily."),
     networkStatus: z
       .enum(PartnerNetworkStatus)
-      .describe("The partner's network status on Dub."),
+      .describe("The partner's network status on Mifily."),
     defaultPayoutMethod: z
       .enum(PartnerPayoutMethod)
       .nullable()
@@ -445,7 +445,7 @@ export const PartnerSchema = z
       .describe("The partner's invoice settings."),
     createdAt: z
       .date()
-      .describe("The date when the partner was created on Dub."),
+      .describe("The date when the partner was created on Mifily."),
     identityVerificationStatus: z
       .enum(IdentityVerificationStatus)
       .nullable()
@@ -665,7 +665,7 @@ export const createPartnerSchema = z.object({
       },
     )
     .describe(
-      "The partner's unique username in your system (max 100 characters). This will be used to create a short link for the partner using your program's default domain. If not provided, Dub will try to generate a username from the partner's name or email.",
+      "The partner's unique username in your system (max 100 characters). This will be used to create a short link for the partner using your program's default domain. If not provided, Mifily will try to generate a username from the partner's name or email.",
     ),
   image: z
     .string()
@@ -940,7 +940,7 @@ export const rejectPartnerSchema = z.object({
     .boolean()
     .optional()
     .describe(
-      "Whether to flag the partner for fraud review by the Dub team. Cannot be combined with `reapplicationTimeframe: instant`.",
+      "Whether to flag the partner for fraud review by the Mifily team. Cannot be combined with `reapplicationTimeframe: instant`.",
     ),
   flagForFraudReason: z
     .string()

@@ -15,7 +15,7 @@ export const LEAD_TRIGGER_EVENT_OPTIONS = [
 
 export const HUBSPOT_DUB_CONTACT_PROPERTIES = [
   {
-    label: "Dub Click ID",
+    label: "Mifily Click ID",
     name: "dub_id",
     type: "string",
     fieldType: "text",
@@ -23,14 +23,14 @@ export const HUBSPOT_DUB_CONTACT_PROPERTIES = [
     formField: true, // Allow the property to be used in a HubSpot form.
   },
   {
-    label: "Dub Link",
+    label: "Mifily Link",
     name: "dub_link",
     type: "string",
     fieldType: "text",
     groupName: "contactinformation",
   },
   {
-    label: "Dub Partner Email",
+    label: "Mifily Partner Email",
     name: "dub_partner_email",
     type: "string",
     fieldType: "text",

@@ -145,7 +145,7 @@ function OnboardingButtonInner({
                   Finish setting up your{" "}
                   {defaultProgramId ? "program" : "workspace"}
                   <br className="hidden sm:block" />
-                  to get the most out of Dub
+                  to get the most out of Mifily
                 </p>
               </div>
               <div className="flex items-center gap-1">

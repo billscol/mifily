@@ -22,7 +22,7 @@ const wordmarkSvg = `<svg width="90" height="24" viewBox="0 0 90 24" xmlns="http
 </svg>`;
 
 /**
- * The Dub logo with a custom context menu for copying/navigation,
+ * The Mifily logo with a custom context menu for copying/navigation,
  * for use in the top site nav
  */
 export function NavWordmark({

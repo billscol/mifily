@@ -90,7 +90,7 @@ export default function NewMessageFromProgram({
   }[];
   email: string;
 }) {
-  const threadUrl = `https://partners.dub.co/messages/${program.slug}`;
+  const threadUrl = `https://partners.mifily.com/messages/${program.slug}`;
 
   return (
     <Html>
@@ -100,7 +100,7 @@ export default function NewMessageFromProgram({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-8 max-w-[600px] px-8 py-8">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
 
             <Section className="my-8">
@@ -121,9 +121,9 @@ export default function NewMessageFromProgram({
                   </Heading>
                   <Link
                     className="text-[13px] font-medium text-neutral-500 underline"
-                    href={`https://partners.dub.co/programs/${program.slug}`}
+                    href={`https://partners.mifily.com/programs/${program.slug}`}
                   >
-                    View program in Dub
+                    View program in Mifily
                   </Link>
                 </Section>
               </div>
@@ -187,7 +187,7 @@ export default function NewMessageFromProgram({
                 className="mt-4 block rounded-lg bg-neutral-900 px-6 py-3 text-center text-[13px] font-medium text-white no-underline"
                 href={threadUrl}
               >
-                Reply in Dub
+                Reply in Mifily
               </Link>
             </Section>
 

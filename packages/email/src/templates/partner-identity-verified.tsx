@@ -41,7 +41,7 @@ export default function PartnerIdentityVerified({
 
             <Text className="text-sm leading-6 text-neutral-600">
               Hi {partner.name}, your identity has been verified for your
-              partner profile on Dub!
+              partner profile on Mifily!
             </Text>
 
             <Section className="mb-8 text-center">

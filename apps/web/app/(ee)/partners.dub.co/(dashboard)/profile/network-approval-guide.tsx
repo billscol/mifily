@@ -63,7 +63,7 @@ export function NetworkApprovalGuide() {
   const { setShowConfirmModal, confirmModal } = useConfirmModal({
     title: "Submit application",
     description:
-      "Are you sure you want to submit your Dub Network application for review? You won't be able to make changes to your application after submitting it.",
+      "Are you sure you want to submit your Mifily Network application for review? You won't be able to make changes to your application after submitting it.",
     confirmText: "Confirm submission",
     onConfirm: async () => {
       await submitNetworkProfile();
@@ -93,7 +93,7 @@ export function NetworkApprovalGuide() {
             <div>
               <div className="flex flex-col-reverse gap-1.5 md:flex-row md:items-center">
                 <h2 className="text-lg font-semibold">
-                  Join the Dub Partner Network
+                  Join the Mifily Partner Network
                 </h2>
 
                 {partner.networkStatus === "draft" || !isComplete ? (
@@ -129,7 +129,7 @@ export function NetworkApprovalGuide() {
                 )}
               </div>
               <p className="text-content-inverted/60 text-sm">
-                Complete the steps to join the Dub Partner Network and start
+                Complete the steps to join the Mifily Partner Network and start
                 applying to programs in our network.
               </p>
             </div>

@@ -89,7 +89,7 @@ export default function NetworkReferralsPage() {
       title="Network Referrals"
       titleInfo={{
         title:
-          "Learn how the [Dub Network referral bonus](https://dub.co/help/article/network-referral-bonus) works and how you can share your referral link to start earning.",
+          "Learn how the [Mifily Network referral bonus](https://dub.co/help/article/network-referral-bonus) works and how you can share your referral link to start earning.",
       }}
     >
       <PageWidthWrapper className="flex flex-col gap-6 pb-10">
@@ -238,7 +238,7 @@ function NetworkReferralsStats() {
     <div className="grid grid-cols-2 divide-x divide-neutral-200 rounded-xl border border-neutral-200 bg-white">
       <NetworkReferralsStatItem
         label="Referred partners"
-        tooltipContent="Partners who joined Dub using your network referral link."
+        tooltipContent="Partners who joined Mifily using your network referral link."
         isLoading={partnerLoading || statsLoading}
         chartData={partnersChartData}
       >
@@ -275,7 +275,7 @@ function ReferralLinkLocked() {
               <Lock className="size-4 text-neutral-900" strokeWidth={2} />
             </span>
             <span className="text-content-default min-w-0 text-sm font-medium leading-snug">
-              Get accepted to the Dub Network to unlock
+              Get accepted to the Mifily Network to unlock
             </span>
           </div>
           <Link href="/profile" className="shrink-0">
@@ -325,7 +325,7 @@ function NetworkReferralLink() {
             </div>
             <img
               src={DUB_LOGO}
-              alt="Dub Partners"
+              alt="Mifily Partners"
               className="relative z-10 size-6 shrink-0 rounded-full"
             />
           </div>
@@ -403,7 +403,7 @@ function NetworkReferralRewards() {
         </ReferralRewardListItem>
 
         <ReferralRewardListItem icon={Gift}>
-          Unlock premium Dub swag once you cross{" "}
+          Unlock premium Mifily swag once you cross{" "}
           {currencyFormatter(NETWORK_REFERRAL_SWAG_THRESHOLD_CENTS, {
             minimumFractionDigits: 0,
             maximumFractionDigits: 0,
@@ -544,7 +544,7 @@ function ReferredPartners() {
       <div className="flex flex-col gap-4">
         <NetworkReferralsEmptyState
           title="No referred partners"
-          description="Get accepted to the Dub Network to start earning from referred partners."
+          description="Get accepted to the Mifily Network to start earning from referred partners."
           button={
             <Link href="/profile">
               <Button
@@ -571,7 +571,7 @@ function ReferredPartners() {
     <div className="flex flex-col gap-4">
       <NetworkReferralsEmptyState
         title="No referred partners"
-        description="Share your network referral link to start earning from partners joining the Dub Network."
+        description="Share your network referral link to start earning from partners joining the Mifily Network."
         button={
           <Button
             text="Copy link"
@@ -641,10 +641,10 @@ function NetworkReferralsPromoCard() {
       </div>
       <div className="relative z-[1] mt-auto space-y-2 pt-[88px] sm:pt-[84px]">
         <p className="text-base font-semibold text-white">
-          Dub Network Referral Bonus
+          Mifily Network Referral Bonus
         </p>
         <p className="text-sm font-normal text-neutral-200">
-          Bring on other partners to the Dub Network, and earn from their
+          Bring on other partners to the Mifily Network, and earn from their
           activity for up to {NETWORK_REFERRAL_REWARD.maxDuration} months.{" "}
           <Link
             href="https://dub.co/help/article/network-referral-bonus"

@@ -47,14 +47,14 @@ const socials = [
 
 const navigation = {
   product: [
-    ...FEATURES_LIST.filter(({ title }) => title !== "Dub Integrations").map(
+    ...FEATURES_LIST.filter(({ title }) => title !== "Mifily Integrations").map(
       ({ id, title, href }) => ({
         id,
         name: title,
         href,
       }),
     ),
-    { id: null, name: "Dub Enterprise", href: "/enterprise" },
+    { id: null, name: "Mifily Enterprise", href: "/enterprise" },
   ],
   solutions: [
     { name: "Marketing attribution", href: "/analytics" },
@@ -134,7 +134,7 @@ export function Footer({
                 })}
                 className="block max-w-fit"
               >
-                <span className="sr-only">Dub Logo</span>
+                <span className="sr-only">Mifily Logo</span>
                 <NavWordmark className="h-8 text-neutral-800" />
               </Link>
             </div>
@@ -330,7 +330,7 @@ export function Footer({
             />
           </Link>
           <p className="text-xs text-neutral-500 sm:text-right">
-            © {new Date().getFullYear()} Dub Technologies, Inc.
+            © {new Date().getFullYear()} Mifily Technologies, Inc.
           </p>
         </div>
       </footer>

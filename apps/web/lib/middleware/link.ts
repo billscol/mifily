@@ -45,7 +45,7 @@ export async function LinkMiddleware(req: NextRequest, ev: NextFetchEvent) {
   }
 
   // encode the key to ascii
-  // links on Dub are case insensitive by default
+  // links on Mifily are case insensitive by default
   let key = punyEncode(originalKey);
 
   if (!isCaseSensitiveDomain(domain)) {

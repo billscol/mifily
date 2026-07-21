@@ -126,7 +126,7 @@ export const PATCH = withWorkspace(
 
       const connections = await apiController.getConnections({
         tenant: workspace.id,
-        product: "Dub",
+        product: "Mifily",
       });
 
       if (connections.length === 0) {

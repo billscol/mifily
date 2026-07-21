@@ -229,7 +229,7 @@ export const PLANS: PlanDetails[] = [
         text: "Link folders",
         tooltip: {
           title:
-            "Organize and manage access to your links on Dub using folders.",
+            "Organize and manage access to your links on Mifily using folders.",
           cta: "Learn more.",
           href: "https://dub.co/help/article/link-folders",
         },
@@ -313,9 +313,9 @@ export const PLANS: PlanDetails[] = [
       },
       {
         id: "partners",
-        text: "Dub Partners",
+        text: "Mifily Partners",
         tooltip: {
-          title: "Use Dub Partners to manage and pay out your affiliates.",
+          title: "Use Mifily Partners to manage and pay out your affiliates.",
           cta: "Learn more.",
           href: "https://dub.co/partners",
         },

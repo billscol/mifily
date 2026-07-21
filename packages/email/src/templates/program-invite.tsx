@@ -149,7 +149,7 @@ export default function ProgramInvite({
 }) {
   const emailTitle = title || "You've been invited";
   const emailSubject =
-    subject || `${program.name} invited you to join Dub Partners`;
+    subject || `${program.name} invited you to join Mifily Partners`;
 
   return (
     <Html>
@@ -159,7 +159,7 @@ export default function ProgramInvite({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-8 max-w-[600px] px-8 py-8">
             <Section className="mb-8 mt-6">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
 
             <Heading className="bt-5 mx-0 mt-10 p-0 text-lg font-medium text-black">
@@ -174,7 +174,7 @@ export default function ProgramInvite({
               <>
                 <Text className="text-sm leading-6 text-neutral-600">
                   {name && !name.includes("@") && <>Hi {name}, </>}
-                  {program.name} invited you to join their program on Dub
+                  {program.name} invited you to join their program on Mifily
                   Partners.
                 </Text>
 
@@ -185,7 +185,7 @@ export default function ProgramInvite({
                     target="_blank"
                     className="font-semibold text-neutral-800 underline underline-offset-2"
                   >
-                    Dub Partners
+                    Mifily Partners
                   </Link>{" "}
                   to power their partner program and wants to work with great
                   people like you!
@@ -271,7 +271,7 @@ export default function ProgramInvite({
                   )}
                   <Link
                     className="mt-5 block rounded-lg bg-neutral-900 px-4 py-3 text-center text-xs font-semibold text-white no-underline"
-                    href={`https://partners.dub.co/${program.slug}/register?email=${encodeURIComponent(email)}&next=/programs/${program.slug}/invite`}
+                    href={`https://partners.mifily.com/${program.slug}/register?email=${encodeURIComponent(email)}&next=/programs/${program.slug}/invite`}
                   >
                     View invite
                   </Link>

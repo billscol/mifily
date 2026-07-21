@@ -824,7 +824,7 @@ export const getLinkInfoQuerySchema = domainKeySchema.partial().extend({
     .meta({ example: "123456" }),
 });
 
-// Only Dub UI uses the following query parameters
+// Only Mifily UI uses the following query parameters
 export const getLinksQuerySchemaExtended = getLinksQuerySchemaBase.extend({
   sortBy: linksSortBy,
   includeUser: booleanQuerySchema.default(false),

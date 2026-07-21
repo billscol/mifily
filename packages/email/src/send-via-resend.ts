@@ -31,9 +31,9 @@ const resendEmailForOptions = (
     from: from || VARIANT_TO_FROM_MAP[variant],
     subject: `${subject}${isPreviewEnv && gitBranch ? ` [${gitBranch}]` : ""}`,
     bcc,
-    // if replyTo is set to "noreply@dub.co", don't set replyTo
-    // else set it to the value of replyTo or fallback to support@dub.co
-    ...(replyTo === "noreply" ? {} : { replyTo: replyTo || "support@dub.co" }),
+    // if replyTo is set to "noreply@mifily.com", don't set replyTo
+    // else set it to the value of replyTo or fallback to support@mifily.com
+    ...(replyTo === "noreply" ? {} : { replyTo: replyTo || "support@mifily.com" }),
     scheduledAt,
     tags,
     ...(variant === "marketing"
@@ -41,7 +41,7 @@ const resendEmailForOptions = (
           headers: {
             ...(headers || {}),
             "List-Unsubscribe":
-              unsubscribeUrl || "https://app.dub.co/account/settings",
+              unsubscribeUrl || "https://app.mifily.com/account/settings",
           },
         }
       : headers && { headers }),

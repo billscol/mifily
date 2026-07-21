@@ -398,7 +398,7 @@ const PartnerDiscountCodes = ({
     ) {
       return (
         <TooltipContent
-          title="Your workspace isn't connected to Stripe yet. Please install the Dub Stripe app in settings to create discount codes."
+          title="Your workspace isn't connected to Stripe yet. Please install the Mifily Stripe app in settings to create discount codes."
           cta="Install Stripe app"
           href={`/${slug}/settings/integrations/stripe`}
           target="_blank"
@@ -412,7 +412,7 @@ const PartnerDiscountCodes = ({
     ) {
       return (
         <TooltipContent
-          title="Your workspace isn't connected to Shopify yet. Please install the Dub Shopify app in settings to create discount codes."
+          title="Your workspace isn't connected to Shopify yet. Please install the Mifily Shopify app in settings to create discount codes."
           cta="Install Shopify app"
           href={`/${slug}/settings/integrations/shopify`}
           target="_blank"

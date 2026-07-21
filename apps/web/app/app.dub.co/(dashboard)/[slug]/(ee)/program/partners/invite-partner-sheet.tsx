@@ -55,12 +55,12 @@ function InvitePartnerSheetContent({ setIsOpen }: InvitePartnerSheetProps) {
 
   // Default email content
   const defaultEmailContent = useMemo<EmailContent>(() => {
-    const programName = program?.name || "Dub";
+    const programName = program?.name || "Mifily";
 
     return {
-      subject: `${programName} invited you to join Dub Partners`,
+      subject: `${programName} invited you to join Mifily Partners`,
       title: "You've been invited",
-      body: `${programName} invited you to join their program on Dub Partners.\n\n${programName} uses [Dub Partners](https://dub.co/partners) to power their partner program and wants to work with great people like you!`,
+      body: `${programName} invited you to join their program on Mifily Partners.\n\n${programName} uses [Mifily Partners](https://dub.co/partners) to power their partner program and wants to work with great people like you!`,
     };
   }, [program?.name]);
 

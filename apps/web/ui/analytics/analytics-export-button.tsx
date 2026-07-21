@@ -46,7 +46,7 @@ export function AnalyticsExportButton({
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `Dub Analytics Export - ${new Date().toISOString()}.zip`;
+      a.download = `Mifily Analytics Export - ${new Date().toISOString()}.zip`;
       a.click();
       window.URL.revokeObjectURL(url);
     } catch (error) {

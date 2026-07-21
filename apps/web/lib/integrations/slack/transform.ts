@@ -99,7 +99,7 @@ const linkClickedTemplate = ({ data }: { data: ClickEventWebhookPayload }) => {
         elements: [
           {
             type: "mrkdwn",
-            text: `<${hrefToClicks}|View on Dub>`,
+            text: `<${hrefToClicks}|View on Mifily>`,
           },
         ],
       },
@@ -160,7 +160,7 @@ const leadCreatedTemplate = ({ data }: { data: LeadEventWebhookPayload }) => {
         elements: [
           {
             type: "mrkdwn",
-            text: `View on Dub: ${quickLinks.join(" | ")}`,
+            text: `View on Mifily: ${quickLinks.join(" | ")}`,
           },
         ],
       },
@@ -242,7 +242,7 @@ const saleCreatedTemplate = ({ data }: { data: SaleEventWebhookPayload }) => {
         elements: [
           {
             type: "mrkdwn",
-            text: `View on Dub: ${quickLinks.join(" | ")}`,
+            text: `View on Mifily: ${quickLinks.join(" | ")}`,
           },
         ],
       },
@@ -297,7 +297,7 @@ const partnerEnrolledTemplate = ({
         elements: [
           {
             type: "mrkdwn",
-            text: `View on Dub: <${hrefToPartnerPage}|Partner>`,
+            text: `View on Mifily: <${hrefToPartnerPage}|Partner>`,
           },
         ],
       },
@@ -352,7 +352,7 @@ const partnerApplicationSubmittedTemplate = ({
         elements: [
           {
             type: "mrkdwn",
-            text: `View on Dub: <${hrefToApplicationPage}|Application>`,
+            text: `View on Mifily: <${hrefToApplicationPage}|Application>`,
           },
         ],
       },
@@ -426,7 +426,7 @@ const commissionCreatedTemplate = ({
         elements: [
           {
             type: "mrkdwn",
-            text: `View on Dub: ${quickLinks.join(" | ")}`,
+            text: `View on Mifily: ${quickLinks.join(" | ")}`,
           },
         ],
       },
@@ -517,7 +517,7 @@ const bountyTemplates = ({
         elements: [
           {
             type: "mrkdwn",
-            text: `<${hrefToBounty}|View on Dub>`,
+            text: `<${hrefToBounty}|View on Mifily>`,
           },
         ],
       },
@@ -578,7 +578,7 @@ const payoutConfirmedTemplate = ({
         elements: [
           {
             type: "mrkdwn",
-            text: `Payout ID: ${id} | <${hrefToPayout}|View on Dub>`,
+            text: `Payout ID: ${id} | <${hrefToPayout}|View on Mifily>`,
           },
         ],
       },

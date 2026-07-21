@@ -74,7 +74,7 @@ export function MarketplaceProgramHero({
 
           <p className="text-content-default mt-2 max-w-md text-sm">
             {program.description ||
-              `${program.name} is a program in the Dub Partner Network. Join the network to start partnering with them.`}
+              `${program.name} is a program in the Mifily Partner Network. Join the network to start partnering with them.`}
           </p>
         </div>
 

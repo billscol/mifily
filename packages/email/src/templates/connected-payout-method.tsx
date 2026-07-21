@@ -58,8 +58,8 @@ export default function ConnectedPayoutMethod({
 
             <Text className="mb-6 text-sm leading-6 text-neutral-600">
               {isStablecoin
-                ? "Great news! Your stablecoin wallet has been successfully connected to your Dub partner account. You're all set to receive USDC payouts."
-                : "Great news! Your bank account has been successfully connected to your Dub partner account. You're all set to receive payouts."}
+                ? "Great news! Your stablecoin wallet has been successfully connected to your Mifily partner account. You're all set to receive USDC payouts."
+                : "Great news! Your bank account has been successfully connected to your Mifily partner account. You're all set to receive payouts."}
             </Text>
 
             {/* Payout Method Details Card */}
@@ -143,7 +143,7 @@ export default function ConnectedPayoutMethod({
             {/* Action Buttons */}
             <Section className="mb-6">
               <Link
-                href="https://partners.dub.co/payouts"
+                href="https://partners.mifily.com/payouts"
                 className="box-border block w-full rounded-md bg-black px-0 py-3 text-center text-sm font-medium leading-none text-white no-underline"
               >
                 View payouts dashboard

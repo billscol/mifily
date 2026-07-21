@@ -5,8 +5,8 @@ import { constructMetadata } from "@dub/utils";
 import { UnsubscribeForm } from "./unsubscribe-form";
 
 export const metadata = constructMetadata({
-  title: "Email Preferences – Dub",
-  description: "Manage your email subscription preferences on Dub",
+  title: "Email Preferences – Mifily",
+  description: "Manage your email subscription preferences on Mifily",
   noIndex: true,
 });
 

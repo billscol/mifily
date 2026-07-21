@@ -10,7 +10,7 @@ export default function ProgramPayoutsPage() {
       title="Payouts"
       titleInfo={{
         title:
-          "Learn more about how you can send payouts to your affiliate partners globally with Dub.",
+          "Learn more about how you can send payouts to your affiliate partners globally with Mifily.",
         href: "https://dub.co/help/article/partner-payouts",
       }}
       controls={

@@ -52,7 +52,7 @@ export default function EmailDomainStatusChanged({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] rounded border border-solid border-neutral-200 px-10 py-5">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
             <Heading className="mx-0 my-7 p-0 text-lg font-medium text-black">
               {heading}
@@ -61,10 +61,10 @@ export default function EmailDomainStatusChanged({
             {isVerified ? (
               <Text className="text-sm leading-6 text-black">
                 Your email domain{" "}
-                <code className="text-purple-600">{domain}</code> for your Dub
+                <code className="text-purple-600">{domain}</code> for your Mifily
                 workspace{" "}
                 <Link
-                  href={`https://app.dub.co/${workspace.slug}`}
+                  href={`https://app.mifily.com/${workspace.slug}`}
                   className="font-medium text-blue-600 no-underline"
                 >
                   {workspace.name}↗
@@ -76,10 +76,10 @@ export default function EmailDomainStatusChanged({
               <>
                 <Text className="text-sm leading-6 text-black">
                   Your email domain{" "}
-                  <code className="text-purple-600">{domain}</code> for your Dub
+                  <code className="text-purple-600">{domain}</code> for your Mifily
                   workspace{" "}
                   <Link
-                    href={`https://app.dub.co/${workspace.slug}`}
+                    href={`https://app.mifily.com/${workspace.slug}`}
                     className="font-medium text-blue-600 no-underline"
                   >
                     {workspace.name}↗
@@ -96,10 +96,10 @@ export default function EmailDomainStatusChanged({
             ) : (
               <Text className="text-sm leading-6 text-black">
                 Your email domain{" "}
-                <code className="text-purple-600">{domain}</code> for your Dub
+                <code className="text-purple-600">{domain}</code> for your Mifily
                 workspace{" "}
                 <Link
-                  href={`https://app.dub.co/${workspace.slug}`}
+                  href={`https://app.mifily.com/${workspace.slug}`}
                   className="font-medium text-blue-600 no-underline"
                 >
                   {workspace.name}↗
@@ -120,14 +120,14 @@ export default function EmailDomainStatusChanged({
             <Section className="my-8">
               <Link
                 className="rounded-lg bg-black px-6 py-3 text-center text-[12px] font-semibold text-white no-underline"
-                href={`https://app.dub.co/${workspace.slug}/links/domains/email`}
+                href={`https://app.mifily.com/${workspace.slug}/links/domains/email`}
               >
                 View email domain
               </Link>
             </Section>
             <Footer
               email={email}
-              notificationSettingsUrl={`https://app.dub.co/${workspace.slug}/settings/notifications`}
+              notificationSettingsUrl={`https://app.mifily.com/${workspace.slug}/settings/notifications`}
             />
           </Container>
         </Body>

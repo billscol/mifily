@@ -57,7 +57,7 @@ export async function invitePartnerUser({
   const url = `${PARTNERS_DOMAIN}/api/auth/callback/email?${params}`;
 
   return await sendEmail({
-    subject: `You've been invited to join a partner profile on Dub Partners.`,
+    subject: `You've been invited to join a partner profile on Mifily Partners.`,
     to: email,
     react: PartnerUserInvited({
       email,

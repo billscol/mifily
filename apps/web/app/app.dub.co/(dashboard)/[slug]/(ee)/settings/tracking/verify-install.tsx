@@ -117,7 +117,7 @@ const VerifyInstall = () => {
               ) : response ? (
                 "You’re connected and ready to track conversions"
               ) : (
-                "Test your connection to Dub"
+                "Test your connection to Mifily"
               )}
             </p>
           </div>

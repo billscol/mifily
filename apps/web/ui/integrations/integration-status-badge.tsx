@@ -11,7 +11,7 @@ export function IntegrationStatusBadge({
 }) {
   if (projectId === DUB_WORKSPACE_ID) {
     return (
-      <Tooltip content="This is an official integration built and maintained by Dub">
+      <Tooltip content="This is an official integration built and maintained by Mifily">
         <span>
           <DubCraftedShield className="size-4 shrink-0 -translate-y-px" />
         </span>
@@ -30,7 +30,7 @@ export function IntegrationStatusBadge({
                 Verified Integration
               </span>
               <span className="text-sm font-normal text-neutral-600">
-                This integration has been verified by Dub.
+                This integration has been verified by Mifily.
               </span>
             </div>
           </div>
@@ -42,7 +42,7 @@ export function IntegrationStatusBadge({
   }
 
   return (
-    <Tooltip content="Dub hasn't verified this integration. Install it at your own risk.">
+    <Tooltip content="Mifily hasn't verified this integration. Install it at your own risk.">
       <span>
         <CircleWarning className="size-4 shrink-0 text-neutral-500" invert />
       </span>

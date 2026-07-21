@@ -18,8 +18,10 @@ export const log = async ({
   /* Log a message to the console */
   console.log(message);
 
-  if (process.env.VERCEL_ENV !== "production") {
-    console.log("Skipping log to Dub Slack in non-production environment.");
+  // NOTE: was VERCEL_ENV, which is never set on this self-hosted deployment -
+  // that silently disabled Slack alerting entirely in production.
+  if (process.env.NODE_ENV !== "production") {
+    console.log("Skipping log to Mifily Slack in non-production environment.");
     return;
   }
 
@@ -45,6 +47,6 @@ export const log = async ({
       }),
     });
   } catch (e) {
-    console.log(`Failed to log to Dub Slack. Error: ${e}`);
+    console.log(`Failed to log to Mifily Slack. Error: ${e}`);
   }
 };

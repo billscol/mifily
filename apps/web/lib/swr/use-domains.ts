@@ -93,10 +93,10 @@ export default function useDomains({
 
   return {
     activeWorkspaceDomains, // active workspace domains
-    activeDefaultDomains, // active default Dub domains
+    activeDefaultDomains, // active default Mifily domains
     allWorkspaceDomains, // all workspace domains (active + archived)
-    allActiveDomains, // all active domains (active workspace domains + active default Dub domains)
-    allDomains, // all domains (all workspace domains + all default Dub domains)
+    allActiveDomains, // all active domains (active workspace domains + active default Mifily domains)
+    allDomains, // all domains (all workspace domains + all default Mifily domains)
     primaryDomain,
     loading: (!data && !error) || loadingDefaultDomains,
     mutate,

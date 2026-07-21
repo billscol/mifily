@@ -18,14 +18,14 @@ function randomOnboardingDomain() {
 /** Client navigations can finish before a sequential waitForURL runs; pair clicks with URL assertions. */
 const STEP_NAV_TIMEOUT = 60_000;
 
-test.describe("Dub Partners onboarding", () => {
+test.describe("Mifily Partners onboarding", () => {
   /**
    * Retries must be off: a failed run may already own 2 free workspaces (links + this flow); retrying
    * POST /api/workspaces hits FREE_WORKSPACES_LIMIT (403).
    */
   test.describe.configure({ retries: 0 });
 
-  test("complete workspace onboarding with Dub Partners product", async ({
+  test("complete workspace onboarding with Mifily Partners product", async ({
     page,
     baseURL: baseURLParam,
   }) => {
@@ -38,7 +38,7 @@ test.describe("Dub Partners onboarding", () => {
     // Welcome page
     await page.goto("/onboarding");
     await expect(
-      page.getByRole("heading", { name: "Welcome to Dub" }),
+      page.getByRole("heading", { name: "Welcome to Mifily" }),
     ).toBeVisible();
     await Promise.all([
       expect(page).toHaveURL(/\/onboarding\/workspace/, {
@@ -60,7 +60,7 @@ test.describe("Dub Partners onboarding", () => {
     expect(slug).toBeTruthy();
 
     const productsHeading = page.getByRole("heading", {
-      name: "What do you want to do with Dub?",
+      name: "What do you want to do with Mifily?",
     });
 
     // Navigation runs in onSuccess after POST + SWR mutate + session.update(); wait for API first (CI).
@@ -82,12 +82,12 @@ test.describe("Dub Partners onboarding", () => {
     });
     await expect(productsHeading).toBeVisible({ timeout: STEP_NAV_TIMEOUT });
 
-    // Select "Dub Partners" product
+    // Select "Mifily Partners" product
     await Promise.all([
       expect(page).toHaveURL(/\/onboarding\/domain/, {
         timeout: STEP_NAV_TIMEOUT,
       }),
-      page.getByRole("button", { name: "Continue with Dub Partners" }).click(),
+      page.getByRole("button", { name: "Continue with Mifily Partners" }).click(),
     ]);
 
     // Domain step — connect a custom domain

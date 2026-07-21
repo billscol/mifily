@@ -146,7 +146,7 @@ function FinishSetupWrapper({
           Finish setting up your program
         </h2>
         <p className="text-content-subtle mt-2 max-w-md text-pretty text-sm">
-          Install the Dub tracking script on your site to track conversions,
+          Install the Mifily tracking script on your site to track conversions,
           attribute sales, and measure partner performance.
         </p>
         <Link

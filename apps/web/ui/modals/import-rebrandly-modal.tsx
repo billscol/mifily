@@ -115,7 +115,7 @@ function ImportRebrandlyModal({
         </div>
         <h3 className="text-lg font-medium">Import Your Rebrandly Links</h3>
         <p className="text-center text-sm text-neutral-500">
-          Easily import all your existing Rebrandly links into Dub with just a
+          Easily import all your existing Rebrandly links into Mifily with just a
           few clicks.
         </p>
       </div>

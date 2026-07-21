@@ -216,7 +216,7 @@ export function EmailDomainDnsRecords({ domain }: EmailDomainDnsRecordsProps) {
                   title="DKIM and SPF (Required)"
                   description={
                     <p className="text-sm text-neutral-700">
-                      To authorize Dub to send emails from{" "}
+                      To authorize Mifily to send emails from{" "}
                       <strong>{domain.slug}</strong> to your partners, verify
                       that the DNS records listed below are properly configured
                       in your domain's DNS settings.

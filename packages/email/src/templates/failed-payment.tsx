@@ -21,7 +21,7 @@ export default function FailedPayment({
     email: "panic@thedis.co",
   },
   workspace = {
-    name: "Dub",
+    name: "Mifily",
     slug: "dub",
     plan: "business",
     defaultProgramId: null,
@@ -39,7 +39,7 @@ export default function FailedPayment({
 }) {
   const title = `${
     attemptCount == 2 ? "2nd notice: " : attemptCount == 3 ? "3rd notice: " : ""
-  }Your payment for Dub failed`;
+  }Your payment for Mifily failed`;
 
   // Check if plan has partner access (Business, Advanced, Enterprise have payouts > 0)
   const planHasPartnerAccess = workspace.plan
@@ -58,7 +58,7 @@ export default function FailedPayment({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] rounded border border-solid border-neutral-200 px-10 py-5">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
             <Heading className="mx-0 my-7 p-0 text-lg font-medium text-black">
               {attemptCount == 2 ? "2nd " : attemptCount == 3 ? "3rd " : ""}
@@ -72,7 +72,7 @@ export default function FailedPayment({
               <code className="text-purple-600">
                 {currencyFormatter(amountDue)}
               </code>{" "}
-              for your Dub workspace{" "}
+              for your Mifily workspace{" "}
               <code className="text-purple-600">{workspace.name}</code>.
             </Text>
             {showPartnerWarning && (
@@ -95,7 +95,7 @@ export default function FailedPayment({
             <Section className="my-8">
               <Link
                 className="rounded-lg bg-black px-6 py-3 text-center text-[12px] font-semibold text-white no-underline"
-                href={`https://app.dub.co/${workspace.slug}/settings/billing`}
+                href={`https://app.mifily.com/${workspace.slug}/settings/billing`}
               >
                 Update payment information
               </Link>

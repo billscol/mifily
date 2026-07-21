@@ -194,7 +194,7 @@ export async function processLink<T extends Record<string, any>>({
         code: "unprocessable_entity",
       };
     }
-    // checks for other Dub-owned domains (chatg.pt, spti.fi, etc.)
+    // checks for other Mifily-owned domains (chatg.pt, spti.fi, etc.)
   } else if (isDubDomain(domain)) {
     // coerce type with ! cause we already checked if it exists
     const { allowedHostnames } = DUB_DOMAINS.find((d) => d.slug === domain)!;
@@ -240,7 +240,7 @@ export async function processLink<T extends Record<string, any>>({
 
     // else, check if the domain is a free .link and whether the workspace is pro+
   } else if (domain.endsWith(".link") && workspace?.plan === "free") {
-    // Dub provisioned .link domains can only be used on a Pro plan and above
+    // Mifily provisioned .link domains can only be used on a Pro plan and above
     const domainId = domains?.find((d) => d.slug === domain)?.id;
     const registeredDomain = await prisma.registeredDomain.findUnique({
       where: {

@@ -1,8 +1,8 @@
-import { Dub } from "dub";
+import { Mifily } from "dub";
 
-export const dub = new Dub();
+export const dub = new Mifily();
 
-// fetch Dub customer using their external ID (ID in our database)
+// fetch Mifily customer using their external ID (ID in our database)
 export const getDubCustomer = async (userId: string) => {
   try {
     const { result: customers } = await dub.customers.list({

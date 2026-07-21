@@ -1,4 +1,5 @@
 import {
+  APP_DOMAIN,
   capitalize,
   DUB_LOGO,
   DUB_TRIAL_PERIOD_DAYS,
@@ -46,24 +47,24 @@ export default function TrialStartedEmail({
   };
 }) {
   const planLabel = capitalize(plan);
-  const dashboardUrl = `https://app.dub.co/${workspace.slug}`;
+  const dashboardUrl = `${APP_DOMAIN}/${workspace.slug}`;
 
   return (
     <Html>
       <Head />
       <Preview>
-        {String(DUB_TRIAL_PERIOD_DAYS)} days of Dub — domains, tracking,
+        {String(DUB_TRIAL_PERIOD_DAYS)} days of Mifily — domains, tracking,
         partners, and API. Here are your first steps.
       </Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] rounded border border-solid border-neutral-200 px-10 py-5">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
             <Heading className="mx-0 my-7 p-0 text-xl font-semibold text-black">
               Welcome to your free {String(DUB_TRIAL_PERIOD_DAYS)}-day trial of
-              Dub!
+              Mifily!
             </Heading>
 
             <Text className="mb-6 mt-5 text-sm leading-5 text-neutral-600">
@@ -260,7 +261,7 @@ export default function TrialStartedEmail({
                   >
                     Check out our docs
                   </Link>{" "}
-                  to learn how to programmatically manage your Dub links.
+                  to learn how to programmatically manage your Mifily links.
                 </Text>
               </>
             )}
@@ -270,7 +271,7 @@ export default function TrialStartedEmail({
             <Text className="mb-8 text-sm leading-5 text-neutral-800">
               You&apos;ll have access to all{" "}
               <Link
-                href={`https://app.dub.co/${workspace.slug}/settings/billing/upgrade`}
+                href={`${APP_DOMAIN}/${workspace.slug}/settings/billing/upgrade`}
                 className="font-medium text-neutral-500 underline underline-offset-2"
               >
                 {planLabel} features

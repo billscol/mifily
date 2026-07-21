@@ -118,7 +118,7 @@ export const GET = withPartnerProfile(async ({ partner, searchParams }) => {
               tw="text-neutral-900 max-w-[180px] text-3xl leading-8 font-bold"
               style={{ fontFamily: "Inter" }}
             >
-              Dub Partner Rewind &rsquo;25
+              Mifily Partner Rewind &rsquo;25
             </span>
 
             <img

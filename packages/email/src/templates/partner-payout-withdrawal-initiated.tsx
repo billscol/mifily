@@ -42,7 +42,7 @@ export default function PartnerPayoutWithdrawalInitiated({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] rounded border border-solid border-neutral-200 px-10 py-5">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
 
             <Heading className="mx-0 my-7 p-0 text-lg font-medium text-black">
@@ -82,7 +82,7 @@ export default function PartnerPayoutWithdrawalInitiated({
             <Section className="mb-12 mt-8">
               <Link
                 className="rounded-lg bg-neutral-900 px-4 py-3 text-[12px] font-semibold text-white no-underline"
-                href="https://partners.dub.co/payouts"
+                href="https://partners.mifily.com/payouts"
               >
                 View payouts
               </Link>

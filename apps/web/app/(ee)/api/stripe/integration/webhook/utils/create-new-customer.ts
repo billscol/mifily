@@ -202,7 +202,7 @@ export async function createNewCustomer(event: Stripe.Event) {
   );
 
   return {
-    response: `New Dub customer created: ${customer.id}. Lead event recorded: ${leadData.event_id}`,
+    response: `New Mifily customer created: ${customer.id}. Lead event recorded: ${leadData.event_id}`,
     workspaceId: workspace.id,
   };
 }

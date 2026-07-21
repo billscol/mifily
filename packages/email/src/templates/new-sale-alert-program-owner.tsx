@@ -77,8 +77,8 @@ export default function NewSaleAlertProgramOwner({
     earnings: number;
   };
 }) {
-  const salesLink = `https://app.dub.co/${workspace.slug}/program/commissions?partnerId=${partner.id}`;
-  const notificationPreferencesLink = `https://app.dub.co/${workspace.slug}/settings/notifications`;
+  const salesLink = `https://app.mifily.com/${workspace.slug}/program/commissions?partnerId=${partner.id}`;
+  const notificationPreferencesLink = `https://app.mifily.com/${workspace.slug}/settings/notifications`;
 
   const saleAmountInDollars = currencyFormatter(commission.amount);
 
@@ -128,7 +128,7 @@ export default function NewSaleAlertProgramOwner({
               <strong className="font-medium text-black">{program.name}</strong>{" "}
               earned a sale from a new customer referred by{" "}
               <Link
-                href={`https://app.dub.co/${workspace.slug}/program/partners/${partner.id}`}
+                href={`https://app.mifily.com/${workspace.slug}/program/partners/${partner.id}`}
                 className="font-medium text-black underline"
               >
                 {partner.name
@@ -147,7 +147,7 @@ export default function NewSaleAlertProgramOwner({
                         <>
                           Payment from{" "}
                           <Link
-                            href={`https://app.dub.co/${workspace.slug}/program/customers/${customer.id}`}
+                            href={`https://app.mifily.com/${workspace.slug}/program/customers/${customer.id}`}
                             className="font-medium text-black underline"
                           >
                             <strong className="font-medium text-black">

@@ -215,7 +215,7 @@ function UsageInner() {
                 )}
               >
                 {paymentFailedAt
-                  ? "Your last payment failed. Please update your payment method to continue using Dub."
+                  ? "Your last payment failed. Please update your payment method to continue using Mifily."
                   : isTrial && trialEndsAt
                     ? null
                     : billingEnd

@@ -55,7 +55,7 @@ function ImportFirstPromoterModal({
         <MarkdownDescription className="text-center text-sm text-neutral-500">
           [Migrate your existing FirstPromoter
           campaign](https://dub.co/help/article/migrating-from-firstpromoter),
-          partners, and historical stats into Dub.
+          partners, and historical stats into Mifily.
         </MarkdownDescription>
       </div>
 

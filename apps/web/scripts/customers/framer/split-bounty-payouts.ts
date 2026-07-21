@@ -81,7 +81,7 @@ async function main() {
         periodStart,
         periodEnd,
         amount: totalEarnings,
-        description: "Dub Partners payout (Framer)",
+        description: "Mifily Partners payout (Framer)",
       },
     });
 

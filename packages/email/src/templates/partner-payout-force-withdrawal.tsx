@@ -76,7 +76,7 @@ export default function PartnerPayoutForceWithdrawal({
               <Img
                 src="https://assets.dub.co/logo.png"
                 height="32"
-                alt="Dub logo"
+                alt="Mifily logo"
               />
             </Section>
 
@@ -86,7 +86,7 @@ export default function PartnerPayoutForceWithdrawal({
 
             <Text className="text-sm leading-6 text-neutral-600">
               A withdrawal of {payoutAmountInDollars} has been initiated from
-              your Dub account.
+              your Mifily account.
             </Text>
 
             <Text className="text-sm leading-6 text-neutral-600">
@@ -96,7 +96,7 @@ export default function PartnerPayoutForceWithdrawal({
             <Section className="my-8">
               <Link
                 className="rounded-lg bg-neutral-900 px-4 py-3 text-[12px] font-semibold text-white no-underline"
-                href="https://partners.dub.co/payouts"
+                href="https://partners.mifily.com/payouts"
               >
                 View your payouts
               </Link>

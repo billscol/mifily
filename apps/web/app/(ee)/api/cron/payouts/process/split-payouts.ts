@@ -92,7 +92,7 @@ export async function splitPayouts({
               (total, commission) => total + commission.earnings,
               0,
             ),
-            description: `Dub Partners payout (${program.name})`,
+            description: `Mifily Partners payout (${program.name})`,
           },
         });
 

@@ -67,7 +67,7 @@ export default function AcceptPartnerInvitePage() {
           Partner Profile Invitation
         </h1>
         <p className="mt-2 text-center text-sm text-gray-500">
-          You've been invited to join a partner profile on Dub Partners.
+          You've been invited to join a partner profile on Mifily Partners.
         </p>
 
         <div className="mt-8">

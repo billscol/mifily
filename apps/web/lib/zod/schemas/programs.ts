@@ -132,9 +132,9 @@ export const ProgramEnrollmentApplicationSchema = z.object({
 });
 
 export const ProgramEnrollmentSchema = z.object({
-  programId: z.string().describe("The program's unique ID on Dub."),
-  groupId: z.string().nullish().describe("The partner's group ID on Dub."),
-  partnerId: z.string().describe("The partner's unique ID on Dub."),
+  programId: z.string().describe("The program's unique ID on Mifily."),
+  groupId: z.string().nullish().describe("The partner's group ID on Mifily."),
+  partnerId: z.string().describe("The partner's unique ID on Mifily."),
   tenantId: z
     .string()
     .nullable()

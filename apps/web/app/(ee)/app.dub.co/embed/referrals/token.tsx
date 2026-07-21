@@ -28,7 +28,7 @@ export const ReferralsReferralsEmbedToken = () => {
     if (error) {
       window.parent.postMessage(
         {
-          originator: "Dub",
+          originator: "Mifily",
           event: "ERROR",
           data: error.info,
         },

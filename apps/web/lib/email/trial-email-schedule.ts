@@ -73,7 +73,7 @@ export function getTrialEmailSubject({
   companyName?: string;
 }): string {
   const prefix =
-    companyName && companyName.length <= 12 ? `Dub + ${companyName}: ` : "";
+    companyName && companyName.length <= 12 ? `Mifily + ${companyName}: ` : "";
 
   const subjects: Record<TrialEmailType, string> = {
     [TRIAL_EMAIL_TYPE.SEVEN_DAYS_REMAINING]: `${prefix}Mid-trial check-in`,

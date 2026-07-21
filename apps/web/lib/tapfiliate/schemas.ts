@@ -16,7 +16,7 @@ export const tapfiliateImportPayloadSchema = z.object({
   tapfiliateProgramId: z.string(),
   action: tapfiliateImportSteps,
   page: z.number().optional(), // Tapfiliate pagination
-  startingAfter: z.string().optional(), // Dub pagination
+  startingAfter: z.string().optional(), // Mifily pagination
 });
 
 export const tapfiliateGroupSchema = z.object({

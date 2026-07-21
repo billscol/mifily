@@ -67,10 +67,10 @@ export async function sendCancellationFeedback({
         owner.email &&
         sendEmail({
           to: owner.email,
-          from: "Steven Tey <steven@dub.co>",
-          replyTo: "steven.tey@dub.co",
-          subject: "Feedback for Dub.co?",
-          text: `Hey ${owner.name ? owner.name.split(" ")[0] : "there"}!\n\nSaw you canceled your Dub subscription${reasonText ? ` and mentioned that ${reasonText}` : ""} – do you mind sharing if there's anything we could've done better on our side?\n\nWe're always looking to improve our product offering so any feedback would be greatly appreciated!\n\nThank you so much in advance!\n\nBest,\nSteven Tey\nFounder, Dub.co`,
+          from: "Mifily <support@mifily.com>",
+          replyTo: "support@mifily.com",
+          subject: "Feedback for Mifily?",
+          text: `Hey ${owner.name ? owner.name.split(" ")[0] : "there"}!\n\nSaw you canceled your Mifily subscription${reasonText ? ` and mentioned that ${reasonText}` : ""} – do you mind sharing if there's anything we could've done better on our side?\n\nWe're always looking to improve our product offering so any feedback would be greatly appreciated!\n\nThank you so much in advance!\n\nBest,\nThe Mifily Team`,
           headers: {
             "Idempotency-Key": `cancellation-feedback-${owner.email}`,
           },

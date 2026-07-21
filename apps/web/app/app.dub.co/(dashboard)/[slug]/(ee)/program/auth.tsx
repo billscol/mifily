@@ -63,8 +63,8 @@ function AccessDenied({ slug }: { slug: string }) {
   return (
     <PageContent>
       <SimpleEmptyState
-        title="You don't have access to Dub Partners"
-        description="Your workspace admin has restricted access to Dub Partners for your account. Contact them if you believe this is a mistake."
+        title="You don't have access to Mifily Partners"
+        description="Your workspace admin has restricted access to Mifily Partners for your account. Contact them if you believe this is a mistake."
         graphic={
           <div className="flex size-16 items-center justify-center rounded-2xl border border-neutral-200 bg-neutral-50">
             <ShieldSlash className="size-6 text-neutral-800" />
@@ -78,7 +78,7 @@ function AccessDenied({ slug }: { slug: string }) {
               "flex h-9 items-center whitespace-nowrap rounded-lg border px-4 text-sm",
             )}
           >
-            Go to Dub Links
+            Go to Mifily Links
           </Link>
         }
       />

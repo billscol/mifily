@@ -10,7 +10,7 @@ async function main() {
       name: "Intercom",
       slug: "intercom",
       description: "Intercom integration",
-      developer: "Dub",
+      developer: "Mifily",
       website: "https://dub.co",
       verified: true,
       projectId: DUB_WORKSPACE_ID,

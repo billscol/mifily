@@ -79,7 +79,7 @@ test.describe("Billing trial checkout", () => {
         .not.toBeNull();
 
       await expect(
-        page.getByRole("heading", { name: /Dub Pro looks good on you/i }),
+        page.getByRole("heading", { name: /Mifily Pro looks good on you/i }),
       ).toBeVisible({ timeout: 15_000 });
 
       await page.getByRole("button", { name: "View dashboard" }).click();
@@ -196,7 +196,7 @@ test.describe("Free trial user navigation", () => {
       );
     });
     await expect(
-      page.getByRole("heading", { name: /Dub Business looks good on you/i }),
+      page.getByRole("heading", { name: /Mifily Business looks good on you/i }),
     ).toBeVisible({ timeout: 15_000 });
   });
 });

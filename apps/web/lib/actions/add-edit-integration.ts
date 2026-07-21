@@ -27,7 +27,7 @@ export const addEditIntegration = authActionClient
       requiredPermissions: ["oauth_apps.write"],
     });
 
-    // this is only available for Dub workspace for now
+    // this is only available for Mifily workspace for now
     // we might open this up to other workspaces in the future
     if (workspaceId !== DUB_WORKSPACE_ID) {
       throw new Error("Not authorized");

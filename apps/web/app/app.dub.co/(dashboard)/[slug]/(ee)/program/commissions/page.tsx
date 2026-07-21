@@ -13,7 +13,7 @@ export default function ProgramCommissions() {
       title="Commissions"
       titleInfo={{
         title:
-          "Learn how partner commissions work on Dub, and how to create manual commissions or clawbacks.",
+          "Learn how partner commissions work on Mifily, and how to create manual commissions or clawbacks.",
         href: "https://dub.co/help/article/partner-commissions-clawbacks",
       }}
       controls={

@@ -7,7 +7,7 @@ import { ratelimit } from "../upstash";
 import { emailSchema } from "../zod/schemas/auth";
 import { authActionClient } from "./safe-action";
 
-// send invite referral email for Dub Referrals (soon to be deprecated?)
+// send invite referral email for Mifily Referrals (soon to be deprecated?)
 export const sendInviteReferralEmail = authActionClient
   .inputSchema(
     z.object({
@@ -34,7 +34,7 @@ export const sendInviteReferralEmail = authActionClient
 
     try {
       return await sendEmail({
-        subject: "You've been invited to start using Dub",
+        subject: "You've been invited to start using Mifily",
         to: email,
         react: ReferralInvite({
           email,

@@ -131,7 +131,7 @@ export async function GET(req: Request) {
     for (const invoice of invoices) {
       let { workspace } = groupedByWorkspace[invoice.workspaceId];
 
-      // If Acme workspace, use Dub workspace stripeId
+      // If Acme workspace, use Mifily workspace stripeId
       if (workspace.id === ACME_WORKSPACE_ID) {
         const dubWorkspace = await prisma.project.findUniqueOrThrow({
           where: {
@@ -148,7 +148,7 @@ export async function GET(req: Request) {
         };
 
         console.log(
-          `Using Dub workspace stripeId for Acme workspace domains...`,
+          `Using Mifily workspace stripeId for Acme workspace domains...`,
         );
       }
 

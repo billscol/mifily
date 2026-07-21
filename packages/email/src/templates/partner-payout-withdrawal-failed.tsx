@@ -60,7 +60,7 @@ export default function PartnerPayoutWithdrawalFailed({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-8 max-w-[600px] px-8 py-8">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
 
             <Heading className="mx-0 my-8 p-0 text-lg font-medium text-black">
@@ -156,7 +156,7 @@ export default function PartnerPayoutWithdrawalFailed({
             <Section className="my-8">
               <Link
                 className="rounded-lg bg-neutral-900 px-6 py-3 text-[13px] font-medium text-white no-underline"
-                href="https://partners.dub.co/payouts?settings=true"
+                href="https://partners.mifily.com/payouts?settings=true"
               >
                 Update bank account
               </Link>

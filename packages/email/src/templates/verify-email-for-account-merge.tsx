@@ -36,7 +36,7 @@ export default function VerifyEmailForAccountMerge({
               <Img
                 src={DUB_WORDMARK}
                 height="32"
-                alt="Dub"
+                alt="Mifily"
                 className="mr-auto"
               />
             </Section>

@@ -5,7 +5,7 @@ export const intercomAuthTokenSchema = z.object({
   token_type: z.string(),
 });
 
-// Integration credentials Dub stores
+// Integration credentials Mifily stores
 export const intercomCredentialsSchema = z.object({
   accessToken: z.string(),
   appId: z.string().describe("Intercom workspace ID."),

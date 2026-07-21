@@ -31,8 +31,8 @@ const ConnectStep = ({
     <Step
       id="connect"
       step={1}
-      title="Install the Dub client-side script"
-      subtitle="Generate and install the Dub client-side script to start tracking conversions."
+      title="Install the Mifily client-side script"
+      subtitle="Generate and install the Mifily client-side script to start tracking conversions."
       expanded={expanded}
       toggleExpanded={toggleExpanded}
       complete={complete}

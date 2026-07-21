@@ -163,18 +163,18 @@ export async function checkoutSessionCompleted(
         - if yes, follow the promotion code logic below
         - if no, we skip the event
     - else:
-      - we first try to see if the customer with the Stripe ID already exists in Dub
-        - if it does, great, we can use the customer found on Dub
+      - we first try to see if the customer with the Stripe ID already exists in Mifily
+        - if it does, great, we can use the customer found on Mifily
       - if it doesn't, we try to find the customer on the connected account
       - if present:
           - we update the customer with the stripe customerId
-          - we then find the lead event using the customer's unique ID on Dub
+          - we then find the lead event using the customer's unique ID on Mifily
           - the lead event will then be passed to the remaining logic to record a sale
       - if not present:
           - we check if a promotion code was used in the checkout
           - if a promotion code is present, we try to attribute via the promotion code:
             - confirm the promotion code exists in Stripe
-            - find the associated discount code and link in Dub
+            - find the associated discount code and link in Mifily
             - record a fake click event for attribution
             - create a new customer and lead event
             - proceed with sale recording
@@ -211,7 +211,7 @@ export async function checkoutSessionCompleted(
           }
         } else {
           return {
-            response: `dubCustomerExternalId was provided but customer with dubCustomerExternalId ${dubCustomerExternalId} not found on Dub, skipping...`,
+            response: `dubCustomerExternalId was provided but customer with dubCustomerExternalId ${dubCustomerExternalId} not found on Mifily, skipping...`,
             workspaceId: workspace.id,
           };
         }
@@ -259,7 +259,7 @@ export async function checkoutSessionCompleted(
           });
           if (!customer) {
             return {
-              response: `dubCustomerExternalId was found on the connected customer ${stripeCustomerId} but customer with dubCustomerExternalId ${dubCustomerExternalId} not found on Dub, skipping...`,
+              response: `dubCustomerExternalId was found on the connected customer ${stripeCustomerId} but customer with dubCustomerExternalId ${dubCustomerExternalId} not found on Mifily, skipping...`,
               workspaceId: workspace.id,
             };
           }

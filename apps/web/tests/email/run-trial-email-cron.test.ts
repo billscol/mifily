@@ -75,7 +75,7 @@ describe("runTrialEmailCron", () => {
         type: TRIAL_EMAIL_TYPE.SEVEN_DAYS_REMAINING,
         companyName: "Acme",
       }),
-      replyTo: "steven.tey@dub.co",
+      replyTo: "support@mifily.com",
       variant: "marketing",
     });
     expect(create).toHaveBeenCalledWith({

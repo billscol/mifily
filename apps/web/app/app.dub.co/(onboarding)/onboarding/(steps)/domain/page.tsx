@@ -23,7 +23,7 @@ export default async function Domain({
             >
               dedicated domain
             </a>{" "}
-            is required for Dub Partner programs, and can be changed at anytime.
+            is required for Mifily Partner programs, and can be changed at anytime.
           </>
         ) : (
           <>

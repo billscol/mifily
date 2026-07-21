@@ -142,7 +142,7 @@ export async function runTrialEmailCron({
     for (const type of due) {
       const payloads = recipients.map((recipient) => ({
         to: recipient.email,
-        replyTo: "steven.tey@dub.co",
+        replyTo: "support@mifily.com",
         subject: getTrialEmailSubject({
           type,
           companyName: workspace.programs?.[0]?.name ?? workspace.name,

@@ -7,7 +7,7 @@ import ProgramApplicationReminder from "@dub/email/templates/program-application
 import { APP_DOMAIN_WITH_NGROK } from "@dub/utils/src/constants";
 
 // POST - /api/cron/program-application-reminder
-// Sends an email to a program application email if they haven't verified their account on Dub yet
+// Sends an email to a program application email if they haven't verified their account on Mifily yet
 export async function POST(req: Request) {
   try {
     const rawBody = await req.text();

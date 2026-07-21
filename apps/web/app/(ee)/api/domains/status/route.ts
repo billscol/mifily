@@ -45,7 +45,7 @@ export const GET = withWorkspace(
 
     let response: z.infer<typeof DomainStatusSchema>[] = [];
 
-    // if all domains are already registered on Dub, return the status for all domains as false
+    // if all domains are already registered on Mifily, return the status for all domains as false
     if (domainsOnDub.length > 0) {
       response = DomainStatusSchema.array().parse(
         domainsOnDub.map(({ slug: domain }) => ({

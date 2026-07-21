@@ -66,7 +66,7 @@ export async function POST(req: Request) {
 
     let { workspace } = invoice;
 
-    // If Acme workspace, use Dub workspace stripeId
+    // If Acme workspace, use Mifily workspace stripeId
     if (workspace.id === ACME_WORKSPACE_ID) {
       const dubWorkspace = await prisma.project.findUniqueOrThrow({
         where: {

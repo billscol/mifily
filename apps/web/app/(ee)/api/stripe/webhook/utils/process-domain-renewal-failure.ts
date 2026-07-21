@@ -44,7 +44,7 @@ export async function processDomainRenewalFailure({
 
   // Domain renewal failed 3 times:
   // 1. Turn off auto-renew for the domains on Dynadot
-  // 2. Disable auto-renew for the domains on Dub
+  // 2. Disable auto-renew for the domains on Mifily
   // 3. Send email to the workspace users
   if (invoice.failedAttempts >= 3) {
     await Promise.allSettled(

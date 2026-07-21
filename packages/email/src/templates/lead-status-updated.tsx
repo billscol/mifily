@@ -163,7 +163,7 @@ export default function LeadStatusUpdated({
 
             <Footer
               email={partner.email}
-              notificationSettingsUrl="https://partners.dub.co/profile/notifications"
+              notificationSettingsUrl="https://partners.mifily.com/profile/notifications"
             />
           </Container>
         </Body>

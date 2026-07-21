@@ -131,7 +131,7 @@ function UpgradedModal({
               className="scrollbar-hide max-h-[calc(100vh-400px)] overflow-y-auto pb-6 text-left"
             >
               <h1 className="text-lg font-semibold text-neutral-900">
-                Dub {plan?.name} looks good on you!
+                Mifily {plan?.name} looks good on you!
               </h1>
               <p className="mt-2 text-sm text-neutral-600">
                 Thank you for upgrading to the {plan?.name} plan. You now have

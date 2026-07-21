@@ -171,7 +171,7 @@ async function handler(req: Request) {
       partnerPrograms.map(({ partner, programs }) => ({
         variant: "notifications",
         to: partner.email,
-        subject: "Connect your payout details on Dub Partners",
+        subject: "Connect your payout details on Mifily Partners",
         templateName: "ConnectPayoutReminder",
         templateProps: {
           email: partner.email,

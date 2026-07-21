@@ -200,7 +200,7 @@ export async function PartnerPayoutInvoice({
     {
       title: "From",
       address: {
-        name: "Dub Technologies, Inc.",
+        name: "Mifily Technologies, Inc.",
         line1: "2261 Market Street STE 5906",
         city: "San Francisco",
         state: "CA",

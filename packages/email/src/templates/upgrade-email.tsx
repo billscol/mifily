@@ -26,24 +26,23 @@ export default function UpgradeEmail({
         <Text style={pStyle}>Hi {name ? name.split(" ")[0] : "there"},</Text>
 
         <Text style={pStyle}>
-          My name is Steven, and I&apos;m the founder of Dub. I wanted to
-          personally reach out to thank you for upgrading to{" "}
-          <strong>Dub {capitalize(plan)}</strong>! Your support means the world
-          to us and helps us continue to build and improve Dub.
+          We wanted to personally reach out to thank you for upgrading to{" "}
+          <strong>Mifily {capitalize(plan)}</strong>! Your support means the world
+          to us and helps us continue to build and improve Mifily.
         </Text>
 
         <Text style={pStyle}>
-          If you have any questions or feedback about Dub, please don&apos;t
-          hesitate to reach out (you can just reply to this email) – I&apos;m
+          If you have any questions or feedback about Mifily, please don&apos;t
+          hesitate to reach out (you can just reply to this email) – we&apos;re
           always happy to help!
         </Text>
 
         <Text style={{ ...pStyle, marginBottom: 0 }}>
           Best,
           <br />
-          Steven – Founder,{" "}
-          <Link href="https://dub.co" style={linkStyle}>
-            Dub.co
+          The Mifily Team –{" "}
+          <Link href="https://mifily.com" style={linkStyle}>
+            Mifily
           </Link>
         </Text>
 
@@ -51,7 +50,7 @@ export default function UpgradeEmail({
           If you don't want to receive these emails, you can adjust your email
           preferences{" "}
           <Link
-            href="https://app.dub.co/account/settings"
+            href="https://app.mifily.com/account/settings"
             style={footerLinkStyle}
           >
             here

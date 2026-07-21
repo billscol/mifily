@@ -10,7 +10,7 @@ export default function WorkspaceTrackingSettingsPage() {
       title="Tracking"
       titleInfo={{
         title:
-          "Configure and install Dub's tracking scripts and start tracking conversions on your website and web applications.",
+          "Configure and install Mifily's tracking scripts and start tracking conversions on your website and web applications.",
         href: "https://dub.co/docs/concepts/attribution",
       }}
       controls={<ConversionTrackingToggle />}

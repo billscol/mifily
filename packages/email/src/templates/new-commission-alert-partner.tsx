@@ -48,7 +48,7 @@ export default function NewCommissionAlertPartner({
   shortLink?: string | null;
 }) {
   const earningsInDollars = currencyFormatter(commission.earnings);
-  const linkToEarnings = `https://partners.dub.co/programs/${program.slug}/earnings`;
+  const linkToEarnings = `https://partners.mifily.com/programs/${program.slug}/earnings`;
 
   return (
     <Html>
@@ -57,7 +57,7 @@ export default function NewCommissionAlertPartner({
         You just earned {earningsInDollars} in commissions via{" "}
         {shortLink
           ? `your referral link ${getPrettyUrl(shortLink)}`
-          : "Dub Partners"}
+          : "Mifily Partners"}
       </Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
@@ -170,7 +170,7 @@ export default function NewCommissionAlertPartner({
             </Section>
             <Footer
               email={email}
-              notificationSettingsUrl="https://partners.dub.co/profile/notifications"
+              notificationSettingsUrl="https://partners.mifily.com/profile/notifications"
             />
           </Container>
         </Body>

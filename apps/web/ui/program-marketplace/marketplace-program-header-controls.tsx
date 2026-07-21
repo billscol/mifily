@@ -80,7 +80,7 @@ function ApplyButton({ program }: { program: NetworkProgramProps }) {
   const { setShowConfirmModal, confirmModal } = useConfirmModal({
     title: "Submit application",
     description:
-      "Are you sure you want to submit your Dub Network application for review? You won't be able to make changes to your application after submitting it.",
+      "Are you sure you want to submit your Mifily Network application for review? You won't be able to make changes to your application after submitting it.",
     confirmText: "Confirm submission",
     onConfirm: async () => {
       await submitNetworkProfile();
@@ -112,7 +112,7 @@ function ApplyButton({ program }: { program: NetworkProgramProps }) {
     ) : !isComplete ? (
       <div className="max-w-xs p-3 text-center">
         <div className="text-content-default text-pretty text-sm leading-5">
-          Complete your profile to join the Dub Partner Network. Once approved,
+          Complete your profile to join the Mifily Partner Network. Once approved,
           you can then apply to this program.
         </div>
         <Link

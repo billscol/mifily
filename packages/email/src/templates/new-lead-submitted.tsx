@@ -58,7 +58,7 @@ export default function NewLeadSubmitted({
     image: string | null;
   };
 }) {
-  const leadUrl = `https://app.dub.co/${workspace.slug}/program/customers/leads?leadId=${lead.id}`;
+  const leadUrl = `https://app.mifily.com/${workspace.slug}/program/customers/leads?leadId=${lead.id}`;
 
   return (
     <Html>
@@ -83,7 +83,7 @@ export default function NewLeadSubmitted({
                 href={leadUrl}
                 className="text-neutral-600 underline underline-offset-4"
               >
-                full details on Dub
+                full details on Mifily
               </Link>
               .
             </Text>
@@ -270,13 +270,13 @@ export default function NewLeadSubmitted({
                 href={leadUrl}
                 className="box-border block w-full rounded-lg bg-black px-0 py-4 text-center text-sm font-semibold leading-none text-white no-underline"
               >
-                Review on Dub
+                Review on Mifily
               </Link>
             </Section>
 
             <Footer
               email={email}
-              notificationSettingsUrl={`https://app.dub.co/${workspace.slug}/settings/notifications`}
+              notificationSettingsUrl={`https://app.mifily.com/${workspace.slug}/settings/notifications`}
             />
           </Container>
         </Body>

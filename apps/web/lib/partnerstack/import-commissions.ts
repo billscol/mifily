@@ -197,7 +197,7 @@ export async function createCommissionFromPS({
       await logImportError({
         ...commonImportLogInputs,
         code: "PARTNER_NOT_FOUND",
-        message: `Program enrollment for partner ${commission.partnership.email} not found in Dub.`,
+        message: `Program enrollment for partner ${commission.partnership.email} not found in Mifily.`,
       });
 
       return;
@@ -278,7 +278,7 @@ export async function createCommissionFromPS({
     amount = convertedAmount;
   }
 
-  // here, we also check for commissions that have already been recorded on Dub
+  // here, we also check for commissions that have already been recorded on Mifily
   // e.g. during the transition period
   // since we don't have the Stripe invoiceId from PartnerStack, we use the referral's customer ID
   // and check for commissions that were created with the same amount and within a +-1 hour window
@@ -298,7 +298,7 @@ export async function createCommissionFromPS({
 
   if (trackedCommission) {
     console.log(
-      `Commission ${trackedCommission.id} was already recorded on Dub, skipping...`,
+      `Commission ${trackedCommission.id} was already recorded on Mifily, skipping...`,
     );
     return;
   }

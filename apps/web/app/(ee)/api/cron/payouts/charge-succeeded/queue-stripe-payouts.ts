@@ -68,7 +68,7 @@ export async function queueStripePayouts({
         });
       } catch (error) {
         await log({
-          message: `Failed to fund Dub's financial account for stablecoin payouts: ${error.message}`,
+          message: `Failed to fund Mifily's financial account for stablecoin payouts: ${error.message}`,
           type: "errors",
         });
 

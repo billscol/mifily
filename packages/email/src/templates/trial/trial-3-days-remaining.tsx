@@ -14,7 +14,7 @@ export default function Trial3DaysRemainingEmail({
   plan = "business",
   workspaceSlug = "acme",
 }: TrialMarketingEmailProps) {
-  const dashboardUrlPrefix = `https://app.dub.co/${workspaceSlug}`;
+  const dashboardUrlPrefix = `https://app.mifily.com/${workspaceSlug}`;
   return (
     <Html>
       <Head />
@@ -25,8 +25,8 @@ export default function Trial3DaysRemainingEmail({
         <Text style={pStyle}>Hi {name ? name.split(" ")[0] : "there"},</Text>
 
         <Text style={pStyle}>
-          How are things going on your end? You have 3 days left in your Dub{" "}
-          {capitalize(plan)} trial, so I wanted to reach out before your trial
+          How are things going on your end? You have 3 days left in your Mifily{" "}
+          {capitalize(plan)} trial, so we wanted to reach out before your trial
           ends to make sure you have everything you need.
         </Text>
 
@@ -36,7 +36,7 @@ export default function Trial3DaysRemainingEmail({
         </Text>
 
         <Text style={pStyle}>
-          If Dub is indeed a perfect fit (and I really hope it is!), please
+          If Mifily is indeed a perfect fit (and we really hope it is!), please
           double-check your{" "}
           <Link
             href={`${dashboardUrlPrefix}/settings/billing`}
@@ -55,16 +55,16 @@ export default function Trial3DaysRemainingEmail({
         <Text style={{ ...pStyle, marginBottom: 0 }}>
           Best,
           <br />
-          Steven – Founder,{" "}
-          <Link href="https://dub.co" style={linkStyle}>
-            Dub.co
+          The Mifily Team –{" "}
+          <Link href="https://mifily.com" style={linkStyle}>
+            Mifily
           </Link>
         </Text>
 
         <Text style={footerStyle}>
-          If you&apos;d like me to stop sending you emails, please{" "}
+          If you&apos;d like to stop receiving these emails, please{" "}
           <Link
-            href="https://app.dub.co/account/settings"
+            href="https://app.mifily.com/account/settings"
             style={footerLinkStyle}
           >
             click here

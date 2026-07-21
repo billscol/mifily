@@ -580,7 +580,7 @@ async function stepRunSideEffects(
         isFirstCommission,
       }),
 
-    // Execute Dub workflows
+    // Execute Mifily workflows
     shouldTriggerWorkflow &&
       executeWorkflows({
         trigger: "partnerMetricsUpdated",

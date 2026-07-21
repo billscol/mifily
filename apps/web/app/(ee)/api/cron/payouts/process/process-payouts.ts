@@ -237,9 +237,9 @@ export async function processPayouts({
       confirm: true,
       transfer_group: invoice.id,
       ...(paymentMethod.type === "card"
-        ? { statement_descriptor_suffix: "Dub Partners" }
-        : { statement_descriptor: "Dub Partners" }),
-      description: `Dub Partners payout invoice (${invoice.id})`,
+        ? { statement_descriptor_suffix: "Mifily Partners" }
+        : { statement_descriptor: "Mifily Partners" }),
+      description: `Mifily Partners payout invoice (${invoice.id})`,
     },
     {
       idempotencyKey: `process-payout-invoice/${invoice.id}`,

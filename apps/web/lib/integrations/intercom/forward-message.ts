@@ -178,7 +178,7 @@ export async function forwardProgramMessageToIntercom({
   });
 }
 
-// Prepare Dub message attachments (stored in private R2) for forwarding to Intercom.
+// Prepare Mifily message attachments (stored in private R2) for forwarding to Intercom.
 // Intercom only honors ONE of attachment_urls / attachment_files per reply — when both
 // are present it keeps the URLs and silently drops the files. So we never mix them:
 //   - all images → signed URLs (Intercom fetches them; lightweight, and the only form

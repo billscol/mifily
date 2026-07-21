@@ -37,7 +37,7 @@ export default function AdminPage() {
           <br />- If the partner has already received payouts via Stripe, their
           Stripe Express account won't be deleted.
           <br />- If the partner has already received commissions or leads on
-          Dub, their partner account won't be deleted.
+          Mifily, their partner account won't be deleted.
         </p>
         <DeletePartnerAccount />
       </div>

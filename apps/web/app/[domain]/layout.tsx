@@ -1,5 +1,5 @@
 // These are link-facing utility pages (not found, banned, expired, stats),
-// not marketing pages - no Nav/Footer (Dub's own marketing site chrome).
+// not marketing pages - no Nav/Footer (Mifily's own marketing site chrome).
 export default function ExternalPagesLayout({
   children,
 }: {

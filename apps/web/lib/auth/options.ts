@@ -110,7 +110,7 @@ export const authOptions: NextAuthOptions = {
 
         sendEmail({
           to: identifier,
-          subject: "Your Dub Login Link",
+          subject: "Your Mifily Login Link",
           react: LoginLink({ url, email: identifier }),
         });
       },
@@ -149,7 +149,7 @@ export const authOptions: NextAuthOptions = {
           where: { email: profile.email },
         });
 
-        // user is authorized but doesn't have a Dub account, create one for them
+        // user is authorized but doesn't have a Mifily account, create one for them
         if (!existingUser) {
           existingUser = await prisma.user.create({
             data: {
@@ -223,7 +223,7 @@ export const authOptions: NextAuthOptions = {
           where: { email: userInfo.email },
         });
 
-        // user is authorized but doesn't have a Dub account, create one for them
+        // user is authorized but doesn't have a Mifily account, create one for them
         if (!existingUser) {
           existingUser = await prisma.user.create({
             data: {
@@ -256,7 +256,7 @@ export const authOptions: NextAuthOptions = {
     // Sign in with email and password
     CredentialsProvider({
       id: "credentials",
-      name: "Dub.co",
+      name: "Mifily",
       type: "credentials",
       credentials: {
         email: { type: "email" },

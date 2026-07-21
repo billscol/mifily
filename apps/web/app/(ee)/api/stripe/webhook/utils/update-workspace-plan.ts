@@ -278,8 +278,8 @@ export async function updateWorkspacePlan({
               sendBatchEmail(
                 workspaceOwners.map((user) => ({
                   to: user.email as string,
-                  replyTo: "steven.tey@dub.co",
-                  subject: `Thank you for upgrading to Dub ${newPlan.name}!`,
+                  replyTo: "support@mifily.com",
+                  subject: `Thank you for upgrading to Mifily ${newPlan.name}!`,
                   react: UpgradeEmail({
                     name: user.name,
                     email: user.email as string,

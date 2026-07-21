@@ -77,7 +77,7 @@ export const HubSpotSettings = ({
         <div className="space-y-6 p-4">
           <div>
             <p className="mb-4 text-sm leading-normal text-neutral-600">
-              Choose when leads should be tracked in Dub. This determines the
+              Choose when leads should be tracked in Mifily. This determines the
               trigger event for lead attribution.
             </p>
 

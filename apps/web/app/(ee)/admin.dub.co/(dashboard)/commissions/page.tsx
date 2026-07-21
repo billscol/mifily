@@ -204,7 +204,7 @@ function CommissionsPageClient() {
                 content={
                   <div className="max-w-[220px] px-3 py-2.5 text-center">
                     <p className="text-sm font-medium text-neutral-900">
-                      Dub Marketplace
+                      Mifily Marketplace
                     </p>
                     <p className="mt-1 text-xs leading-snug text-neutral-500">
                       Listed since{" "}
@@ -231,7 +231,7 @@ function CommissionsPageClient() {
                     "transition-[box-shadow,transform] duration-150 hover:shadow-md active:scale-[0.97]",
                     "outline-none focus-visible:ring-2 focus-visible:ring-teal-400/35 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
                   )}
-                  aria-label={`View ${row.original.name} on Dub Marketplace (opens in new tab)`}
+                  aria-label={`View ${row.original.name} on Mifily Marketplace (opens in new tab)`}
                 >
                   <Shop className="size-3.5 shrink-0" aria-hidden />
                 </a>

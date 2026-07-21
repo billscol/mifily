@@ -94,7 +94,7 @@ export const invitePartnerAction = authActionClient
         await sendEmail({
           subject:
             inviteEmailData?.subject ||
-            `${program.name} invited you to join Dub Partners`,
+            `${program.name} invited you to join Mifily Partners`,
           variant: "notifications",
           // use the first verified email domain as the from email address
           from:

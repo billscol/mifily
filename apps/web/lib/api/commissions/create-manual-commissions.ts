@@ -430,7 +430,7 @@ async function recordEvents(args: RecordEventsArgs) {
       programId,
     });
 
-    // Filter out invoices that are already associated with a commission on Dub
+    // Filter out invoices that are already associated with a commission on Mifily
     stripeCustomerInvoices = stripeCustomerInvoices.filter(
       (invoice) => !invoice.dubCommissionId,
     );

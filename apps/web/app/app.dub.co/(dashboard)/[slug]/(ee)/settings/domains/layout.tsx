@@ -9,7 +9,7 @@ export default function DomainsLayout({ children }: { children: ReactNode }) {
       title="Domains"
       titleInfo={{
         title:
-          "Learn more about how to add, configure, and verify custom domains on Dub.",
+          "Learn more about how to add, configure, and verify custom domains on Mifily.",
         href: "https://dub.co/help/article/how-to-add-custom-domain",
       }}
     >

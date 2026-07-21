@@ -82,7 +82,7 @@ export default function UnresolvedRiskEventsSummary({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-8 max-w-[600px] px-8 py-8">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
 
             <Heading className="mx-0 my-8 p-0 text-lg font-medium text-black">
@@ -144,7 +144,7 @@ export default function UnresolvedRiskEventsSummary({
                         <Column align="right" valign="middle">
                           <Link
                             className="inline-block rounded-lg border border-solid border-neutral-300 bg-white px-2.5 py-1.5 text-sm font-medium text-neutral-800 no-underline"
-                            href={`https://app.dub.co/${workspace.slug}/program/risks?groupId=${group.id}`}
+                            href={`https://app.mifily.com/${workspace.slug}/program/risks?groupId=${group.id}`}
                           >
                             View
                           </Link>
@@ -173,7 +173,7 @@ export default function UnresolvedRiskEventsSummary({
 
             <Section className="mt-6 text-center">
               <Link
-                href={`https://app.dub.co/${workspace.slug}/program/risks`}
+                href={`https://app.mifily.com/${workspace.slug}/program/risks`}
                 className="box-border block w-full rounded-md bg-black px-4 py-3 text-center text-sm font-medium leading-none text-white no-underline"
               >
                 Review all events
@@ -182,7 +182,7 @@ export default function UnresolvedRiskEventsSummary({
 
             <Footer
               email={email}
-              notificationSettingsUrl={`https://app.dub.co/${workspace.slug}/settings/notifications`}
+              notificationSettingsUrl={`https://app.mifily.com/${workspace.slug}/settings/notifications`}
             />
           </Container>
         </Body>

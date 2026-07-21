@@ -42,7 +42,7 @@ export function Conclusion({
           "animate-slide-up-fade [--offset:10px] [animation-delay:0.3s] [animation-duration:1s] [animation-fill-mode:both]",
         )}
       >
-        Thank you for all your hard work being a Dub Partner. We can&rsquo;t
+        Thank you for all your hard work being a Mifily Partner. We can&rsquo;t
         wait to see what you&rsquo;ll do in 2026!
       </p>
       <div className="animate-slide-up-fade flex items-center gap-2 [--offset:10px] [animation-delay:0.4s] [animation-duration:1s] [animation-fill-mode:both]">

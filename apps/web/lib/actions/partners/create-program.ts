@@ -257,8 +257,8 @@ export const createProgram = async ({
           ? [
               sendEmail({
                 to: user.email!,
-                replyTo: "steven.tey@dub.co",
-                subject: "Welcome to your 14-day Dub trial",
+                replyTo: "support@mifily.com",
+                subject: "Welcome to your 14-day Mifily trial",
                 react: TrialStartedEmail({
                   email: user.email!,
                   plan: workspace.plan,
@@ -341,7 +341,7 @@ async function invitePartner({
       });
 
       await sendEmail({
-        subject: `${program.name} invited you to join Dub Partners`,
+        subject: `${program.name} invited you to join Mifily Partners`,
         variant: "notifications",
         to: partner.email,
         replyTo: program.supportEmail || "noreply",

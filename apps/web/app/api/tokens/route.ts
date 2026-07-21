@@ -167,7 +167,7 @@ export const POST = withWorkspace(
     waitUntil(
       sendEmail({
         to: session.user.email,
-        subject: `A new API key has been created for your workspace ${workspace.name} on Dub`,
+        subject: `A new API key has been created for your workspace ${workspace.name} on Mifily`,
         react: APIKeyCreated({
           email: session.user.email,
           token: {

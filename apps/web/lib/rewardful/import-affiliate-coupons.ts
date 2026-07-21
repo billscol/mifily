@@ -68,7 +68,7 @@ export async function importAffiliateCoupons(payload: RewardfulImportPayload) {
       ),
     );
 
-    // Find the coupons that have a partner account created on Dub
+    // Find the coupons that have a partner account created on Mifily
     const filteredCoupons = activeAffiliateCoupons.filter(
       (affiliateCoupon) => filteredPartners[affiliateCoupon.affiliate_id],
     );

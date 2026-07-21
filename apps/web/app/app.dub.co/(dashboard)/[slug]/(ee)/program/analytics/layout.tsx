@@ -22,7 +22,7 @@ export default function ProgramAnalyticsLayout({
       title="Analytics"
       titleInfo={{
         title:
-          "Learn how to use Dub to track and measure your program's performance.",
+          "Learn how to use Mifily to track and measure your program's performance.",
         href: "https://dub.co/help/article/program-analytics",
       }}
     >

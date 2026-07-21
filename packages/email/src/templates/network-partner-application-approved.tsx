@@ -25,7 +25,7 @@ export default function NetworkPartnerApplicationApproved({
     <Html>
       <Head />
       <Preview>
-        Your application to join the Dub Network has been approved.
+        Your application to join the Mifily Network has been approved.
       </Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
@@ -35,7 +35,7 @@ export default function NetworkPartnerApplicationApproved({
                 src={DUB_WORDMARK}
                 width="65"
                 height="32"
-                alt="Dub"
+                alt="Mifily"
                 style={{
                   display: "block",
                   margin: "0 auto",
@@ -48,7 +48,7 @@ export default function NetworkPartnerApplicationApproved({
                 src="https://assets.dub.co/misc/program-marketplace-email-header.jpg"
                 width="500"
                 height="292"
-                alt="Dub Program Marketplace"
+                alt="Mifily Program Marketplace"
                 style={{
                   display: "block",
                   maxWidth: "100%",
@@ -63,14 +63,14 @@ export default function NetworkPartnerApplicationApproved({
             </Heading>
 
             <Text className="mx-auto mb-4 mt-0 max-w-[420px] text-center text-base leading-7 text-neutral-600">
-              Your application to join the <strong>Dub Network</strong> has been
+              Your application to join the <strong>Mifily Network</strong> has been
               approved. You can now apply to more programs on the marketplace,
               and get discovered by brands.
             </Text>
 
             <Section className="mb-8 text-center">
               <Link
-                href="https://partners.dub.co/marketplace"
+                href="https://partners.mifily.com/marketplace"
                 className="box-border inline-block rounded-lg bg-neutral-900 px-6 py-3 text-center text-sm font-medium text-white no-underline"
               >
                 View the marketplace

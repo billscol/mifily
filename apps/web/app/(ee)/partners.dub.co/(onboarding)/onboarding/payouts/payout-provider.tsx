@@ -54,7 +54,7 @@ export function PayoutProvider({
             target="_blank"
             className="cursor-help text-sm text-neutral-500 underline decoration-dotted underline-offset-2 transition-colors hover:text-neutral-800"
           >
-            Learn more about receiving payouts on Dub.
+            Learn more about receiving payouts on Mifily.
           </a>
         </div>
       </div>

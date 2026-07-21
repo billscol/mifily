@@ -58,7 +58,7 @@ export const saleWebhookEventSchema = z.object({
   metadata: metadataSchema,
 });
 
-// Schema of the payload sent to the webhook endpoint by Dub
+// Schema of the payload sent to the webhook endpoint by Mifily
 export const webhookPayloadSchema = z.object({
   id: z.string().describe("Unique identifier for the event."),
   event: z

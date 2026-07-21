@@ -5,7 +5,7 @@ import { bulkCreateLinks } from "../../../lib/api/links/bulk-create-links";
 import { syncTotalCommissions } from "../../../lib/api/partners/sync-total-commissions";
 
 // case A: sales come from coupon code only (https://dub.slack.com/archives/C08S54HTHA8/p1782854750091729?thread_ts=1782830134.684169&cid=C08S54HTHA8)
-// this variant is for handling cases where there are no paid commissions via Dub – just do a simple swap
+// this variant is for handling cases where there are no paid commissions via Mifily – just do a simple swap
 async function main() {
   const PROGRAM_ID = "prog_xxx";
 

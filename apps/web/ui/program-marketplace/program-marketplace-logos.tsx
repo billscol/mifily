@@ -8,7 +8,7 @@ const PROGRAM_MARKETPLACE_LOGOS_URL =
 const LOGOS = [
   // Perplexity
   { x: 0, y: 16, r: 22, s: 1 },
-  // Dub
+  // Mifily
   { x: 23, y: 0, r: -7, s: 0.7 },
   // Tella
   { x: 44, y: 24, r: 13, s: 0.8 },

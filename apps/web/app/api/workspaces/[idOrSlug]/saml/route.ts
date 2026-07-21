@@ -33,7 +33,7 @@ export const GET = withWorkspace(
 
     const connections = await apiController.getConnections({
       tenant: workspace.id,
-      product: "Dub",
+      product: "Mifily",
     });
 
     const response = {
@@ -76,7 +76,7 @@ export const POST = withWorkspace(
       defaultRedirectUrl: `${process.env.NEXTAUTH_URL}/auth/saml`,
       redirectUrl: process.env.NEXTAUTH_URL as string,
       tenant: workspace.id,
-      product: "Dub",
+      product: "Mifily",
     });
 
     await prisma.project.update({
@@ -106,7 +106,7 @@ export const DELETE = withWorkspace(
 
     const connections = await apiController.getConnections({
       tenant: workspace.id,
-      product: "Dub",
+      product: "Mifily",
     });
 
     const connection = connections.find(

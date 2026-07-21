@@ -237,7 +237,7 @@ function StepSlide({
 
       <div className="flex items-end justify-between">
         <span className="text-content-emphasis font-display max-w-[180px] text-2xl font-bold leading-8 sm:text-3xl">
-          Dub Partner Rewind &rsquo;25
+          Mifily Partner Rewind &rsquo;25
         </span>
 
         <div className="-mb-3 -mr-2 -mt-16 h-[260px] grow sm:-mb-6 sm:-mr-8 sm:h-[340px]">

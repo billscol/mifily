@@ -10,7 +10,7 @@ export default function AdminDomainsPage() {
         <p className="text-sm text-neutral-500">
           Create a domain-renewal invoice and charge the workspace default
           payment method for a premium .link domain. On success, the domain is
-          provisioned in Dub, but you'll need to register it manually via
+          provisioned in Mifily, but you'll need to register it manually via
           Dynadot (limitation of their API).
         </p>
         <RegisterPremiumDomain />
@@ -19,7 +19,7 @@ export default function AdminDomainsPage() {
         <h2 className="text-xl font-semibold">Renew domain (.link)</h2>
         <p className="text-sm text-neutral-500">
           Create a new domain-renewal invoice and charge the workspace default
-          payment method. On success, Stripe webhooks extend Dub expiry and
+          payment method. On success, Stripe webhooks extend Mifily expiry and
           re-enable Dynadot auto-renew. If the domain has already expired at
           Dynadot, you may still need to renew it in the Dynadot dashboard.
         </p>

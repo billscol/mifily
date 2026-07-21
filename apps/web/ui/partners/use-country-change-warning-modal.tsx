@@ -39,7 +39,7 @@ export function useCountryChangeWarningModal() {
           of payouts, and legal action.
         </p>
         <p className="mt-4">
-          Dub is not responsible for legal or tax consequences resulting from
+          Mifily is not responsible for legal or tax consequences resulting from
           misrepresentation.
         </p>
       </div>

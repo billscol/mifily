@@ -66,7 +66,7 @@ export async function invoicePaymentFailed(
             : attemptCount == 3
               ? "3rd notice: "
               : ""
-        }Your payment for Dub.co failed`,
+        }Your payment for Mifily failed`,
         react: (
           <FailedPayment
             attemptCount={attemptCount}

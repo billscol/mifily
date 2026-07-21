@@ -63,10 +63,10 @@ export default function PartnerReactivated({
             <Text className="text-sm leading-6 text-neutral-600">
               You can view your dashboard and links on{" "}
               <Link
-                href={`https://partners.dub.co/programs/${program.slug}`}
+                href={`https://partners.mifily.com/programs/${program.slug}`}
                 className="font-semibold text-neutral-700 underline underline-offset-2"
               >
-                partners.dub.co ↗
+                partners.mifily.com ↗
               </Link>
               .
             </Text>
@@ -74,7 +74,7 @@ export default function PartnerReactivated({
             <Text className="text-sm leading-6 text-neutral-600">
               If you have any questions, please{" "}
               <Link
-                href={`https://partners.dub.co/messages/${program.slug}`}
+                href={`https://partners.mifily.com/messages/${program.slug}`}
                 className="font-semibold text-neutral-700 underline underline-offset-2"
               >
                 reach out to the {program.name} team ↗

@@ -31,9 +31,9 @@ export const getApplicationSourceLabelTooltip = (
     };
   if (isMarketplaceReferralSource(referralSource))
     return {
-      label: "Dub Marketplace",
+      label: "Mifily Marketplace",
       tooltip:
-        "This application came from your [Dub Program Marketplace](https://partners.dub.co/marketplace) listing",
+        "This application came from your [Mifily Program Marketplace](https://partners.dub.co/marketplace) listing",
     };
   return {
     label: "Public application form",
@@ -44,7 +44,7 @@ export const getApplicationSourceLabelTooltip = (
 
 export const getReferralSourceDisplayValue = (referralSource: string) => {
   if (referralSource === MARKETPLACE_REFERRAL_SOURCE)
-    return "Dub Program Marketplace";
+    return "Mifily Program Marketplace";
   if (referralSource === "direct") return "Direct application";
   if (referralSource === "manual") return "Manual attribution";
   return referralSource;

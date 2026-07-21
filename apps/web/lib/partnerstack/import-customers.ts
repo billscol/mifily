@@ -58,7 +58,7 @@ export async function importCustomers(payload: PartnerStackImportPayload) {
       break;
     }
 
-    // Identify the Partner on Dub from PS partnership_key
+    // Identify the Partner on Mifily from PS partnership_key
     const partnerKeys = [
       ...new Set(customers.map(({ partnership_key }) => partnership_key)),
     ];

@@ -152,8 +152,8 @@ export async function checkoutSessionCompleted(
       sendBatchEmail(
         users.map((user) => ({
           to: user.email as string,
-          replyTo: "steven.tey@dub.co",
-          subject: "Welcome to your 14-day Dub trial",
+          replyTo: "support@mifily.com",
+          subject: "Welcome to your 14-day Mifily trial",
           react: TrialStartedEmail({
             email: user.email as string,
             plan: plan.name,

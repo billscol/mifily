@@ -58,7 +58,7 @@ function ImportPartnerStackModal({
         <MarkdownDescription className="text-center text-sm text-neutral-500">
           [Migrate your existing PartnerStack
           program](https://dub.co/help/article/migrating-from-partnerstack),
-          partners, and historical stats into Dub.
+          partners, and historical stats into Mifily.
         </MarkdownDescription>
       </div>
 

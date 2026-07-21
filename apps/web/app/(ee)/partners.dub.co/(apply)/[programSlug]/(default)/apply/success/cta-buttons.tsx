@@ -22,8 +22,8 @@ export function CTAButtons() {
           type="button"
           text={
             status === "authenticated"
-              ? "Continue to Dub Partners"
-              : "Create your Dub Partners account"
+              ? "Continue to Mifily Partners"
+              : "Create your Mifily Partners account"
           }
           className="border-[var(--brand)] bg-[var(--brand)] hover:bg-[var(--brand)] hover:ring-[var(--brand-ring)]"
         />
@@ -33,7 +33,7 @@ export function CTAButtons() {
           <Button
             type="button"
             variant="secondary"
-            text="Log in to Dub Partners"
+            text="Log in to Mifily Partners"
           />
         </Link>
       )}

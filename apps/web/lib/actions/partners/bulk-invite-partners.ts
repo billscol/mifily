@@ -102,7 +102,7 @@ export const bulkInvitePartnersAction = authActionClient
     });
 
     console.log(
-      `Created ${createdPartnersCount} out of ${emailsToInvite.length} provided partners (${emailsToInvite.length - createdPartnersCount} already exist on Dub)`,
+      `Created ${createdPartnersCount} out of ${emailsToInvite.length} provided partners (${emailsToInvite.length - createdPartnersCount} already exist on Mifily)`,
     );
 
     // Fetch the partners
@@ -211,7 +211,7 @@ export const bulkInvitePartnersAction = authActionClient
           partners.map((partner) => ({
             subject:
               inviteEmailData?.subject ||
-              `${program.name} invited you to join Dub Partners`,
+              `${program.name} invited you to join Mifily Partners`,
             variant: "notifications",
             from:
               emailDomains.length > 0

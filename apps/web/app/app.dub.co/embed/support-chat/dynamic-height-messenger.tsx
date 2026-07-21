@@ -9,7 +9,7 @@ export function SupportChatDynamicHeightMessenger() {
       const height = document.body.scrollHeight;
       window.parent.postMessage(
         {
-          originator: "Dub",
+          originator: "Mifily",
           event: "PAGE_HEIGHT",
           data: { height },
         },

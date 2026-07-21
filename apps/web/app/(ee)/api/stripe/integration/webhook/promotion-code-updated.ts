@@ -42,7 +42,7 @@ export async function promotionCodeUpdated(
     };
   }
 
-  // If the promotion code is not active, we need to remove them from Dub
+  // If the promotion code is not active, we need to remove them from Mifily
   const discountCode = await prisma.discountCode.findUnique({
     where: {
       programId_code: {

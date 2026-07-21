@@ -65,7 +65,7 @@ export const resendProgramInviteAction = authActionClient
         const programWebsite = group.partnerGroupDefaultLinks[0]?.url;
 
         await sendEmail({
-          subject: `${program.name} invited you to join Dub Partners`,
+          subject: `${program.name} invited you to join Mifily Partners`,
           variant: "notifications",
           to: partner.email!,
           replyTo: program.supportEmail || "noreply",

@@ -59,19 +59,19 @@ export default function PendingApplicationsSummary({
   date: Date;
 }) {
   const formattedDate = format(date, "MMM d, yyyy");
-  const applicationsUrl = `https://app.dub.co/${workspace.slug}/program/partners/applications`;
+  const applicationsUrl = `https://app.mifily.com/${workspace.slug}/program/partners/applications`;
 
   return (
     <Html>
       <Preview>
         You have {nFormatter(totalCount, { full: true })} pending applications
-        to review on Dub for {formattedDate}
+        to review on Mifily for {formattedDate}
       </Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] px-10 py-8">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
 
             <Heading className="mx-0 mb-5 mt-10 p-0 text-lg font-medium text-black">
@@ -86,7 +86,7 @@ export default function PendingApplicationsSummary({
                 href={applicationsUrl}
                 className="text-gray-600 underline underline-offset-4"
               >
-                review on Dub
+                review on Mifily
               </Link>
               . Reviewing these on time will keep your program running smoothly
               and provide a better partner experience.
@@ -154,7 +154,7 @@ export default function PendingApplicationsSummary({
 
             <Footer
               email={email}
-              notificationSettingsUrl={`https://app.dub.co/${workspace.slug}/settings/notifications`}
+              notificationSettingsUrl={`https://app.mifily.com/${workspace.slug}/settings/notifications`}
             />
           </Container>
         </Body>

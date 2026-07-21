@@ -12,7 +12,7 @@ export interface DubDiscountAttributes {
 }
 
 /**
- * Convert Dub Discount attributes to Stripe Coupon attributes
+ * Convert Mifily Discount attributes to Stripe Coupon attributes
  */
 export function dubDiscountToStripeCoupon(
   discount: DubDiscountAttributes & { name?: string },
@@ -47,7 +47,7 @@ export function dubDiscountToStripeCoupon(
 }
 
 /**
- * Convert Stripe Coupon attributes to Dub Discount attributes
+ * Convert Stripe Coupon attributes to Mifily Discount attributes
  */
 export function stripeCouponToDubDiscount(
   stripeCoupon: Stripe.Coupon,
@@ -58,7 +58,7 @@ export function stripeCouponToDubDiscount(
     : "flat";
   const amount = stripeCoupon.percent_off || stripeCoupon.amount_off || 0;
 
-  // Convert Stripe duration to Dub maxDuration
+  // Convert Stripe duration to Mifily maxDuration
   let maxDuration: number | null = null;
 
   switch (stripeCoupon.duration) {
@@ -83,7 +83,7 @@ export function stripeCouponToDubDiscount(
 }
 
 /**
- * Validate that a Stripe coupon can be converted to a Dub discount
+ * Validate that a Stripe coupon can be converted to a Mifily discount
  */
 export function validateStripeCouponForDubDiscount(
   stripeCoupon: Stripe.Coupon,

@@ -219,7 +219,7 @@ export const createStablecoinPayout = async ({
     ...new Set(allPayouts.map((p) => p.program.name)),
   ];
 
-  // Transfer the total of previously processed payouts to Dub's FA
+  // Transfer the total of previously processed payouts to Mifily's FA
   const amountToTransferToFA = previouslyProcessedPayouts.reduce(
     (acc, payout) => acc + payout.amount,
     0,
@@ -235,7 +235,7 @@ export const createStablecoinPayout = async ({
   const outboundPayment = await createStripeOutboundPayment({
     stripeRecipientId: partner.stripeRecipientId,
     amount: totalTransferableAmount,
-    description: `Dub Partners payout (${allPayoutsProgramNames.join(", ")})`,
+    description: `Mifily Partners payout (${allPayoutsProgramNames.join(", ")})`,
     idempotencyKey,
   });
 
@@ -341,7 +341,7 @@ export const createStablecoinPayout = async ({
     variant: "notifications",
     to: partner.email,
     subject: forceWithdrawal
-      ? `A withdrawal of ${currencyFormatter(amountToTransferToFA)} has been initiated from your Dub account`
+      ? `A withdrawal of ${currencyFormatter(amountToTransferToFA)} has been initiated from your Mifily account`
       : `You've received a ${currencyFormatter(firstPayout.amount)} payout from ${firstPayout.program.name}`,
     react: forceWithdrawal
       ? PartnerPayoutForceWithdrawal({

@@ -83,7 +83,7 @@ async function main() {
       usersToNotify.map((user) => ({
         to: user.email!,
         variant: "marketing",
-        subject: "Introducing the Dub Network Referral Bonus",
+        subject: "Introducing the Mifily Network Referral Bonus",
         templateName: "DubLaunchWeekDay5",
         templateProps: {
           email: user.email!,

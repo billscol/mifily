@@ -40,7 +40,7 @@ export default function ConnectedPaypalAccount({
 
             <Text className="mb-6 text-sm leading-6 text-neutral-600">
               Great news! Your PayPal account has been successfully connected to
-              your Dub partner account. You're all set to receive payouts.
+              your Mifily partner account. You're all set to receive payouts.
             </Text>
 
             {/* PayPal Account Details Card */}
@@ -72,7 +72,7 @@ export default function ConnectedPaypalAccount({
             {/* Action Buttons */}
             <Section className="mb-6">
               <Link
-                href="https://partners.dub.co/payouts"
+                href="https://partners.mifily.com/payouts"
                 className="box-border block w-full rounded-md bg-black px-0 py-3 text-center text-sm font-medium leading-none text-white no-underline"
               >
                 View payouts dashboard

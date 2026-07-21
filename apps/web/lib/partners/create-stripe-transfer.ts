@@ -197,7 +197,7 @@ export const createStripeTransfer = async ({
       // (even though the transfer could technically include payouts from multiple invoices)
       transfer_group: finalPayoutInvoiceId!,
       destination: partner.stripeConnectId,
-      description: `Dub Partners payout transfer (${allPayoutsProgramNames.join(", ")})`,
+      description: `Mifily Partners payout transfer (${allPayoutsProgramNames.join(", ")})`,
       // Omit `source_transaction` if prior processed payouts exist to ensure this transfer
       // never exceeds the original charge amount.
       ...(previouslyProcessedPayouts.length === 0 &&
@@ -305,7 +305,7 @@ export const createStripeTransfer = async ({
       variant: "notifications",
       to: partner.email,
       subject: forceWithdrawal
-        ? `A withdrawal of ${currencyFormatter(totalTransferableAmount)} has been initiated from your Dub account`
+        ? `A withdrawal of ${currencyFormatter(totalTransferableAmount)} has been initiated from your Mifily account`
         : `You've received a ${currencyFormatter(payout.amount)} payout from ${payout.program.name}`,
       react: forceWithdrawal
         ? PartnerPayoutForceWithdrawal({

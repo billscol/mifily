@@ -74,7 +74,7 @@ export const handleSlashCommand = async (req: Request) => {
     };
   }
 
-  // Find Dub user matching the Slack user profile
+  // Find Mifily user matching the Slack user profile
   const credentials = installation.credentials as SlackAuthToken;
   const slackUser = await findSlackUser({
     userId: data.user_id,
@@ -101,7 +101,7 @@ export const handleSlashCommand = async (req: Request) => {
           type: "section",
           text: {
             type: "plain_text",
-            text: "Unable to find Dub account matching your Slack account. Only Dub users can use this command.",
+            text: "Unable to find Mifily account matching your Slack account. Only Mifily users can use this command.",
           },
         },
       ],
@@ -140,7 +140,7 @@ export const handleSlashCommand = async (req: Request) => {
   };
 };
 
-// Find Dub user for the given Slack user
+// Find Mifily user for the given Slack user
 // TODO: Cache the profile for better performance
 const findSlackUser = async ({
   userId,
@@ -245,7 +245,7 @@ const createShortLink = async ({
         elements: [
           {
             type: "mrkdwn",
-            text: `*Created by* ${user.name} | ${createdAtDate} | <${APP_DOMAIN}/${workspace.slug}/links/${link.domain}/${link.key} | View on Dub>`,
+            text: `*Created by* ${user.name} | ${createdAtDate} | <${APP_DOMAIN}/${workspace.slug}/links/${link.domain}/${link.key} | View on Mifily>`,
           },
         ],
       },

@@ -81,7 +81,7 @@ function ImportTapfiliateModal({
         <MarkdownDescription className="text-center text-sm text-neutral-500">
           [Migrate your existing Tapfiliate
           program](https://dub.co/help/article/migrating-from-tapfiliate),
-          partners, and historical stats into Dub in just a few clicks.
+          partners, and historical stats into Mifily in just a few clicks.
         </MarkdownDescription>
       </div>
 

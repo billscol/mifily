@@ -63,13 +63,13 @@ export function UpgradeBanner() {
                 &nbsp;on your current plan
               </span>
               <span className="hidden md:inline">
-                . Upgrade to keep using Dub.
+                . Upgrade to keep using Mifily.
               </span>
             </>
           ) : (
             <>
               Your last payment failed. Please update your payment method to
-              continue using Dub.
+              continue using Mifily.
             </>
           )}
         </p>

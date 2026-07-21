@@ -71,7 +71,7 @@ export const sendOtpAction = actionClient
       (blacklistedEmailDomainTermsRegex &&
         blacklistedEmailDomainTermsRegex.test(emailDomain))
     ) {
-      // edge case: the user already has a partner account on Dub with this email address,
+      // edge case: the user already has a partner account on Mifily with this email address,
       // or they have an existing application for a program, we can allow them to continue
       const [isPartnerAccount, hasExistingApplications] = await Promise.all([
         prisma.partner.findUnique({
@@ -122,7 +122,7 @@ export const sendOtpAction = actionClient
       }),
 
       sendEmail({
-        subject: "Dub: OTP to verify your account",
+        subject: "Mifily: OTP to verify your account",
         to: email,
         react: VerifyEmail({
           email,

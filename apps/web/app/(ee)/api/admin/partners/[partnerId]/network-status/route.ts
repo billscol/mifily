@@ -98,8 +98,8 @@ export const PATCH = withAdmin(
           to: existingPartner.email,
           subject:
             updatedStatus === "approved"
-              ? "Your Dub Partner Network application was approved"
-              : "Dub Partner Network application update",
+              ? "Your Mifily Partner Network application was approved"
+              : "Mifily Partner Network application update",
           variant: "notifications",
           react:
             updatedStatus === "approved"

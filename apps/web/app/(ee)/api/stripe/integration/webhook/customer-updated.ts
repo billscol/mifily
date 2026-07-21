@@ -64,13 +64,13 @@ export async function customerUpdated(event: Stripe.CustomerUpdatedEvent) {
       });
 
       return {
-        response: `Dub customer with ID ${customer.id} updated.`,
+        response: `Mifily customer with ID ${customer.id} updated.`,
         workspaceId,
       };
     } catch (error) {
       console.error(error);
       return {
-        response: `Error updating Dub customer with ID ${customer.id}: ${error}`,
+        response: `Error updating Mifily customer with ID ${customer.id}: ${error}`,
         workspaceId,
       };
     }

@@ -43,7 +43,7 @@ export default function ProgramWelcome({
     logo: string | null;
   };
 }) {
-  const workspaceUrlPrefix = `https://app.dub.co/${workspace.slug}`;
+  const workspaceUrlPrefix = `https://app.mifily.com/${workspace.slug}`;
 
   return (
     <Html>
@@ -53,7 +53,7 @@ export default function ProgramWelcome({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] px-10 py-5">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
             <Heading className="mt-8 text-lg font-semibold leading-7 text-neutral-900">
               Congratulations on creating a program!

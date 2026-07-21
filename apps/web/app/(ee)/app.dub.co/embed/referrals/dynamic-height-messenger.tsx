@@ -9,7 +9,7 @@ export function DynamicHeightMessenger() {
       const height = document.body.scrollHeight;
       parent.postMessage(
         {
-          originator: "Dub",
+          originator: "Mifily",
           event: "PAGE_HEIGHT",
           data: { height },
         },

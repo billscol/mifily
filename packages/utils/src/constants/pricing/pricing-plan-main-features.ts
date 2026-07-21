@@ -81,7 +81,7 @@ export const PRICING_PLAN_MAIN_FEATURES = {
             text: "Free .link domain",
             tooltip: {
               title:
-                "Get a free .link custom domain for 1 year with any of Dub's paid plans.",
+                "Get a free .link custom domain for 1 year with any of Mifily's paid plans.",
               cta: "Learn more.",
               href: "https://dub.co/help/article/free-dot-link-domain",
             },
@@ -91,7 +91,7 @@ export const PRICING_PLAN_MAIN_FEATURES = {
             text: "Link folders",
             tooltip: {
               title:
-                "Organize and manage access to your links on Dub using folders.",
+                "Organize and manage access to your links on Mifily using folders.",
               cta: "Learn more.",
               href: "https://dub.co/help/article/link-folders",
             },
@@ -245,7 +245,7 @@ export const PRICING_PLAN_MAIN_FEATURES = {
             text: "AI landing page generator",
             tooltip: {
               title:
-                "Generate compelling landing pages using Dub AI to attract high-quality partners to join your program.",
+                "Generate compelling landing pages using Mifily AI to attract high-quality partners to join your program.",
               cta: "Learn more.",
               href: "https://dub.co/help/article/program-landing-page",
             },

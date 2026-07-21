@@ -28,7 +28,7 @@ export default function NotifyPartnerReapply({
       logo: "https://dubassets.com/programs/prog_CYCu7IMAapjkRpTnr8F1azjN/logo_HPEaC8P",
     },
     {
-      name: "Dub",
+      name: "Mifily",
       slug: "dub",
       logo: "https://dubassets.com/programs/prog_d8pl69xXCv4AoHNT281pHQdo/logo_TMLMTHs",
     },
@@ -91,7 +91,7 @@ export default function NotifyPartnerReapply({
                   </Column>
                   <Column className="text-right text-sm">
                     <Link
-                      href={`https://partners.dub.co/marketplace/${program.slug}`}
+                      href={`https://partners.mifily.com/marketplace/${program.slug}`}
                       className="rounded-lg border border-neutral-200 px-2 py-1 text-sm font-medium text-neutral-600 no-underline"
                     >
                       Reapply

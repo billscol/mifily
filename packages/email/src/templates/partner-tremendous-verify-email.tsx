@@ -30,7 +30,7 @@ export default function PartnerTremendousVerifyEmail({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] rounded border border-solid border-neutral-200 px-10 py-5">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
 
             <Heading className="mx-0 my-7 p-0 text-xl font-medium text-black">
@@ -39,7 +39,7 @@ export default function PartnerTremendousVerifyEmail({
 
             <Text className="mx-auto text-sm leading-6 text-neutral-600">
               Enter this code to verify your email address for gift card payouts
-              via Dub Partners:
+              via Mifily Partners:
             </Text>
 
             <Section className="my-8 rounded-lg border border-solid border-neutral-200">

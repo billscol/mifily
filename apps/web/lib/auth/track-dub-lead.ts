@@ -11,7 +11,7 @@ export const trackDubLead = async (user: User) => {
     return;
   }
 
-  // send the lead event to Dub
+  // send the lead event to Mifily
   await dub.track.lead({
     clickId,
     eventName: "Sign Up",

@@ -84,7 +84,7 @@ export const acceptProgramInviteAction = authPartnerActionClient
             programId,
             partnerIds: [enrolledPartner.id],
           }),
-          // 4. Execute Dub workflows using the “partnerEnrolled” trigger.
+          // 4. Execute Mifily workflows using the “partnerEnrolled” trigger.
           executeWorkflows({
             trigger: "partnerEnrolled",
             identity: {

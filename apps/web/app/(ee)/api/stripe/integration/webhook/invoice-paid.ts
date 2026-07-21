@@ -104,7 +104,7 @@ export async function invoicePaid(
 
     if (!workspace.defaultProgramId) {
       return {
-        response: `Customer with stripeCustomerId ${stripeCustomerId} not found on Dub and workspace has no default program, skipping...`,
+        response: `Customer with stripeCustomerId ${stripeCustomerId} not found on Mifily and workspace has no default program, skipping...`,
         workspaceId: workspace.id,
       };
     }
@@ -141,7 +141,7 @@ export async function invoicePaid(
 
     if (!customer) {
       return {
-        response: `Customer with stripeCustomerId ${stripeCustomerId} not found on Dub (nor does the connected customer ${stripeCustomerId} have a valid dubCustomerExternalId or partner discount code on the invoice), skipping...`,
+        response: `Customer with stripeCustomerId ${stripeCustomerId} not found on Mifily (nor does the connected customer ${stripeCustomerId} have a valid dubCustomerExternalId or partner discount code on the invoice), skipping...`,
         workspaceId: workspace.id,
       };
     }

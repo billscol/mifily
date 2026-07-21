@@ -50,7 +50,7 @@ export abstract class PostbackAdapter {
       url: this.postback.url,
       body: transformedPayload,
       headers: {
-        "Dub-Signature": signature,
+        "Mifily-Signature": signature,
         "Upstash-Hide-Headers": "true",
       },
     });

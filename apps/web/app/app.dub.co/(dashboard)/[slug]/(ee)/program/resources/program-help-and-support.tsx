@@ -124,7 +124,7 @@ export function ProgramHelpAndSupportContent({
 
           <SettingsRow
             heading="Messaging center"
-            description="Communicate with your partners directly inside Dub"
+            description="Communicate with your partners directly inside Mifily"
           >
             <div className="flex items-center justify-end">
               <div className="w-full max-w-md">

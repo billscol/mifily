@@ -39,7 +39,7 @@ export function SidePanel({
                 target="_blank"
                 className="text-neutral-600 decoration-dotted underline-offset-2 transition-colors hover:underline"
               >
-                <strong>Dub Partners</strong>
+                <strong>Mifily Partners</strong>
               </a>{" "}
               to power their affiliate program
             </p>
@@ -49,7 +49,7 @@ export function SidePanel({
         <>
           <div className="flex flex-col gap-6 px-4 lg:px-10">
             <p className="text-content-default max-w-[370px] text-pretty text-xl font-medium">
-              Join thousands of others who have earned over $10,000,000 on Dub
+              Join thousands of others who have earned over $10,000,000 on Mifily
               partnering with world-class companies.
             </p>
             <Link

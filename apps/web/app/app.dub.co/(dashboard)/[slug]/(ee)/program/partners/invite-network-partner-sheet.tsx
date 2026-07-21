@@ -57,7 +57,7 @@ function InviteNetworkPartnerSheetContent({
 
   const defaultEmailContent = useMemo<EmailContent>(() => {
     return getProgramNetworkInviteEmailDefaults({
-      programName: program?.name || "Dub",
+      programName: program?.name || "Mifily",
       partnerName: partner.name,
     });
   }, [program?.name, partner.name]);

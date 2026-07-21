@@ -27,7 +27,7 @@ export default function ConnectPayoutReminder({
     },
     {
       id: "2",
-      name: "Dub",
+      name: "Mifily",
       logo: "https://dubassets.com/programs/prog_d8pl69xXCv4AoHNT281pHQdo/logo_TMLMTHs",
       amount: 40_24,
     },
@@ -60,7 +60,7 @@ export default function ConnectPayoutReminder({
             </Heading>
 
             <Text className="text-sm leading-6 text-neutral-600">
-              You have pending rewards on Dub Partners, but you need to{" "}
+              You have pending rewards on Mifily Partners, but you need to{" "}
               <Link
                 href="https://dub.co/help/article/receiving-payouts"
                 className="font-semibold text-black underline"
@@ -103,14 +103,14 @@ export default function ConnectPayoutReminder({
             </Section>
 
             <Text className="text-sm leading-6 text-neutral-600">
-              If you haven't already, please create a partner account on Dub
+              If you haven't already, please create a partner account on Mifily
               with your <strong className="underline">{email}</strong> email and
               set up your payout details.
             </Text>
 
             <Section className="mt-8 text-center">
               <Link
-                href={`https://partners.dub.co/register?email=${email}&next=/payouts`}
+                href={`https://partners.mifily.com/register?email=${email}&next=/payouts`}
                 className="box-border block w-full rounded-md bg-black px-0 py-4 text-center text-sm font-medium leading-none text-white no-underline"
               >
                 Connect payout details
@@ -119,7 +119,7 @@ export default function ConnectPayoutReminder({
 
             <Footer
               email={email}
-              notificationSettingsUrl="https://partners.dub.co/profile/notifications"
+              notificationSettingsUrl="https://partners.mifily.com/profile/notifications"
             />
           </Container>
         </Body>

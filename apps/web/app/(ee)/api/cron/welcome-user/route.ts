@@ -68,8 +68,8 @@ export async function POST(req: Request) {
     if (isPartner) {
       await sendEmail({
         to: user.email,
-        replyTo: "steven.tey@dub.co",
-        subject: "Welcome to Dub Partners!",
+        replyTo: "support@mifily.com",
+        subject: "Welcome to Mifily Partners!",
         react: WelcomeEmailPartner({
           email: user.email,
           name: user.name,
@@ -88,8 +88,8 @@ export async function POST(req: Request) {
     ) {
       await sendEmail({
         to: user.email,
-        replyTo: "steven.tey@dub.co",
-        subject: "Welcome to Dub!",
+        replyTo: "support@mifily.com",
+        subject: "Welcome to Mifily!",
         react: WelcomeEmail({
           email: user.email,
           workspace: user.projects[0].project,

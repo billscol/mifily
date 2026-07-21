@@ -24,22 +24,22 @@ export default function NetworkPartnerApplicationRejected({
   return (
     <Html>
       <Head />
-      <Preview>Dub Partner Network application update</Preview>
+      <Preview>Mifily Partner Network application update</Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-8 max-w-[600px] px-8 py-8">
             <Section className="mt-2">
-              <Img src={DUB_WORDMARK} width="61" height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} width="61" height="32" alt="Mifily" />
             </Section>
 
             <Heading className="mx-0 mb-8 mt-10 p-0 text-xl font-semibold text-neutral-900">
-              Dub Partner Network application update
+              Mifily Partner Network application update
             </Heading>
 
             <Text className="text-sm leading-6 text-neutral-600">
               {name ? `Hi ${name}, t` : "T"}hanks for your interest in joining
               the{" "}
-              <strong className="text-neutral-800">Dub Partner Network</strong>.
+              <strong className="text-neutral-800">Mifily Partner Network</strong>.
             </Text>
 
             <Text className="text-sm leading-6 text-neutral-600">
@@ -48,7 +48,7 @@ export default function NetworkPartnerApplicationRejected({
             </Text>
 
             <Text className="text-sm font-semibold leading-6 text-neutral-800">
-              Please note that this Dub Partner Network rejection only affects
+              Please note that this Mifily Partner Network rejection only affects
               your access to the{" "}
               <Link
                 className="text-neutral-800 underline"
@@ -69,7 +69,7 @@ export default function NetworkPartnerApplicationRejected({
             <Section className="mb-10 mt-8">
               <Link
                 className="rounded-lg bg-neutral-900 px-6 py-3 text-[13px] font-medium text-white no-underline"
-                href="https://partners.dub.co"
+                href="https://partners.mifily.com"
               >
                 View dashboard
               </Link>
@@ -77,7 +77,7 @@ export default function NetworkPartnerApplicationRejected({
 
             <Footer
               email={email}
-              notificationSettingsUrl="https://partners.dub.co/profile/notifications"
+              notificationSettingsUrl="https://partners.mifily.com/profile/notifications"
             />
           </Container>
         </Body>

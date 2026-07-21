@@ -123,7 +123,7 @@ export default function PartnerIdentityVerificationFailed({
               <Section className="mb-10 mt-6">
                 <Link
                   className="rounded-lg bg-neutral-900 px-6 py-3 text-[13px] font-medium text-white no-underline"
-                  href="https://partners.dub.co/profile"
+                  href="https://partners.mifily.com/profile"
                 >
                   Go to your dashboard
                 </Link>

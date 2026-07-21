@@ -37,7 +37,7 @@ export function DefaultDomainSelector() {
           title="Connect a custom domain"
           description={
             product === "links"
-              ? "Already have a domain? Connect it to your Dub workspace."
+              ? "Already have a domain? Connect it to your Mifily workspace."
               : undefined
           }
           features={

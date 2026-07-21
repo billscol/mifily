@@ -27,15 +27,15 @@ export default function WelcomeEmailPartner({
   return (
     <Html>
       <Head />
-      <Preview>Welcome to Dub Partners</Preview>
+      <Preview>Welcome to Mifily Partners</Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] rounded border border-solid border-neutral-200 px-10 py-5">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
             <Heading className="mx-0 my-7 p-0 text-xl font-semibold text-black">
-              Welcome {name || "to Dub Partners"}!
+              Welcome {name || "to Mifily Partners"}!
             </Heading>
             <Text className="mb-8 text-sm leading-6 text-gray-600">
               We're excited to have you onboard. Time to start earning rewards
@@ -60,7 +60,7 @@ export default function WelcomeEmailPartner({
                 filling out your partner profile
               </Link>{" "}
               and verifying your social platforms, which will allow you to start
-              applying to programs on Dub.
+              applying to programs on Mifily.
             </Text>
 
             <Text className="mb-4 text-sm leading-6 text-gray-600">
@@ -108,7 +108,7 @@ export default function WelcomeEmailPartner({
                 href="https://dub.co/help/article/receiving-payouts"
                 className="font-semibold text-black underline underline-offset-4"
               >
-                receiving payouts on Dub
+                receiving payouts on Mifily
               </Link>
               .
             </Text>

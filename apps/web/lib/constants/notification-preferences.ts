@@ -1,7 +1,7 @@
 // User-level notification preferences for email communications
 export const NOTIFICATION_PREFERENCE_TYPES = [
-  "dubLinks", // Dub Links product updates on app.dub.co
-  "dubPartners", // Dub Partners product updates on app.dub.co
+  "dubLinks", // Mifily Links product updates on app.dub.co
+  "dubPartners", // Mifily Partners product updates on app.dub.co
   "partnerAccount", // Updates to partner accounts on partners.dub.co
 ] as const;
 
@@ -34,15 +34,15 @@ export const NOTIFICATION_PREFERENCE_LABELS: Record<
   { title: string; description: string; link: string }
 > = {
   dubLinks: {
-    title: "Dub Links",
+    title: "Mifily Links",
     description:
-      "New Dub Links features and guides on how to manage and track your links",
+      "New Mifily Links features and guides on how to manage and track your links",
     link: "https://dub.co/links",
   },
   dubPartners: {
-    title: "Dub Partners",
+    title: "Mifily Partners",
     description:
-      "New Dub Partners features and tips on how to grow your affiliate program",
+      "New Mifily Partners features and tips on how to grow your affiliate program",
     link: "https://dub.co/partners",
   },
   partnerAccount: {

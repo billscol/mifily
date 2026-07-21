@@ -206,7 +206,7 @@ export function AnalyticsToggle({
               ) : (
                 <div className="flex items-center text-lg font-semibold text-neutral-800">
                   <BlurImage
-                    alt={url || "Dub"}
+                    alt={url || "Mifily"}
                     src={
                       url
                         ? `${GOOGLE_FAVICON_URL}${getApexDomain(url)}`

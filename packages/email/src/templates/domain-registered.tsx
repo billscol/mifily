@@ -31,7 +31,7 @@ export default function DomainRegistered({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] rounded border border-solid border-neutral-200 px-10 py-5">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
             <Heading className="mx-0 my-7 p-0 text-lg font-medium text-black">
               Your premium .link domain has been registered!
@@ -39,9 +39,9 @@ export default function DomainRegistered({
             <Text className="text-sm leading-6 text-black">
               Your premium domain{" "}
               <code className="text-purple-600">{domain}</code> has been
-              successfully registered for your Dub workspace{" "}
+              successfully registered for your Mifily workspace{" "}
               <Link
-                href={`https://app.dub.co/${workspaceSlug}`}
+                href={`https://app.mifily.com/${workspaceSlug}`}
                 className="font-medium text-blue-600 no-underline"
               >
                 {workspaceSlug}↗
@@ -51,7 +51,7 @@ export default function DomainRegistered({
             <Section className="my-8">
               <Link
                 className="rounded-lg bg-black px-6 py-3 text-center text-[12px] font-semibold text-white no-underline"
-                href={`https://app.dub.co/${workspaceSlug}/settings/domains`}
+                href={`https://app.mifily.com/${workspaceSlug}/settings/domains`}
               >
                 Manage your domain
               </Link>

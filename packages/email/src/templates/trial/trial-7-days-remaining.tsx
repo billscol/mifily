@@ -17,14 +17,14 @@ export default function Trial7DaysRemainingEmail({
     <Html>
       <Head />
       <Preview>
-        Here are some resources to help you get the most out of your Dub trial.
+        Here are some resources to help you get the most out of your Mifily trial.
       </Preview>
       <Body style={bodyStyle}>
         <Text style={pStyle}>Hi {name ? name.split(" ")[0] : "there"},</Text>
 
         <Text style={pStyle}>
-          We're officially halfway through your Dub {capitalize(plan)} trial, so
-          I wanted to check in here and see if you need any help – do you have
+          We're officially halfway through your Mifily {capitalize(plan)} trial, so
+          we wanted to check in here and see if you need any help – do you have
           any questions or blockers?
         </Text>
 
@@ -37,27 +37,27 @@ export default function Trial7DaysRemainingEmail({
           <Link href="https://dub.co/docs" style={linkStyle}>
             documentation
           </Link>{" "}
-          to learn more about Dub and our various use cases.
+          to learn more about Mifily and our various use cases.
         </Text>
 
         <Text style={pStyle}>
-          Excited to see how you plan to use Dub! Thank you for giving us a
+          Excited to see how you plan to use Mifily! Thank you for giving us a
           chance 🙏
         </Text>
 
         <Text style={{ ...pStyle, marginBottom: 0 }}>
           Best,
           <br />
-          Steven – Founder,{" "}
-          <Link href="https://dub.co" style={linkStyle}>
-            Dub.co
+          The Mifily Team –{" "}
+          <Link href="https://mifily.com" style={linkStyle}>
+            Mifily
           </Link>
         </Text>
 
         <Text style={footerStyle}>
-          If you&apos;d like me to stop sending you emails, please{" "}
+          If you&apos;d like to stop receiving these emails, please{" "}
           <Link
-            href="https://app.dub.co/account/settings"
+            href="https://app.mifily.com/account/settings"
             style={footerLinkStyle}
           >
             click here

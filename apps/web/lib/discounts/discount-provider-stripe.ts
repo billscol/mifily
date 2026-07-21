@@ -22,7 +22,7 @@ async function requireInstalledIntegration(
   if (!workspace.stripeConnectId) {
     throw new DiscountIntegrationNotAvailableError({
       message:
-        "STRIPE_CONNECTION_REQUIRED: Your workspace isn't connected to Stripe yet. Please install the Dub Stripe app in settings to create a discount.",
+        "STRIPE_CONNECTION_REQUIRED: Your workspace isn't connected to Stripe yet. Please install the Mifily Stripe app in settings to create a discount.",
     });
   }
 
@@ -36,7 +36,7 @@ async function requireInstalledIntegration(
   if (!installation) {
     throw new DiscountIntegrationNotAvailableError({
       message:
-        "STRIPE_CONNECTION_REQUIRED: Your workspace isn't connected to Stripe yet. Please install the Dub Stripe app in settings to create a discount.",
+        "STRIPE_CONNECTION_REQUIRED: Your workspace isn't connected to Stripe yet. Please install the Mifily Stripe app in settings to create a discount.",
     });
   }
 
@@ -69,7 +69,7 @@ function createStripeDiscountProvider() {
         stripeAccount: workspace.stripeConnectId!,
       });
 
-      // Validate the Stripe coupon can be converted to a Dub discount
+      // Validate the Stripe coupon can be converted to a Mifily discount
       const validation = validateStripeCouponForDubDiscount(coupon);
       if (!validation.isValid) {
         throw new Error(
@@ -107,7 +107,7 @@ function createStripeDiscountProvider() {
     });
 
     const stripeCouponData = dubDiscountToStripeCoupon({
-      name: `Dub Discount (${truncate(group.name, 25)})`,
+      name: `Mifily Discount (${truncate(group.name, 25)})`,
       amount: data.amount,
       type: data.type,
       maxDuration: data.maxDuration ?? null,

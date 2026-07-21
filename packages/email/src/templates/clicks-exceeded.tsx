@@ -37,7 +37,7 @@ export default function ClicksExceeded({
     <Html>
       <Head />
       <Preview>
-        Your Dub workspace, {name || ""} has exceeded the{" "}
+        Your Mifily workspace, {name || ""} has exceeded the{" "}
         {capitalize(plan) || ""} Plan limit of {nFormatter(usageLimit)} link
         clicks/month.
       </Preview>
@@ -45,15 +45,15 @@ export default function ClicksExceeded({
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] rounded border border-solid border-neutral-200 px-10 py-5">
             <Section className="mt-8">
-              <Img src={DUB_WORDMARK} height="32" alt="Dub" />
+              <Img src={DUB_WORDMARK} height="32" alt="Mifily" />
             </Section>
             <Heading className="mx-0 my-7 p-0 text-lg font-medium text-black">
               Clicks Limit Exceeded
             </Heading>
             <Text className="text-sm leading-6 text-black">
-              Your Dub workspace,{" "}
+              Your Mifily workspace,{" "}
               <Link
-                href={`https://app.dub.co/${slug}`}
+                href={`https://app.mifily.com/${slug}`}
                 className="text-black underline"
               >
                 <strong>{name}</strong>

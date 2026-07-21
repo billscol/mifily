@@ -144,7 +144,7 @@ export async function importCampaigns(payload: RewardfulImportPayload) {
           },
           event: EventType.sale,
           // if max_commissions is 1 OR max_commission_period_months is 0,
-          // map to Dub's maxDuration = 0 ("for the first sale").
+          // map to Mifily's maxDuration = 0 ("for the first sale").
           maxDuration:
             max_commissions === 1 || max_commission_period_months === 0
               ? 0
@@ -169,7 +169,7 @@ export async function importCampaigns(payload: RewardfulImportPayload) {
     }
 
     // Note: Interestingly, Rewardful's API can sometimes return `stripe_coupon_id: null`
-    // even when the campaign has a valid Stripe coupon. In these cases we'd need to manually recreate the discount on Dub.
+    // even when the campaign has a valid Stripe coupon. In these cases we'd need to manually recreate the discount on Mifily.
     if (!createdGroup.discountId && campaign.stripe_coupon_id) {
       let dubDiscountAttrs: DubDiscountAttributes | undefined;
 
@@ -182,10 +182,10 @@ export async function importCampaigns(payload: RewardfulImportPayload) {
             },
           );
 
-          // Validate the Stripe coupon can be converted to a Dub discount
+          // Validate the Stripe coupon can be converted to a Mifily discount
           const validation = validateStripeCouponForDubDiscount(stripeCoupon);
           if (validation.isValid) {
-            // Convert Stripe coupon to Dub discount attributes
+            // Convert Stripe coupon to Mifily discount attributes
             dubDiscountAttrs = stripeCouponToDubDiscount(stripeCoupon);
           } else {
             console.error(

@@ -12,15 +12,15 @@ export function ProgramPayoutModeSection() {
   const payoutModeOptions = [
     {
       value: ProgramPayoutMode.hybrid,
-      label: "Dub and external (Hybrid)",
+      label: "Mifily and external (Hybrid)",
       description:
-        "Partners with connected bank accounts are paid directly by Dub. Those linked by tenant ID receive payouts externally through the webhook.",
+        "Partners with connected bank accounts are paid directly by Mifily. Those linked by tenant ID receive payouts externally through the webhook.",
     },
     {
       value: ProgramPayoutMode.external,
       label: "External only",
       description:
-        "Every payout is processed externally through your platform's webhook integration. Dub does not handle any direct transfers.",
+        "Every payout is processed externally through your platform's webhook integration. Mifily does not handle any direct transfers.",
     },
   ];
 

@@ -66,7 +66,7 @@ export default function DefaultPayoutMethodChanged({
 
             <Section className="mb-6">
               <Link
-                href="https://partners.dub.co/payouts?settings=true"
+                href="https://partners.mifily.com/payouts?settings=true"
                 className="box-border block w-full rounded-md bg-black px-0 py-3 text-center text-sm font-medium leading-none text-white no-underline"
               >
                 View payout settings

@@ -20,8 +20,8 @@ export const getProgramNetworkInviteEmailDefaults = ({
   const partnerName = getNetworkPartnerDisplayName(partnerNameProp);
 
   return {
-    subject: `${programName} invited you to join on Dub Partners`,
+    subject: `${programName} invited you to join on Mifily Partners`,
     title: "You're getting noticed!",
-    body: `Hi ${partnerName}, ${programName} found you on the Dub Partner Network and invited you to join their partner program.`,
+    body: `Hi ${partnerName}, ${programName} found you on the Mifily Partner Network and invited you to join their partner program.`,
   };
 };

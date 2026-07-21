@@ -60,7 +60,7 @@ export async function scheduleDelayedPayouts({
   }
 }
 
-// For payouts that move funds out of Dub's balance directly (stablecoin, PayPal, Tremendous),
+// For payouts that move funds out of Mifily's balance directly (stablecoin, PayPal, Tremendous),
 // schedule a cron job at `available_on + 15 minutes`. These payout methods do not support
 // `source_transaction`, so they must be triggered only after the funding charge's funds settle —
 // otherwise we'd be fronting money on a card charge that can still be reversed before it posts.

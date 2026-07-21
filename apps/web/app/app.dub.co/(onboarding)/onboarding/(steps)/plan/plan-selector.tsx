@@ -276,7 +276,7 @@ export function PlanSelector({ product }: { product: OnboardingProduct }) {
                           <span className="text-content-default block text-sm">
                             Includes{" "}
                             <strong className="font-semibold">
-                              Dub {product === "links" ? "Partners" : "Links"}
+                              Mifily {product === "links" ? "Partners" : "Links"}
                             </strong>
                           </span>
                         </div>

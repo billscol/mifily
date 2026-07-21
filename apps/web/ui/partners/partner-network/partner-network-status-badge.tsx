@@ -25,7 +25,7 @@ export function PartnerNetworkStatusBadge({
                 Approved Partner
               </span>
               <span className="text-sm font-normal text-neutral-600">
-                This partner is approved in the Dub Partner Network.
+                This partner is approved in the Mifily Partner Network.
               </span>
             </div>
           </div>

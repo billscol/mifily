@@ -162,7 +162,7 @@ export async function sendTremendousPayouts({
       delivery: {
         method: "LINK",
         meta: {
-          message: `Dub Partners payout (${[...new Set(allPayouts.map((p) => p.program.name))].join(", ")})`,
+          message: `Mifily Partners payout (${[...new Set(allPayouts.map((p) => p.program.name))].join(", ")})`,
         },
       },
     },
@@ -276,7 +276,7 @@ export async function sendTremendousPayouts({
       variant: "notifications",
       to: partner.email,
       subject: forceWithdrawal
-        ? `A withdrawal of ${formattedAmount} has been initiated from your Dub account`
+        ? `A withdrawal of ${formattedAmount} has been initiated from your Mifily account`
         : `You've received a ${formattedAmount} reward from ${payout.program.name}`,
       react: PartnerTremendousPayout({
         email: partner.email,

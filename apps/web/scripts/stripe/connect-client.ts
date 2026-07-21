@@ -5,7 +5,7 @@ export const stripeConnectClient = new Stripe(
   {
     apiVersion: "2025-05-28.basil",
     appInfo: {
-      name: "Dub.co",
+      name: "Mifily.co",
       version: "0.1.0",
     },
   },

@@ -36,7 +36,7 @@ export function PartnerBanner({
           target="_blank"
           className="font-semibold text-neutral-600 decoration-dotted underline-offset-2 transition-colors hover:underline"
         >
-          Dub Partners
+          Mifily Partners
         </a>{" "}
         to power their affiliate program
       </p>

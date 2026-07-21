@@ -210,7 +210,7 @@ async function handler(req: Request) {
                   periodStart,
                   periodEnd,
                   amount: totalEarnings,
-                  description: `Dub Partners payout${programName ? ` (${programName})` : ""}`,
+                  description: `Mifily Partners payout${programName ? ` (${programName})` : ""}`,
                 },
               });
             }

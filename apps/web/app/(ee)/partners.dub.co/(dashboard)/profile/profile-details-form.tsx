@@ -88,7 +88,7 @@ export function ProfileDetailsForm({
       <SettingsRow
         id="info"
         heading="Basic information"
-        description="Your core details, and information that's required to set up your Dub Partner account."
+        description="Your core details, and information that's required to set up your Mifily Partner account."
       >
         <FormProvider {...basicInfoForm}>
           <BasicInfoForm

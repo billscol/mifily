@@ -1150,7 +1150,7 @@ export function EmbedPreview({ group }: { group: GroupWithProgramProps }) {
                     style={{ whiteSpace: "pre" }}
                   >
                     <tspan x="82.126" y="733.091">
-                      Sharing is caring! Recommend Dub{" "}
+                      Sharing is caring! Recommend Mifily{" "}
                     </tspan>
                     <tspan x="80.556" y="753.091">
                       to all your friends, family, and social{" "}

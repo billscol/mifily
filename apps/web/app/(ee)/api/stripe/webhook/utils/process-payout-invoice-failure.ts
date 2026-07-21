@@ -89,8 +89,8 @@ export async function processPayoutInvoiceFailure({
       const { paymentIntent, paymentMethod } = await createPaymentIntent({
         stripeId: workspace.stripeId,
         amount: PAYOUT_FAILURE_FEE_CENTS,
-        description: `Dub Partners payout failure fee for invoice ${invoice.id}`,
-        statementDescriptor: "Dub Partners",
+        description: `Mifily Partners payout failure fee for invoice ${invoice.id}`,
+        statementDescriptor: "Mifily Partners",
       });
 
       if (paymentIntent) {

@@ -24,12 +24,14 @@ export const API_HOSTNAMES = new Set([
   "api.localhost",
 ]);
 
+// NOTE: this used to key off NEXT_PUBLIC_VERCEL_ENV (Vercel-only), which is
+// never set in this self-hosted deployment - that made API_DOMAIN/PARTNERS_DOMAIN
+// silently resolve to the localhost fallback in production. Switched to
+// NODE_ENV to match APP_DOMAIN above.
 export const API_DOMAIN =
-  process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
-    ? "https://api.dub.co"
-    : process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"
-      ? "https://api-staging.dub.co"
-      : "http://api.localhost:8888";
+  process.env.NODE_ENV === "production"
+    ? "https://api.mifily.com"
+    : "http://api.localhost:8888";
 
 export const ADMIN_HOSTNAMES = new Set([
   "admin.dub.co",
@@ -38,6 +40,7 @@ export const ADMIN_HOSTNAMES = new Set([
 ]);
 
 export const PARTNERS_HOSTNAMES = new Set([
+  "partners.mifily.com",
   "partners.dub.co",
   "partners-staging.dub.co",
   "partners.localhost:8888",
@@ -45,18 +48,14 @@ export const PARTNERS_HOSTNAMES = new Set([
 ]);
 
 export const PARTNERS_DOMAIN =
-  process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
-    ? "https://partners.dub.co"
-    : process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"
-      ? "https://partners-staging.dub.co"
-      : "http://partners.localhost:8888";
+  process.env.NODE_ENV === "production"
+    ? "https://partners.mifily.com"
+    : "http://partners.localhost:8888";
 
 export const PARTNERS_DOMAIN_WITH_NGROK =
-  process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
-    ? "https://partners.dub.co"
-    : process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"
-      ? "https://partners-staging.dub.co"
-      : process.env.NEXT_PUBLIC_NGROK_URL || "http://partners.localhost:8888";
+  process.env.NODE_ENV === "production"
+    ? "https://partners.mifily.com"
+    : process.env.NEXT_PUBLIC_NGROK_URL || "http://partners.localhost:8888";
 
 export const DUB_LOGO = "https://assets.dub.co/logo.png";
 export const DUB_LOGO_SQUARE = "https://assets.dub.co/logo-square.png";

@@ -40,7 +40,7 @@ async function requireInstalledIntegration(
   if (!workspace.shopifyStoreId) {
     throw new DiscountIntegrationNotAvailableError({
       message:
-        "SHOPIFY_CONNECTION_REQUIRED: Your workspace isn't connected to Shopify yet. Please install the Dub Shopify app in settings to create a discount.",
+        "SHOPIFY_CONNECTION_REQUIRED: Your workspace isn't connected to Shopify yet. Please install the Mifily Shopify app in settings to create a discount.",
     });
   }
 
@@ -54,7 +54,7 @@ async function requireInstalledIntegration(
   if (!installation) {
     throw new DiscountIntegrationNotAvailableError({
       message:
-        "SHOPIFY_CONNECTION_REQUIRED: Your workspace isn't connected to Shopify yet. Please install the Dub Shopify app in settings to create a discount.",
+        "SHOPIFY_CONNECTION_REQUIRED: Your workspace isn't connected to Shopify yet. Please install the Mifily Shopify app in settings to create a discount.",
     });
   }
 
@@ -65,7 +65,7 @@ async function requireInstalledIntegration(
   if (!credentials?.scope?.includes("write_discounts")) {
     throw new DiscountIntegrationNotAvailableError({
       message:
-        "SHOPIFY_APP_UPGRADE_REQUIRED: Your connected Shopify store doesn't have permission to create discount codes. Please reinstall or upgrade the Dub Shopify app.",
+        "SHOPIFY_APP_UPGRADE_REQUIRED: Your connected Shopify store doesn't have permission to create discount codes. Please reinstall or upgrade the Mifily Shopify app.",
     });
   }
 
@@ -102,7 +102,7 @@ function createShopifyDiscountProvider() {
   }) => {
     const { credentials } = await requireInstalledIntegration(workspace);
 
-    // Map Dub's maxDuration (months) to Shopify's recurringCycleLimit (subscription billing cycles):
+    // Map Mifily's maxDuration (months) to Shopify's recurringCycleLimit (subscription billing cycles):
     // - null  -> 0 (Shopify: applies indefinitely / forever)
     // - 0     -> 1 (one-time only -> only first subscription cycle)
     // - N     -> N (applies for N billing cycles)
@@ -150,7 +150,7 @@ function createShopifyDiscountProvider() {
           `,
           variables: {
             basicCodeDiscount: {
-              title: `Dub Discount (${currentCode})`,
+              title: `Mifily Discount (${currentCode})`,
               code: currentCode.toUpperCase(),
               startsAt: new Date().toISOString(),
               customerSelection: { all: true },

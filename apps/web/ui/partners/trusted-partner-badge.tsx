@@ -32,7 +32,7 @@ export function TrustedPartnerBadge({
               Trusted Partner
             </span>
             <span className="text-sm font-normal text-neutral-600">
-              This partner is a top-performer and trusted on the Dub Partner
+              This partner is a top-performer and trusted on the Mifily Partner
               Network.
             </span>
           </div>

@@ -48,7 +48,7 @@ type Input = z.infer<typeof inputSchema>;
  * 5. **Trigger Draft Bounty Submission Creation**: Triggers the creation of
  *    draft bounty submissions for the partner if they are eligible for performance bounties.
  *
- * 6. **Execute Dub Workflows**: Executes Dub workflows using the “partnerEnrolled” trigger.
+ * 6. **Execute Mifily Workflows**: Executes Mifily workflows using the “partnerEnrolled” trigger.
  */
 
 // POST /api/workflows/partner-approved
@@ -305,7 +305,7 @@ export const { POST } = serve<Input>(
       });
     });
 
-    // Step 6: Execute Dub workflows using the “partnerEnrolled” trigger.
+    // Step 6: Execute Mifily workflows using the “partnerEnrolled” trigger.
     await context.run("execute-workflows", async () => {
       await executeWorkflows({
         trigger: "partnerEnrolled",

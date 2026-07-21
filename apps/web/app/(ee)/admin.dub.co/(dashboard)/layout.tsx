@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { AdminNav } from "./layout-nav-client";
 
 export const metadata = constructMetadata({
-  title: "Dub Admin",
+  title: "Mifily Admin",
   noIndex: true,
 });
 

@@ -8,7 +8,7 @@ export default function PartnerProgramOverviewPage() {
       title="Overview"
       titleInfo={{
         title:
-          "Learn how to measure your performance, manage your referral links, and view your earnings for a program on Dub.",
+          "Learn how to measure your performance, manage your referral links, and view your earnings for a program on Mifily.",
         href: "https://dub.co/help/article/navigating-partner-program",
       }}
       controls={<HideProgramDetailsButton />}

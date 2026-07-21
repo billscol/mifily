@@ -27,14 +27,14 @@ export function ExceededEventsLimit() {
               onClick={() => openTrialLimitModal("clicks")}
               className="hover:text-content-emphasis underline decoration-dotted underline-offset-2 transition-colors"
             >
-              Start paid plan to keep using Dub.
+              Start paid plan to keep using Mifily.
             </button>
           ) : (
             <Link
               href={`/${slug}/settings/billing`}
               className="hover:text-content-emphasis underline decoration-dotted underline-offset-2 transition-colors"
             >
-              Upgrade to keep using Dub.
+              Upgrade to keep using Mifily.
             </Link>
           )}
         </p>

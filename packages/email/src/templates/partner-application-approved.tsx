@@ -147,7 +147,7 @@ export default function PartnerApplicationApproved({
             <Text className="ml-1 text-sm leading-5 text-black">
               1. Find your unique referral links in the{" "}
               <Link
-                href={`https://partners.dub.co/programs/${program.slug}/links`}
+                href={`https://partners.mifily.com/programs/${program.slug}/links`}
                 className="font-semibold text-black underline"
               >
                 Links
@@ -163,14 +163,14 @@ export default function PartnerApplicationApproved({
             <Text className="ml-1 text-sm leading-5 text-black">
               3. Track your{" "}
               <Link
-                href={`https://partners.dub.co/programs/${program.slug}`}
+                href={`https://partners.mifily.com/programs/${program.slug}`}
                 className="font-semibold text-black underline"
               >
                 link performance
               </Link>{" "}
               and{" "}
               <Link
-                href={`https://partners.dub.co/programs/${program.slug}/earnings`}
+                href={`https://partners.mifily.com/programs/${program.slug}/earnings`}
                 className="font-semibold text-black underline"
               >
                 earnings
@@ -207,7 +207,7 @@ export default function PartnerApplicationApproved({
             <Section className="mb-8 mt-8">
               <Link
                 className="rounded-lg bg-neutral-900 px-6 py-3 text-[13px] font-semibold text-white no-underline"
-                href={`https://partners.dub.co/programs/${program.slug}`}
+                href={`https://partners.mifily.com/programs/${program.slug}`}
               >
                 Go to your dashboard
               </Link>
@@ -217,7 +217,7 @@ export default function PartnerApplicationApproved({
               If you have any questions about the program please don't hesitate
               to{" "}
               <Link
-                href={`https://partners.dub.co/messages/${program.slug}`}
+                href={`https://partners.mifily.com/messages/${program.slug}`}
                 className="font-semibold text-neutral-700 underline underline-offset-2"
               >
                 reach out to the {program.name} team ↗
@@ -232,7 +232,7 @@ export default function PartnerApplicationApproved({
 
             <Footer
               email={partner.email}
-              notificationSettingsUrl="https://partners.dub.co/profile/notifications"
+              notificationSettingsUrl="https://partners.mifily.com/profile/notifications"
             />
           </Container>
         </Body>

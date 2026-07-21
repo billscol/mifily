@@ -88,7 +88,7 @@ export function FeaturedProgramCard({
 
           <div className="text-content-default mt-1 line-clamp-2 max-w-sm text-sm">
             {program.description ||
-              `${program.name} is a program in the Dub Partner Network. Join the network to start partnering with them.`}
+              `${program.name} is a program in the Mifily Partner Network. Join the network to start partnering with them.`}
           </div>
 
           <div className="pointer-events-auto relative z-30 mt-5 flex flex-wrap gap-x-8 gap-y-4">

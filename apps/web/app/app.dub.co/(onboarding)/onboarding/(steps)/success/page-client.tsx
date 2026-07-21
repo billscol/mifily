@@ -153,7 +153,7 @@ export function SuccessPageClient({
                   {
                     icon: ConnectedDots4,
                     title: "Create a program",
-                    description: "Set up your Dub partner program",
+                    description: "Set up your Mifily partner program",
                     href: `/${workspace.slug}/program`,
                     cta: "Manage",
                     complete: true,
@@ -161,7 +161,7 @@ export function SuccessPageClient({
                   {
                     icon: Plug2,
                     title: "Set up conversion tracking",
-                    description: "Install the Dub tracking script",
+                    description: "Install the Mifily tracking script",
                     href: `/${workspace.slug}/settings/tracking`,
                     cta: "Install",
                     loading: isLoadingWorkspace,
@@ -181,7 +181,7 @@ export function SuccessPageClient({
                   {
                     icon: Hyperlink,
                     title: "Create a short link",
-                    description: "Create your first Dub short link",
+                    description: "Create your first Mifily short link",
                     href: `/${workspace.slug}/links?newLink=true`,
                     cta: "Create",
                   },

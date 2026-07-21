@@ -9,7 +9,7 @@ interface FundFinancialAccountParams {
   idempotencyKey: string;
 }
 
-// Fund the Dub's financial account for Global payouts
+// Fund the Mifily's financial account for Global payouts
 export async function fundFinancialAccount({
   amount,
   idempotencyKey,
@@ -47,11 +47,11 @@ export async function fundFinancialAccount({
   });
 
   if (error) {
-    throw new Error(`Failed to fund Dub's financial account: ${error.message}`);
+    throw new Error(`Failed to fund Mifily's financial account: ${error.message}`);
   }
 
   console.log(
-    `Transferred ${currencyFormatter(amount)} to Dub's financial account`,
+    `Transferred ${currencyFormatter(amount)} to Mifily's financial account`,
     prettyPrint(data),
   );
 

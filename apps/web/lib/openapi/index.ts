@@ -23,12 +23,12 @@ import { trackPaths } from "./track";
 export const document = createDocument({
   openapi: "3.0.3",
   info: {
-    title: "Dub API",
+    title: "Mifily API",
     description:
-      "Dub is the modern link attribution platform for short links, conversion tracking, and affiliate programs.",
+      "Mifily is the modern link attribution platform for short links, conversion tracking, and affiliate programs.",
     version: "0.0.1",
     contact: {
-      name: "Dub Support",
+      name: "Mifily Support",
       email: "info@mifily.com",
       url: "https://dub.co/support",
     },
