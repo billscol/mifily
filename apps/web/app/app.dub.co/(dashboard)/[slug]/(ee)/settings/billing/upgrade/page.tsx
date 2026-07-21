@@ -37,7 +37,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 import { CSSProperties, useEffect, useMemo, useState } from "react";
 import { AdjustUsageRow } from "./adjust-usage-row";
 
@@ -68,6 +68,12 @@ export default function WorkspaceBillingUpgradePage() {
     partnersLimit,
     trialEndsAt,
   } = workspace;
+
+  // TODO: remove this once paid plans are launched - for now every workspace
+  // is on the unlimited plan, so there's nothing to upgrade to (see PLANS.md)
+  if (currentPlan === "enterprise" && !stripeId) {
+    redirect(`/${slug}/settings/billing`);
+  }
 
   const { error: permissionsError } = clientAccessCheck({
     action: "billing.write",
@@ -364,7 +370,7 @@ function PlanIncludedProducts({ plan }: { plan: PlanDetails }) {
             className="size-5"
             iconClassName="size-3"
           />
-          <span>Dub Links</span>
+          <span>Mifily Links</span>
         </Link>
         {plan.limits.payouts > 0 && (
           <Link
@@ -378,7 +384,7 @@ function PlanIncludedProducts({ plan }: { plan: PlanDetails }) {
               className="size-5"
               iconClassName="size-3"
             />
-            <span>Dub Partners</span>
+            <span>Mifily Partners</span>
           </Link>
         )}
       </div>

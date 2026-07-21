@@ -10,10 +10,13 @@ import {
   createWorkspaceSchema,
   WorkspaceSchema,
 } from "@/lib/zod/schemas/workspaces";
-import { FREE_WORKSPACES_LIMIT, nanoid, R2_URL } from "@dub/utils";
+import { FREE_WORKSPACES_LIMIT, INFINITY_NUMBER, nanoid, R2_URL } from "@dub/utils";
 import { Prisma } from "@prisma/client";
 import { waitUntil } from "@vercel/functions";
 import { NextResponse } from "next/server";
+
+// TODO: remove this once paid plans are launched (see PLANS.md)
+const UNLIMITED_LIMIT = INFINITY_NUMBER;
 
 // GET /api/workspaces - get all projects for the current user
 export const GET = withSession(async ({ session }) => {
@@ -116,6 +119,21 @@ export const POST = withSession(async ({ req, session }) => {
                 },
               },
             },
+            // TODO: remove this once paid plans are launched - for now every
+            // workspace gets unlimited usage on the house (see PLANS.md)
+            plan: "enterprise",
+            usageLimit: UNLIMITED_LIMIT,
+            linksLimit: UNLIMITED_LIMIT,
+            payoutsLimit: UNLIMITED_LIMIT,
+            domainsLimit: UNLIMITED_LIMIT,
+            tagsLimit: UNLIMITED_LIMIT,
+            partnerTagsLimit: UNLIMITED_LIMIT,
+            foldersLimit: UNLIMITED_LIMIT,
+            partnersLimit: UNLIMITED_LIMIT,
+            groupsLimit: UNLIMITED_LIMIT,
+            usersLimit: UNLIMITED_LIMIT,
+            aiLimit: UNLIMITED_LIMIT,
+            networkInvitesLimit: UNLIMITED_LIMIT,
             billingCycleStart: new Date().getDate(),
             invoicePrefix: generateRandomString(8),
             inviteCode: nanoid(24),
