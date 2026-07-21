@@ -1,6 +1,6 @@
-import { Mifily } from "dub";
+import { Dub } from "dub";
 
-export const dub = new Mifily();
+export const dub = new Dub();
 
 // fetch Mifily customer using their external ID (ID in our database)
 export const getDubCustomer = async (userId: string) => {
