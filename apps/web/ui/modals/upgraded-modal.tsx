@@ -1,13 +1,5 @@
-import useWorkspace from "@/lib/swr/use-workspace";
-import { useWorkspaceStore } from "@/lib/swr/use-workspace-store";
 import { Button, Modal, useRouterStuff, useScrollProgress } from "@dub/ui";
-import {
-  capitalize,
-  getPlanDetails,
-  isWorkspaceBillingTrialActive,
-  PLANS,
-  PRO_PLAN,
-} from "@dub/utils";
+import { capitalize, getPlanDetails, PLANS, PRO_PLAN } from "@dub/utils";
 import { usePlausible } from "next-plausible";
 import { useSearchParams } from "next/navigation";
 import {
@@ -19,7 +11,6 @@ import {
   useRef,
   useState,
 } from "react";
-import { RegisterDomainForm } from "../domains/register-domain-form";
 import { ModalHero } from "../shared/modal-hero";
 
 function UpgradedModal({
@@ -31,45 +22,6 @@ function UpgradedModal({
 }) {
   const { queryParams } = useRouterStuff();
   const searchParams = useSearchParams();
-
-  const {
-    dotLinkClaimed,
-    trialEndsAt,
-    loading: workspaceLoading,
-    mutate: mutateWorkspaceData,
-  } = useWorkspace();
-
-  const checkoutSuccess = searchParams.get("upgraded") === "true";
-  const [checkoutWorkspaceSynced, setCheckoutWorkspaceSynced] = useState(
-    () => !checkoutSuccess,
-  );
-
-  useEffect(() => {
-    if (!checkoutSuccess) {
-      setCheckoutWorkspaceSynced(true);
-      return;
-    }
-
-    let cancelled = false;
-    void mutateWorkspaceData().finally(() => {
-      if (!cancelled) {
-        setCheckoutWorkspaceSynced(true);
-      }
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [checkoutSuccess, mutateWorkspaceData]);
-
-  const showDotLinkClaimUi =
-    checkoutWorkspaceSynced &&
-    !workspaceLoading &&
-    !dotLinkClaimed &&
-    !isWorkspaceBillingTrialActive(trialEndsAt);
-
-  const [_, setDotLinkOfferDismissed, { mutateWorkspace }] =
-    useWorkspaceStore<string>("dotLinkOfferDismissed");
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const { scrollProgress, updateScrollProgress } = useScrollProgress(scrollRef);
@@ -109,10 +61,6 @@ function UpgradedModal({
     queryParams({
       del: ["upgraded", "plan", "period"],
     });
-    if (showDotLinkClaimUi) {
-      await setDotLinkOfferDismissed(new Date().toISOString());
-    }
-    mutateWorkspace();
   };
 
   return (
@@ -135,34 +83,8 @@ function UpgradedModal({
               </h1>
               <p className="mt-2 text-sm text-neutral-600">
                 Thank you for upgrading to the {plan?.name} plan. You now have
-                access to more powerful features
-                {!showDotLinkClaimUi ? (
-                  <> and higher usage limits.</>
-                ) : (
-                  <>
-                    , higher usage limits, and a{" "}
-                    <a
-                      href="https://dub.link/claim"
-                      target="_blank"
-                      className="cursor-help font-semibold text-neutral-800 underline decoration-dotted underline-offset-2"
-                    >
-                      1-year free .link domain
-                    </a>
-                    .
-                  </>
-                )}
+                access to more powerful features and higher usage limits.
               </p>
-              {showDotLinkClaimUi && (
-                <div className="mt-6 rounded-xl border border-neutral-100 bg-neutral-50 p-4">
-                  <RegisterDomainForm
-                    showTerms={false}
-                    onSuccess={() => {
-                      setShowUpgradedModal(false);
-                    }}
-                    onCancel={() => setShowUpgradedModal(false)}
-                  />
-                </div>
-              )}
             </div>
             {/* Bottom scroll fade */}
             <div
@@ -172,31 +94,13 @@ function UpgradedModal({
           </div>
           <Button
             type="button"
-            variant={showDotLinkClaimUi ? "secondary" : "primary"}
-            text={
-              showDotLinkClaimUi
-                ? "No thanks, take me to the dashboard"
-                : "View dashboard"
-            }
+            variant="primary"
+            text="View dashboard"
             onClick={() => {
               onClose();
               setShowUpgradedModal(false);
             }}
           />
-          {showDotLinkClaimUi && (
-            <p className="mt-6 text-pretty text-center text-xs text-neutral-500">
-              By claiming your .link domain, you agree to our{" "}
-              <a
-                href="https://dub.co/help/article/free-dot-link-domain#terms-and-conditions"
-                target="_blank"
-                className="underline transition-colors hover:text-neutral-700"
-              >
-                terms
-              </a>
-              .<br />
-              After the first year, your renewal is $12/year.
-            </p>
-          )}
         </div>
       </div>
     </Modal>

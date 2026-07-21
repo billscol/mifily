@@ -104,13 +104,6 @@ export default function WelcomeEmail({
               >
                 Add a custom domain
               </Link>{" "}
-              or{" "}
-              <Link
-                href="https://dub.co/help/article/free-dot-link-domain"
-                className="text-neutral-600 underline underline-offset-2"
-              >
-                claim a free .link domain
-              </Link>{" "}
               and start creating your branded short links.
             </Text>
 

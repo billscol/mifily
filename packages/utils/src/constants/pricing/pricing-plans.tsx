@@ -215,16 +215,6 @@ export const PLANS: PlanDetails[] = [
         },
       },
       {
-        id: "dotlink",
-        text: "Free .link domain",
-        tooltip: {
-          title:
-            "All our paid plans come with a free .link custom domain, which helps improve click-through rates.",
-          cta: "Learn more.",
-          href: "https://dub.co/help/article/free-dot-link-domain",
-        },
-      },
-      {
         id: "folders",
         text: "Link folders",
         tooltip: {

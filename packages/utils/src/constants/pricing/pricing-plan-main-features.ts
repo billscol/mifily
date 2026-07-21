@@ -77,16 +77,6 @@ export const PRICING_PLAN_MAIN_FEATURES = {
             },
           },
           {
-            id: "dotlink",
-            text: "Free .link domain",
-            tooltip: {
-              title:
-                "Get a free .link custom domain for 1 year with any of Mifily's paid plans.",
-              cta: "Learn more.",
-              href: "https://dub.co/help/article/free-dot-link-domain",
-            },
-          },
-          {
             id: "folders",
             text: "Link folders",
             tooltip: {

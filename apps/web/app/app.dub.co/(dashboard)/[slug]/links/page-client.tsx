@@ -7,7 +7,6 @@ import {
 } from "@/lib/swr/use-folder-permissions";
 import useLinks from "@/lib/swr/use-links";
 import useWorkspace from "@/lib/swr/use-workspace";
-import { useWorkspaceStore } from "@/lib/swr/use-workspace-store";
 import { FolderDropdown } from "@/ui/folders/folder-dropdown";
 import {
   FolderInfoPanel,
@@ -21,7 +20,6 @@ import LinksContainer from "@/ui/links/links-container";
 import { LinksDisplayProvider } from "@/ui/links/links-display-provider";
 import { useLinkFilters } from "@/ui/links/use-link-filters";
 import { useAddEditTagModal } from "@/ui/modals/add-edit-tag-modal";
-import { useDotLinkOfferModal } from "@/ui/modals/dot-link-offer-modal";
 import { useExportLinksModal } from "@/ui/modals/export-links-modal";
 import { useLinkBuilder } from "@/ui/modals/link-builder";
 import { useTrialLimitActivateModal } from "@/ui/modals/trial-limit-activate-modal";
@@ -41,7 +39,7 @@ import {
   isWorkspaceBillingTrialActive,
   type TrialLimitResource,
 } from "@dub/utils";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
 
 export default function WorkspaceLinksClient() {
@@ -88,7 +86,6 @@ export function WorkspaceLinksPageControls() {
 export function WorkspaceLinksList() {
   const router = useRouter();
   const { isValidating } = useLinks();
-  const searchParams = useSearchParams();
   const workspace = useWorkspace();
   const { LinkBuilder, CreateLinkButton } = useLinkBuilder();
   const { AddEditTagModal, setShowAddEditTagModal } = useAddEditTagModal();
@@ -111,48 +108,8 @@ export function WorkspaceLinksList() {
     "folders.links.write",
   );
 
-  const [dotLinkOfferDismissed, _, { loading: loadingDotLinkOfferDismissed }] =
-    useWorkspaceStore<string>("dotLinkOfferDismissed");
-
-  const [showedDotLinkModal, setShowedDotLinkModal] = useState(false);
-  const { setShowDotLinkOfferModal, DotLinkOfferModal } =
-    useDotLinkOfferModal();
-
-  useEffect(() => {
-    if (showedDotLinkModal) return;
-
-    // We show the .link offer modal if:
-    // - The upgraded modal is not open
-    // - The user has a paid plan (and valid stripe ID)
-    // - The user is not in a billing trial (.link cannot be claimed until trial ends)
-    // - The user has no custom domains
-    // - The user has not claimed their .link domain
-    // - The user has not dismissed the .link offer modal
-    if (
-      !searchParams.has("upgraded") &&
-      workspace.stripeId &&
-      workspace.plan &&
-      workspace.plan !== "free" &&
-      !isWorkspaceBillingTrialActive(workspace.trialEndsAt) &&
-      workspace.domains?.length === 0 &&
-      !workspace.dotLinkClaimed &&
-      !loadingDotLinkOfferDismissed &&
-      dotLinkOfferDismissed === undefined
-    ) {
-      setShowDotLinkOfferModal(true);
-      setShowedDotLinkModal(true);
-    }
-  }, [
-    showedDotLinkModal,
-    searchParams,
-    workspace,
-    loadingDotLinkOfferDismissed,
-    dotLinkOfferDismissed,
-  ]);
-
   return (
     <>
-      <DotLinkOfferModal />
       <LinkBuilder />
       <AddEditTagModal />
       <div className="flex w-full items-center">

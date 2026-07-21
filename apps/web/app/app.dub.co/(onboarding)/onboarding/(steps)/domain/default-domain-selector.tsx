@@ -5,7 +5,6 @@ import {
   BoltFill,
   Button,
   CircleCheckFill,
-  Crown,
   CursorRays,
   Flask,
   Globe,
@@ -14,15 +13,12 @@ import {
 import { capitalize, cn } from "@dub/utils";
 import { usePlausible } from "next-plausible";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
 import { ReactNode } from "react";
 import { LaterButton } from "../../later-button";
 import { useOnboardingProduct } from "../../use-onboarding-product";
 import { useOnboardingProgress } from "../../use-onboarding-progress";
 
 export function DefaultDomainSelector() {
-  const searchParams = useSearchParams();
-  const workspaceSlug = searchParams.get("workspace");
   const product = useOnboardingProduct();
 
   return (
@@ -99,32 +95,6 @@ export function DefaultDomainSelector() {
               },
             ]}
             cta="Use .dub.link subdomain"
-          />
-        )}
-        {product === "links" && (
-          <DomainOption
-            step="domain/register"
-            icon="https://assets.dub.co/icons/gift.webp"
-            bannerIcon={Crown}
-            bannerText="Paid plan required"
-            title={
-              <>
-                Claim a free <DomainChip>.link</DomainChip> domain
-              </>
-            }
-            description={
-              <>
-                Register a domain like{" "}
-                <span className="font-mono font-semibold text-neutral-900">
-                  {workspaceSlug && workspaceSlug.length < 8
-                    ? workspaceSlug
-                    : "company"}
-                  .link
-                </span>{" "}
-                – free for 1 year
-              </>
-            }
-            cta="Claim .link domain"
           />
         )}
       </div>

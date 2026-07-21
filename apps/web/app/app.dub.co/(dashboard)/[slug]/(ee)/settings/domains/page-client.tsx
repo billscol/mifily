@@ -7,19 +7,15 @@ import useWorkspace from "@/lib/swr/use-workspace";
 import { DOMAINS_MAX_PAGE_SIZE } from "@/lib/zod/schemas/domains";
 import DomainCard from "@/ui/domains/domain-card";
 import DomainCardPlaceholder from "@/ui/domains/domain-card-placeholder";
-import { FreeDotLinkBanner } from "@/ui/domains/free-dot-link-banner";
 import { useAddEditDomainModal } from "@/ui/modals/add-edit-domain-modal";
-import { useRegisterDomainModal } from "@/ui/modals/register-domain-modal";
 import { useRegisterDomainSuccessModal } from "@/ui/modals/register-domain-success-modal";
 import { AnimatedEmptyState } from "@/ui/shared/animated-empty-state";
 import EmptyState from "@/ui/shared/empty-state";
 import { SearchBoxPersisted } from "@/ui/shared/search-box";
 import {
-  Badge,
   Button,
   CursorRays,
   Globe,
-  LinkBroken,
   PaginationControls,
   Popover,
   ToggleGroup,
@@ -28,7 +24,7 @@ import {
   useRouterStuff,
 } from "@dub/ui";
 import { capitalize, pluralize } from "@dub/utils";
-import { ChevronDown, Crown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function CustomDomains() {
@@ -39,7 +35,6 @@ export function CustomDomains() {
     role,
     domainsLimit,
     exceededDomains,
-    dotLinkClaimed,
   } = useWorkspace();
 
   const [openPopover, setOpenPopover] = useState(false);
@@ -60,9 +55,6 @@ export function CustomDomains() {
         className: "h-9 rounded-lg",
       },
     });
-
-  const { RegisterDomainModal, setShowRegisterDomainModal } =
-    useRegisterDomainModal();
 
   const { RegisterDomainSuccessModal, setShowRegisterDomainSuccessModal } =
     useRegisterDomainSuccessModal();
@@ -137,31 +129,6 @@ export function CustomDomains() {
                     className="h-9 justify-start px-2 text-neutral-800"
                     onClick={() => setShowAddEditDomainModal(true)}
                   />
-                  <Button
-                    text={
-                      <div className="flex items-center gap-3">
-                        Claim free .link domain
-                        {plan === "free" ? (
-                          <Badge
-                            variant="neutral"
-                            className="flex items-center gap-1"
-                          >
-                            <Crown className="size-3" />
-                            <span className="uppercase">Pro</span>
-                          </Badge>
-                        ) : dotLinkClaimed ? (
-                          <span className="rounded-md border border-green-200 bg-green-500/10 px-1 py-0.5 text-xs text-green-900">
-                            Claimed
-                          </span>
-                        ) : null}
-                      </div>
-                    }
-                    variant="outline"
-                    icon={<LinkBroken className="size-4" />}
-                    className="h-9 justify-start px-2 text-neutral-800 disabled:border-none disabled:bg-transparent disabled:text-neutral-500"
-                    onClick={() => setShowRegisterDomainModal(true)}
-                    disabled={dotLinkClaimed}
-                  />
                 </div>
               }
               align="end"
@@ -184,14 +151,7 @@ export function CustomDomains() {
           </div>
         </div>
 
-        {workspaceId && (
-          <>
-            <AddEditDomainModal />
-            <RegisterDomainModal />
-          </>
-        )}
-
-        {!dotLinkClaimed && <FreeDotLinkBanner />}
+        {workspaceId && <AddEditDomainModal />}
 
         <div key={archived} className="animate-fade-in">
           {!loading ? (
