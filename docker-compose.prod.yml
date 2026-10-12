@@ -6,6 +6,12 @@ services:
     container_name: mifily_app
     restart: unless-stopped
     env_file: .env
+    environment:
+      # Docker sets HOSTNAME to the container ID by default, and Next.js's
+      # standalone server.js binds to $HOSTNAME via a DNS lookup (getaddrinfo),
+      # which fails since the container ID isn't a resolvable name. Force it
+      # to bind on all interfaces instead.
+      HOSTNAME: "0.0.0.0"
     extra_hosts:
       - "host.docker.internal:host-gateway" # reach the host's MariaDB
     ports:

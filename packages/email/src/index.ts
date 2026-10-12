@@ -14,13 +14,7 @@ export const sendEmail = async (opts: ResendEmailOptions) => {
   );
 
   if (smtpConfigured) {
-    const { to, subject, text, react } = opts;
-    return await sendViaNodeMailer({
-      to,
-      subject,
-      text,
-      react,
-    });
+    return await sendViaNodeMailer(opts);
   }
 
   console.info(
@@ -42,16 +36,7 @@ export const sendBatchEmail = async (
   );
 
   if (smtpConfigured) {
-    await Promise.all(
-      emails.map((p) =>
-        sendViaNodeMailer({
-          to: p.to,
-          subject: p.subject,
-          text: p.text,
-          react: p.react,
-        }),
-      ),
-    );
+    await Promise.all(emails.map((p) => sendViaNodeMailer(p)));
 
     return {
       data: null,
