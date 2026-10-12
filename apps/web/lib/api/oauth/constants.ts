@@ -10,9 +10,9 @@ export const OAUTH_CONFIG = {
   REFRESH_TOKEN_LENGTH: 40,
   CODE_LENGTH: 40,
 
-  CLIENT_ID_PREFIX: "dub_app_",
-  CLIENT_SECRET_PREFIX: "dub_app_secret_",
-  ACCESS_TOKEN_PREFIX: "dub_access_token_",
+  CLIENT_ID_PREFIX: "mifily_app_",
+  CLIENT_SECRET_PREFIX: "mifily_app_secret_",
+  ACCESS_TOKEN_PREFIX: "mifily_access_token_",
 };
 
 // These are the scopes an OAuth app can request on behalf of an user

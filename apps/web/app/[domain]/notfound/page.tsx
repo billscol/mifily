@@ -1,9 +1,10 @@
 import { prisma } from "@/lib/prisma";
+import { MifilyHomePage } from "@/ui/home/mifily-home-page";
 import { BubbleIcon } from "@/ui/placeholders/bubble-icon";
 import { ButtonLink } from "@/ui/placeholders/button-link";
 import { Hero } from "@/ui/placeholders/hero";
 import { GlobeSearch } from "@dub/ui";
-import { cn, constructMetadata } from "@dub/utils";
+import { SHORT_DOMAIN, cn, constructMetadata } from "@dub/utils";
 import { redirect } from "next/navigation";
 
 export const revalidate = false; // cache indefinitely
@@ -20,8 +21,17 @@ export function generateStaticParams() {
 
 export default async function NotFoundLinkPage(props: {
   params: Promise<{ domain: string }>;
+  searchParams: Promise<{ root?: string }>;
 }) {
   const { domain } = await props.params;
+  const { root } = await props.searchParams;
+
+  // the short domain's own root has no "_root" link configured - show the
+  // real marketing homepage instead of a generic "link not found" page.
+  if (domain === SHORT_DOMAIN && root === "1") {
+    return <MifilyHomePage />;
+  }
+
   const domainData = await prisma.domain.findUnique({
     where: {
       slug: domain,

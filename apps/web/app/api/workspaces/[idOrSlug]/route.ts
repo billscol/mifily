@@ -31,7 +31,7 @@ const updateWorkspaceSchema = createWorkspaceSchema
         z
           .string()
           .regex(
-            /^dub_pk_[A-Za-z0-9_-]{16,64}$/,
+            /^mifily_pk_[A-Za-z0-9_-]{16,64}$/,
             "Invalid publishable key format",
           ),
         z.null(),

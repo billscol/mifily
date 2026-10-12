@@ -63,7 +63,7 @@ export const withPublishableKey = (
           }
 
           const publishableKey = authorizationHeader.replace("Bearer ", "");
-          if (!publishableKey.startsWith("dub_pk_")) {
+          if (!publishableKey.startsWith("mifily_pk_")) {
             throw new DubApiError({
               code: "bad_request",
               message: "Invalid or missing publishable key.",

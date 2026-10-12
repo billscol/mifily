@@ -22,7 +22,7 @@ export const PublishableKeyForm = ({ className }: { className?: string }) => {
   const handleGenerateKey = async () => {
     setProcessing(true);
 
-    const newPublishableKey = `dub_pk_${nanoid(24)}`;
+    const newPublishableKey = `mifily_pk_${nanoid(24)}`;
 
     const response = await fetch(`/api/workspaces/${id}`, {
       method: "PATCH",

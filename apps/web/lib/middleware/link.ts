@@ -97,7 +97,12 @@ export async function LinkMiddleware(req: NextRequest, ev: NextFetchEvent) {
         return await crawlBitly(req, ev);
       }
 
-      return NextResponse.rewrite(new URL(`/${domain}/notfound`, req.url), {
+      const notFoundUrl = new URL(`/${domain}/notfound`, req.url);
+      if (key === "_root") {
+        notFoundUrl.searchParams.set("root", "1");
+      }
+
+      return NextResponse.rewrite(notFoundUrl, {
         headers: {
           ...DUB_HEADERS,
           ...STATIC_PAGES_CACHE_HEADERS,
