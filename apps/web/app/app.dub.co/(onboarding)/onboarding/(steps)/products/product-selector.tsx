@@ -12,16 +12,14 @@ const products = {
   partners: {
     image: "https://assets.dub.co/icons/trophy.webp",
     title: "Mifily Partners",
-    href: "https://dub.co/partners",
     description:
-      "Modern [affiliate programs](https://dub.co/partners) with [global payouts](https://dub.co/help/article/partner-payouts) and [accurate attribution](https://dub.co/help/article/program-analytics).",
+      "Modern affiliate programs with global payouts and accurate attribution.",
   },
   links: {
     image: "https://assets.dub.co/icons/link.webp",
     title: "Mifily Links",
-    href: "https://dub.co/links",
     description:
-      "[Short links](https://dub.co/help/category/link-management), [QR codes](https://dub.co/help/article/custom-qr-codes), [real-time analytics](https://dub.co/help/article/dub-analytics), and [conversion tracking](https://dub.co/docs/conversions/quickstart).",
+      "Short links, QR codes, real-time analytics, and conversion tracking.",
   },
 };
 
@@ -34,17 +32,10 @@ export function ProductSelector() {
           product={key as "links" | "partners"}
           icon={product.image}
           title={
-            <a
-              href={product.href}
-              target="_blank"
-              className="group flex items-center justify-center gap-2"
-            >
-              <DubProductIcon
-                product={key as "links" | "partners"}
-                className="transition-transform group-hover:-rotate-12 group-hover:scale-110"
-              />{" "}
+            <span className="flex items-center justify-center gap-2">
+              <DubProductIcon product={key as "links" | "partners"} />{" "}
               {product.title}
-            </a>
+            </span>
           }
           description={product.description}
           cta={`Continue with ${product.title}`}

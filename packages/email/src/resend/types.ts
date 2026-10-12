@@ -4,7 +4,7 @@ export interface ResendEmailOptions
   extends Omit<CreateEmailOptions, "to" | "from"> {
   to: string;
   from?: string;
-  variant?: "primary" | "notifications" | "marketing";
+  variant?: "primary" | "notifications" | "marketing" | "noreply";
   unsubscribeUrl?: string; // Custom unsubscribe URL for List-Unsubscribe header
 }
 

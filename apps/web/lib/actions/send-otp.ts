@@ -124,6 +124,7 @@ export const sendOtpAction = actionClient
       sendEmail({
         subject: "Mifily: OTP to verify your account",
         to: email,
+        variant: "noreply",
         react: VerifyEmail({
           email,
           code,

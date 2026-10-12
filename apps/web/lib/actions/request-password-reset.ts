@@ -63,6 +63,7 @@ export const requestPasswordResetAction = actionClient
     await sendEmail({
       subject: "Mifily: Password reset instructions",
       to: email,
+      variant: "noreply",
       react: ResetPasswordLink({
         email,
         url: `${process.env.NEXTAUTH_URL}/auth/reset-password/${token}`,

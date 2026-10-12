@@ -111,6 +111,7 @@ export const authOptions: NextAuthOptions = {
         sendEmail({
           to: identifier,
           subject: "Your Mifily Login Link",
+          variant: "noreply",
           react: LoginLink({ url, email: identifier }),
         });
       },

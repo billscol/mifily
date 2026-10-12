@@ -4,4 +4,5 @@ export const VARIANT_TO_FROM_MAP = {
   primary: "Mifily <system@mifily.com>",
   notifications: "Mifily <notifications@mifily.com>",
   marketing: "Mifily <hello@mifily.com>",
+  noreply: "Mifily <noreply@mifily.com>",
 };
