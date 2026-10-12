@@ -12,6 +12,13 @@ services:
       # which fails since the container ID isn't a resolvable name. Force it
       # to bind on all interfaces instead.
       HOSTNAME: "0.0.0.0"
+      # Point the @upstash/redis client (apps/web/lib/upstash/redis.ts) at the
+      # self-hosted redis-http proxy instead of Upstash's (now-deleted) free
+      # database. env_file values aren't ${}-expanded, so this has to live
+      # here rather than in .env, with REDIS_HTTP_TOKEN as the one source of
+      # truth for the shared secret.
+      UPSTASH_REDIS_REST_URL: http://redis-http:80
+      UPSTASH_REDIS_REST_TOKEN: ${REDIS_HTTP_TOKEN}
     extra_hosts:
       - "host.docker.internal:host-gateway" # reach the host's MariaDB
     ports:
@@ -36,6 +43,33 @@ services:
       - mifily_net
     depends_on:
       - app
+
+  # Reemplaza Upstash Redis (plan gratuito, se borró por inactividad) con un
+  # Redis propio + un proxy REST compatible con el cliente @upstash/redis
+  # que ya usa el código (ver apps/web/lib/upstash/redis.ts) - así no hace
+  # falta tocar ninguna línea de app code, solo UPSTASH_REDIS_REST_URL/TOKEN
+  # en el .env para que apunten aquí en vez de a Upstash.
+  redis:
+    image: redis:7-alpine
+    container_name: mifily_redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    networks:
+      - mifily_net
+
+  redis-http:
+    image: hiett/serverless-redis-http:latest
+    container_name: mifily_redis_http
+    restart: unless-stopped
+    environment:
+      SRH_MODE: env
+      SRH_TOKEN: ${REDIS_HTTP_TOKEN}
+      SRH_CONNECTION_STRING: redis://redis:6379
+    depends_on:
+      - redis
+    networks:
+      - mifily_net
 
   minio:
     image: minio/minio:latest
@@ -109,3 +143,4 @@ networks:
 
 volumes:
   minio_data:
+  redis_data:
