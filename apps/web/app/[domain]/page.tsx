@@ -1,7 +1,8 @@
 import { ButtonLink } from "@/ui/placeholders/button-link";
 import { Hero } from "@/ui/placeholders/hero";
+import { MifilyHomePage } from "@/ui/home/mifily-home-page";
 import { Logo } from "@dub/ui";
-import { cn, constructMetadata } from "@dub/utils";
+import { SHORT_DOMAIN, cn, constructMetadata } from "@dub/utils";
 import { BubbleIcon } from "../../ui/placeholders/bubble-icon";
 import { BrowserGraphic } from "./browser-graphic";
 
@@ -24,7 +25,15 @@ export function generateStaticParams() {
   return [];
 }
 
-export default function CustomDomainPage() {
+export default async function CustomDomainPage(props: {
+  params: Promise<{ domain: string }>;
+}) {
+  const params = await props.params;
+
+  if (params.domain === SHORT_DOMAIN) {
+    return <MifilyHomePage />;
+  }
+
   return (
     <div>
       <Hero>
