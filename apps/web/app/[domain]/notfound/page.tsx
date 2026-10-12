@@ -9,11 +9,23 @@ import { redirect } from "next/navigation";
 
 export const revalidate = false; // cache indefinitely
 
-export const metadata = constructMetadata({
-  title: "Link Not Found",
-  description: "This link does not exist. Please check the URL and try again.",
-  noIndex: true,
-});
+export async function generateMetadata(props: {
+  params: Promise<{ domain: string }>;
+  searchParams: Promise<{ root?: string }>;
+}) {
+  const { domain } = await props.params;
+  const { root } = await props.searchParams;
+
+  if (domain === SHORT_DOMAIN && root === "1") {
+    return constructMetadata({});
+  }
+
+  return constructMetadata({
+    title: "Link Not Found",
+    description: "This link does not exist. Please check the URL and try again.",
+    noIndex: true,
+  });
+}
 
 export function generateStaticParams() {
   return [];
