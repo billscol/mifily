@@ -44,6 +44,16 @@ COPY --from=builder --chown=nextjs:nodejs /app/apps/web/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/apps/web/.next/static ./apps/web/.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/apps/web/public ./apps/web/public
 
+# Next.js's standalone output tracing copies apps/web/.env (the build-time
+# placeholder file from deploy/build-env.sh) into the image. Every
+# unconfigured optional integration in this codebase guards itself with
+# `if (!process.env.X)`, and a non-empty placeholder string defeats that
+# guard - e.g. EDGE_CONFIG="build-time-placeholder" made the app think Edge
+# Config was configured and crash with "Invalid connection string provided"
+# on real requests (like account signup) instead of skipping it. Real values
+# still come from docker-compose's env_file: .env at container start.
+RUN rm -f apps/web/.env apps/web/.env.production apps/web/.env.local
+
 USER nextjs
 ENV NODE_ENV=production
 ENV PORT=3000
